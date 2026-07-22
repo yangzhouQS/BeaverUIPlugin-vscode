@@ -51,7 +51,8 @@ const attr = [
         key: 'size',
         describe: 'Checkbox 的尺寸',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'name',
@@ -120,12 +121,17 @@ const attr = [
         default: '—'
     }
 ];
-
 const event = [
     {
         key: '@change',
         describe: '当绑定值变化时触发的事件',
         type: 'function'
+    }
+];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
     }
 ];
 
@@ -137,8 +143,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/checkbox.html#checkbox-%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/checkbox.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-checkbox',
     attr,
-    event
+    event,
+    slot
 };

@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const attr = [
     {
         key: 'prop',
-        describe: "model 的键名。它可以是一个属性的值(如 a.b.0 或 ['a', 'b', '0'])。在使用了 validate、resetFields 的方法时，该属性是必填的。",
+        describe: 'model 的键名。它可以是一个属性的值(如 a.b.0 或 [\'a\', \'b\', \'0\'])。在使用了 validate、resetFields 的方法时，该属性是必填的。',
         type: 'string / string[]',
         default: '—'
     },
@@ -17,11 +17,12 @@ const attr = [
         key: 'label-position',
         describe: '表单域标签的位置，当设置为 left 或 right 时，则也需要设置 label-width 属性。默认会继承 Form 的 label-position（2.7.7 新增）',
         type: 'enum',
-        default: "''"
+        default: '\'\'',
+        values: ['left', 'right', 'top']
     },
     {
         key: 'label-width',
-        describe: "标签宽度，例如 '50px'。可以使用 auto。",
+        describe: '标签宽度，例如 \'50px\'。可以使用 auto。',
         type: 'string / number',
         default: '—'
     },
@@ -59,7 +60,8 @@ const attr = [
         key: 'size',
         describe: '用于控制该表单域下组件的默认尺寸',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'for',
@@ -71,15 +73,35 @@ const attr = [
         key: 'validate-status',
         describe: 'formitem 校验的状态',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['error', 'validating', 'success']
+    }
+];
+const event = [];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'label',
+        describe: '标签内容'
+    },
+    {
+        key: 'error',
+        describe: '验证错误信息内容'
     }
 ];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/form.html#form-item-%E5%B1%9E%E6%80%A7';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/form.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-form-item',
     attr,
-    event: []
+    event,
+    slot
 };
 //# sourceMappingURL=el-form-item.js.map

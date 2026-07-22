@@ -5,13 +5,13 @@ const attr = [
         key: 'model-value',
         describe: '绑定值，如果是 range 选择器，数组长度应为 2',
         type: 'number / string / object',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'v-model',
         describe: '绑定值，如果是 range 选择器，数组长度应为 2',
         type: 'number / string / object',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'border',
@@ -41,7 +41,8 @@ const attr = [
         key: 'type',
         describe: '选择器类型，默认是普通选择器',
         type: 'enum',
-        default: 'date'
+        default: 'date',
+        values: ['year', 'years', 'month', 'months', 'date', 'dates', 'datetime', 'week', 'datetimerange', 'daterange', 'monthrange', 'yearrange']
     },
     {
         key: 'default-value',
@@ -139,15 +140,41 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'prev-month',
+        describe: 'prev month icon'
+    },
+    {
+        key: 'next-month',
+        describe: 'next month icon'
+    },
+    {
+        key: 'prev-year',
+        describe: 'prev year icon'
+    },
+    {
+        key: 'next-year',
+        describe: 'next year icon'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/date-picker-panel.html#%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/date-picker-panel.html#events';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/date-picker-panel.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-date-picker-panel',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-date-picker-panel.js.map

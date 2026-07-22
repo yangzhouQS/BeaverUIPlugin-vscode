@@ -5,7 +5,8 @@ const attr = [
         key: 'mode',
         describe: '菜单展示模式。',
         type: 'enum',
-        default: 'vertical'
+        default: 'vertical',
+        values: ['horizontal', 'vertical']
     },
     {
         key: 'collapse',
@@ -35,7 +36,7 @@ const attr = [
         key: 'default-active',
         describe: '页面加载时默认激活菜单的 index。',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'default-openeds',
@@ -53,7 +54,8 @@ const attr = [
         key: 'menu-trigger',
         describe: '子菜单打开的触发方式，只在 mode 为 horizontal 时有效。',
         type: 'enum',
-        default: 'hover'
+        default: 'hover',
+        values: ['hover', 'click']
     },
     {
         key: 'router',
@@ -71,7 +73,8 @@ const attr = [
         key: 'popper-effect',
         describe: 'Tooltip 主题，内置了 dark / light 两种主题，当菜单折叠时生效（2.2.26 版本新增）。',
         type: 'enum / string',
-        default: 'dark'
+        default: 'dark',
+        values: ['dark', 'light']
     },
     {
         key: 'close-on-click-outside',
@@ -145,15 +148,25 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/menu.html#menu-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/menu.html#menu-%E4%BA%8B%E4%BB%B6';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/menu.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-menu',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-menu.js.map

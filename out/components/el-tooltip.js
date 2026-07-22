@@ -11,13 +11,14 @@ const attr = [
         key: 'effect',
         describe: 'Tooltip 主题，内置了 dark / light 两种',
         type: 'enum',
-        default: 'dark'
+        default: 'dark',
+        values: ['dark', 'light']
     },
     {
         key: 'content',
         describe: '显示的内容，也可被 slot#content 覆盖',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'raw-content',
@@ -29,7 +30,8 @@ const attr = [
         key: 'placement',
         describe: 'Tooltip 组件出现的位置',
         type: 'enum',
-        default: 'bottom'
+        default: 'bottom',
+        values: ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end', 'right', 'right-start', 'right-end']
     },
     {
         key: 'fallback-placements',
@@ -131,7 +133,8 @@ const attr = [
         key: 'trigger',
         describe: '如何触发 Tooltip',
         type: 'enum / array',
-        default: 'hover'
+        default: 'hover',
+        values: ['hover', 'click', 'focus', 'contextmenu']
     },
     {
         key: 'virtual-triggering',
@@ -149,7 +152,7 @@ const attr = [
         key: 'trigger-keys',
         describe: '当鼠标点击或者聚焦在触发元素上时， 可以定义一组键盘按键并且通过它们来控制 Tooltip 的显示',
         type: 'array',
-        default: "['Enter','Space']"
+        default: '[\'Enter\',\'Space\']'
     },
     {
         key: 'persistent',
@@ -192,15 +195,29 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'content',
+        describe: '弹出的内容'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/tooltip.html#tooltip-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/tooltip.html#tooltip-%E4%BA%8B%E4%BB%B6';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/tooltip.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-tooltip',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-tooltip.js.map

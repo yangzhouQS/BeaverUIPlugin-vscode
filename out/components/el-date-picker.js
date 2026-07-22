@@ -5,13 +5,13 @@ const attr = [
         key: 'model-value',
         describe: '绑定值，如果它是数组，长度应该是 2',
         type: 'number / string / object',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'v-model',
         describe: '绑定值，如果它是数组，长度应该是 2',
         type: 'number / string / object',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'readonly',
@@ -29,7 +29,8 @@ const attr = [
         key: 'size',
         describe: '输入框尺寸',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'editable',
@@ -47,7 +48,7 @@ const attr = [
         key: 'placeholder',
         describe: '非范围选择时的占位内容',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'start-placeholder',
@@ -65,7 +66,8 @@ const attr = [
         key: 'type',
         describe: '显示类型',
         type: 'enum',
-        default: 'date'
+        default: 'date',
+        values: ['year', 'years', 'month', 'months', 'date', 'dates', 'datetime', 'week', 'datetimerange', 'daterange', 'monthrange', 'yearrange']
     },
     {
         key: 'format',
@@ -95,7 +97,7 @@ const attr = [
         key: 'range-separator',
         describe: '选择范围时的分隔符',
         type: 'string',
-        default: "'-'"
+        default: '\'-\''
     },
     {
         key: 'default-value',
@@ -125,7 +127,7 @@ const attr = [
         key: 'name',
         describe: '等价于原生 input name 属性',
         type: 'string / array',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'unlink-panels',
@@ -143,7 +145,7 @@ const attr = [
         key: 'prefix-icon',
         describe: '自定义前缀图标，如果 type 的值是 TimeLikeType，那么就是 Clock，不然就是 Calendar',
         type: 'string / Component',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'clear-icon',
@@ -197,7 +199,7 @@ const attr = [
         key: 'fallback-placements',
         describe: 'Tooltip 可用的 positions，2.8.4，请查看 popper.js 文档',
         type: 'array',
-        default: "['bottom', 'top', 'right', 'left']"
+        default: '[\'bottom\', \'top\', \'right\', \'left\']'
     },
     {
         key: 'placement',
@@ -267,15 +269,45 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'range-separator',
+        describe: 'custom range separator content'
+    },
+    {
+        key: 'prev-month',
+        describe: 'prev month icon'
+    },
+    {
+        key: 'next-month',
+        describe: 'next month icon'
+    },
+    {
+        key: 'prev-year',
+        describe: 'prev year icon'
+    },
+    {
+        key: 'next-year',
+        describe: 'next year icon'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/date-picker.html#%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/date-picker.html#%E4%BA%8B%E4%BB%B6';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/date-picker.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-date-picker',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-date-picker.js.map

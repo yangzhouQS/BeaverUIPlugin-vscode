@@ -15,7 +15,8 @@ const attr = [
         key: 'size',
         describe: '多选框组尺寸',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'disabled',
@@ -81,21 +82,27 @@ const attr = [
         key: 'props',
         describe: 'options 的配置，2.11.2版本开始支持',
         type: 'object',
-        default: "{value: 'value', label: 'label', disabled: 'disabled'}"
+        default: '{value: \'value\', label: \'label\', disabled: \'disabled\'}'
     },
     {
         key: 'type',
         describe: '用于渲染选项的组件类型，2.11.5版本开始支持',
         type: 'enum',
-        default: "'checkbox'"
+        default: '\'checkbox\'',
+        values: ['checkbox', 'button']
     }
 ];
-
 const event = [
     {
         key: '@change',
         describe: '当绑定值变化时触发的事件',
         type: 'function'
+    }
+];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
     }
 ];
 
@@ -107,8 +114,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/checkbox.html#checkbox-group-%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/checkbox.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-checkbox-group',
     attr,
-    event
+    event,
+    slot
 };

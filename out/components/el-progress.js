@@ -11,7 +11,8 @@ const attr = [
         key: 'type',
         describe: '进度条类型。',
         type: 'enum',
-        default: "'line'"
+        default: '\'line\'',
+        values: ['line', 'circle', 'dashboard']
     },
     {
         key: 'stroke-width',
@@ -21,7 +22,7 @@ const attr = [
     },
     {
         key: 'text-inside',
-        describe: "进度条显示文字内置在进度条内（仅 type 为 'line' 时可用）。",
+        describe: '进度条显示文字内置在进度条内（仅 type 为 \'line\' 时可用）。',
         type: 'boolean',
         default: 'false'
     },
@@ -29,7 +30,8 @@ const attr = [
         key: 'status',
         describe: '进度条当前状态。',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['success', 'exception', 'warning']
     },
     {
         key: 'indeterminate',
@@ -47,7 +49,7 @@ const attr = [
         key: 'color',
         describe: '进度条背景色（会覆盖 status 状态颜色）。',
         type: 'string / function / Array',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'width',
@@ -65,7 +67,8 @@ const attr = [
         key: 'stroke-linecap',
         describe: 'circle/dashboard 类型路径两端的形状。',
         type: 'enum',
-        default: "'round'"
+        default: '\'round\'',
+        values: ['butt', 'round', 'square']
     },
     {
         key: 'format',
@@ -87,15 +90,22 @@ const attr = [
     }
 ];
 const event = [];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/progress.html#progress-%E5%B1%9E%E6%80%A7';
 });
-event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/progress.html#progress-%E4%BA%8B%E4%BB%B6';
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/progress.html#%E6%8F%92%E6%A7%BD';
 });
 exports.default = {
     key: 'el-progress',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-progress.js.map

@@ -27,13 +27,14 @@ const attr = [
         key: 'size',
         describe: 'switch 的大小',
         type: 'enum',
-        default: "''"
+        default: '\'\'',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'width',
         describe: 'switch 的宽度',
         type: 'number / string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'inline-prompt',
@@ -69,13 +70,13 @@ const attr = [
         key: 'active-text',
         describe: 'switch 打开时的文字描述',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'inactive-text',
         describe: 'switch 的状态为 off 时的文字描述',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'active-value',
@@ -93,7 +94,7 @@ const attr = [
         key: 'name',
         describe: 'switch 对应的 name 属性',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'validate-event',
@@ -129,19 +130,19 @@ const attr = [
         key: 'active-color',
         describe: '当在 on 状态时的背景颜色(推荐使用 CSS var --el-switch-on-color ) (已废弃)',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'inactive-color',
         describe: 'off 状态时的背景颜色(推荐使用 CSS var --el-switch-off-color ) (已废弃)',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'border-color',
         describe: '开关的边框颜色 ( 推荐使用 CSS var --el-switch-border-color ) (已废弃)',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'label',
@@ -150,7 +151,6 @@ const attr = [
         default: '—'
     }
 ];
-
 const event = [
     {
         key: '@change',

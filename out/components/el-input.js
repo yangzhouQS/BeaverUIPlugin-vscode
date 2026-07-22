@@ -5,7 +5,8 @@ const attr = [
         key: 'type',
         describe: '类型',
         type: 'enum',
-        default: 'text'
+        default: 'text',
+        values: ['text', 'textarea', 'number', 'password', 'email', 'search', 'tel', 'url']
     },
     {
         key: 'model-value',
@@ -47,7 +48,8 @@ const attr = [
         key: 'word-limit-position',
         describe: '字数统计的位置，仅当 show-word-limit 为 true 时生效',
         type: 'enum',
-        default: 'inside'
+        default: 'inside',
+        values: ['inside', 'outside']
     },
     {
         key: 'placeholder',
@@ -95,7 +97,8 @@ const attr = [
         key: 'size',
         describe: '输入框尺寸，只在 type 不为 textarea 时有效',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'prefix-icon',
@@ -161,7 +164,8 @@ const attr = [
         key: 'resize',
         describe: '控制是否能被用户缩放',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['none', 'both', 'horizontal', 'vertical']
     },
     {
         key: 'autofocus',
@@ -285,15 +289,41 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'prefix',
+        describe: '输入框头部内容 / 前缀内容'
+    },
+    {
+        key: 'suffix',
+        describe: '输入框尾部内容 / 后缀内容'
+    },
+    {
+        key: 'prepend',
+        describe: '输入框前置内容'
+    },
+    {
+        key: 'append',
+        describe: '输入框后置内容'
+    },
+    {
+        key: 'password-icon',
+        describe: 'content as Input password icon, only works when `show-password` is true. The scope variable is `{ visible: boolean }`'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/input.html#attributes';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/input.html#events';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/input.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-input',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-input.js.map

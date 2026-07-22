@@ -36,12 +36,25 @@ const attr = [
         default: '—'
     }
 ];
-
 const event = [
     {
         key: '@update:size',
         describe: '面板尺寸变化时触发',
         type: 'function'
+    }
+];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'start-collapsible',
+        describe: 'Custom content for the start collapsible button'
+    },
+    {
+        key: 'end-collapsible',
+        describe: 'Custom content for the end collapsible button'
     }
 ];
 
@@ -53,8 +66,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/splitter.html#splitterpanel-%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/splitter.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-splitter-panel',
     attr,
-    event
+    event,
+    slot
 };

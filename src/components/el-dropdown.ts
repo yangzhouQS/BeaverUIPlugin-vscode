@@ -3,13 +3,15 @@ const attr = [
         key: 'type',
         describe: '菜单按钮类型，同 Button 组件一样，仅在 split-button 为 true 的情况下有效。',
         type: 'enum',
-        default: "''"
+        default: '\'\'',
+        values: ['default', 'primary', 'success', 'warning', 'info', 'danger', 'text']
     },
     {
         key: 'size',
         describe: '菜单尺寸，在 split-button 为 true 的情况下也对触发按钮生效。',
         type: 'enum',
-        default: "''"
+        default: '\'\'',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'button-props',
@@ -21,7 +23,7 @@ const attr = [
         key: 'max-height',
         describe: '菜单最大高度。',
         type: 'string / number',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'split-button',
@@ -39,25 +41,28 @@ const attr = [
         key: 'placement',
         describe: '菜单弹出位置。',
         type: 'enum',
-        default: 'bottom'
+        default: 'bottom',
+        values: ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end']
     },
     {
         key: 'effect',
         describe: 'Tooltip 主题，内置了 dark / light 两种主题。',
         type: 'enum / string',
-        default: 'light'
+        default: 'light',
+        values: ['dark', 'light']
     },
     {
         key: 'trigger',
         describe: '触发下拉的行为。',
         type: 'enum / array',
-        default: 'hover'
+        default: 'hover',
+        values: ['click', 'hover', 'contextmenu']
     },
     {
         key: 'trigger-keys',
         describe: '指定键盘上哪些按键可以触发操作（2.9.1 版本新增）。',
         type: 'array',
-        default: "['Enter', 'Space', 'ArrowDown', 'NumpadEnter']"
+        default: '[\'Enter\', \'Space\', \'ArrowDown\', \'NumpadEnter\']'
     },
     {
         key: 'virtual-triggering',
@@ -99,7 +104,8 @@ const attr = [
         key: 'role',
         describe: '下拉菜单的 ARIA 属性。根据具体场景，您可能想要将此更改为“navigation”。',
         type: 'enum',
-        default: 'menu'
+        default: 'menu',
+        values: ['dialog', 'grid', 'group', 'listbox', 'menu', 'navigation', 'tooltip', 'tree']
     },
     {
         key: 'tabindex',
@@ -111,7 +117,7 @@ const attr = [
         key: 'popper-class',
         describe: '自定义浮层类名。',
         type: 'string / object',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'popper-style',
@@ -123,7 +129,7 @@ const attr = [
         key: 'popper-options',
         describe: 'popper.js 参数。',
         type: 'object',
-        default: "{modifiers: [{name: 'computeStyles',options: {gpuAcceleration: false}}]}"
+        default: '{modifiers: [{name: \'computeStyles\',options: {gpuAcceleration: false}}]}'
     },
     {
         key: 'teleported',
@@ -144,8 +150,7 @@ const attr = [
         default: 'true'
     }
 ];
-
-const event: any = [
+const event = [
     {
         key: '@click',
         describe: 'split-button 为 true 时，点击左侧按钮的回调。',
@@ -162,6 +167,16 @@ const event: any = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'dropdown',
+        describe: 'content of the Dropdown Menu, usually a `<el-dropdown-menu>` element'
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/dropdown.html#dropdown-%E5%B1%9E%E6%80%A7';
@@ -171,8 +186,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/dropdown.html#dropdown-%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/dropdown.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-dropdown',
     attr,
-    event
+    event,
+    slot
 };

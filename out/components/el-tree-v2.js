@@ -152,15 +152,29 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'empty',
+        describe: '空状态内容'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/tree-v2.html#treev2-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/tree-v2.html#treev2-%E4%BA%8B%E4%BB%B6';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/tree-v2.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-tree-v2',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-tree-v2.js.map

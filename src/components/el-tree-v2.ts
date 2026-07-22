@@ -108,8 +108,7 @@ const attr = [
         default: '200'
     }
 ];
-
-const event: any = [
+const event = [
     {
         key: '@node-click',
         describe: '当节点被点击的时候触发',
@@ -151,6 +150,16 @@ const event: any = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'empty',
+        describe: '空状态内容'
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/tree-v2.html#treev2-%E5%B1%9E%E6%80%A7';
@@ -160,8 +169,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/tree-v2.html#treev2-%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/tree-v2.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-tree-v2',
     attr,
-    event
+    event,
+    slot
 };

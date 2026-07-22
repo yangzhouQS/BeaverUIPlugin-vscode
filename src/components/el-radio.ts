@@ -39,7 +39,8 @@ const attr = [
         key: 'size',
         describe: '单选框的尺寸',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'name',
@@ -48,12 +49,17 @@ const attr = [
         default: '—'
     }
 ];
-
 const event = [
     {
         key: '@change',
         describe: '绑定值变化时触发的事件',
         type: 'function'
+    }
+];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
     }
 ];
 
@@ -65,8 +71,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/radio.html#radio-%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/radio.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-radio',
     attr,
-    event
+    event,
+    slot
 };

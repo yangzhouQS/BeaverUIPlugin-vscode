@@ -21,7 +21,8 @@ const attr = [
         key: 'expand-icon-position',
         describe: '设置展开图标位置',
         type: 'enum',
-        default: 'right'
+        default: 'right',
+        values: ['left', 'right']
     },
     {
         key: 'before-collapse',
@@ -30,12 +31,17 @@ const attr = [
         default: '—'
     }
 ];
-
-const event: any = [
+const event = [
     {
         key: '@change',
         describe: '切换当前活动面板，在手风琴模式下其类型是string，在其他模式下是array',
         type: 'function'
+    }
+];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
     }
 ];
 
@@ -47,8 +53,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/collapse.html#collapse-%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/collapse.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-collapse',
     attr,
-    event
+    event,
+    slot
 };

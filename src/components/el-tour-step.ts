@@ -78,8 +78,7 @@ const attr = [
         default: '—'
     }
 ];
-
-const event: any = [
+const event = [
     {
         key: '@close',
         describe: '关闭引导时的回调函数',

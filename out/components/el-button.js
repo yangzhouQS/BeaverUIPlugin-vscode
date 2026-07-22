@@ -5,13 +5,15 @@ const attr = [
         key: 'size',
         describe: '尺寸',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'type',
         describe: '类型',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['default', 'primary', 'success', 'warning', 'danger', 'info', 'text']
     },
     {
         key: 'plain',
@@ -89,7 +91,8 @@ const attr = [
         key: 'native-type',
         describe: '原生 type 属性',
         type: 'enum',
-        default: 'button'
+        default: 'button',
+        values: ['button', 'submit', 'reset']
     },
     {
         key: 'auto-insert-space',
@@ -117,12 +120,30 @@ const attr = [
     }
 ];
 const event = [];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'loading',
+        describe: 'customize loading component'
+    },
+    {
+        key: 'icon',
+        describe: '图标内容'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/button.html#button-%E5%B1%9E%E6%80%A7';
+});
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/button.html#%E6%8F%92%E6%A7%BD';
 });
 exports.default = {
     key: 'el-button',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-button.js.map

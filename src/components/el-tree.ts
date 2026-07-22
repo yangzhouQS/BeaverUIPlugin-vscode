@@ -151,14 +151,12 @@ const attr = [
     },
     {
         key: 'allow-drop',
-        describe:
-            "拖拽时判定目标节点能否成为拖动目标位置。 如果返回 false ，拖动节点不能被拖放到目标节点。 type 参数有三种情况：'prev'、'inner' 和 'next'，分别表示放置在目标节点前、插入至目标节点和放置在目标节点后",
+        describe: '拖拽时判定目标节点能否成为拖动目标位置。 如果返回 false ，拖动节点不能被拖放到目标节点。 type 参数有三种情况：\'prev\'、\'inner\' 和 \'next\'，分别表示放置在目标节点前、插入至目标节点和放置在目标节点后',
         type: 'function',
         default: '—'
     }
 ];
-
-const event: any = [
+const event = [
     {
         key: '@node-click',
         describe: '当节点被点击的时候触发。四个参数：对应于节点点击的节点对象，TreeNode 的 node 属性，TreeNode 和事件对象。',
@@ -176,8 +174,7 @@ const event: any = [
     },
     {
         key: '@check',
-        describe:
-            '点击节点复选框之后触发。两个参数，依次为：传递给 data 属性的数组中该节点所对应的对象，树目前的选中状态对象，包含 checkedNodes、checkedKeys、halfCheckedNodes、halfCheckedKeys 四个属性。',
+        describe: '点击节点复选框之后触发。两个参数，依次为：传递给 data 属性的数组中该节点所对应的对象，树目前的选中状态对象，包含 checkedNodes、checkedKeys、halfCheckedNodes、halfCheckedKeys 四个属性。',
         type: 'function'
     },
     {
@@ -217,14 +214,23 @@ const event: any = [
     },
     {
         key: '@node-drag-end',
-        describe:
-            '拖拽结束时（可能未成功）触发的事件。四个参数，依次为：被拖拽节点对应的 Node，结束拖拽时最后进入的节点（可能为空），被拖拽节点的放置位置（before、after、inner），event。',
+        describe: '拖拽结束时（可能未成功）触发的事件。四个参数，依次为：被拖拽节点对应的 Node，结束拖拽时最后进入的节点（可能为空），被拖拽节点的放置位置（before、after、inner），event。',
         type: 'function'
     },
     {
         key: '@node-drop',
         describe: '拖拽成功完成时触发的事件。四个参数，依次为：被拖拽节点对应的 Node，结束拖拽时最后进入的节点，被拖拽节点的放置位置（before、after、inner），event。',
         type: 'function'
+    }
+];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'empty',
+        describe: '空状态内容'
     }
 ];
 
@@ -236,8 +242,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/tree.html#%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/tree.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-tree',
     attr,
-    event
+    event,
+    slot
 };

@@ -3,7 +3,8 @@ const attr = [
         key: 'type',
         describe: '对应列的类型。可选值：selection（显示多选框）、index（显示行索引，从 1 开始计算）、expand（显示可展开按钮）',
         type: 'enum',
-        default: 'default'
+        default: 'default',
+        values: ['default', 'selection', 'index', 'expand']
     },
     {
         key: 'index',
@@ -33,19 +34,20 @@ const attr = [
         key: 'width',
         describe: '对应列的宽度',
         type: 'string / number',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'min-width',
         describe: '对应列的最小宽度，与 width 的区别是 width 固定，min-width 会按比例分配剩余宽度',
         type: 'string / number',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'fixed',
         describe: '列是否固定在左侧或者右侧。true 表示固定在左侧',
         type: 'enum / boolean',
-        default: 'false'
+        default: 'false',
+        values: ['left', 'right']
     },
     {
         key: 'render-header',
@@ -55,7 +57,7 @@ const attr = [
     },
     {
         key: 'sortable',
-        describe: "列是否可以排序。可选值：true、false、'custom'（自定义排序，需要监听 Table 的 sort-change 事件）",
+        describe: '列是否可以排序。可选值：true、false、\'custom\'（自定义排序，需要监听 Table 的 sort-change 事件）',
         type: 'boolean / string',
         default: 'false'
     },
@@ -75,7 +77,7 @@ const attr = [
         key: 'sort-orders',
         describe: '数据在排序时所使用排序策略的轮转顺序，仅当 sortable 为 true 时有效。随着用户点击表头，该列依次按照数组中元素的顺序进行排序',
         type: 'array',
-        default: "['ascending', 'descending', null]"
+        default: '[\'ascending\', \'descending\', null]'
     },
     {
         key: 'resizable',
@@ -99,13 +101,15 @@ const attr = [
         key: 'align',
         describe: '对齐方式',
         type: 'enum',
-        default: 'left'
+        default: 'left',
+        values: ['left', 'center', 'right']
     },
     {
         key: 'header-align',
         describe: '表头对齐方式，若不设置该项，则使用表格的对齐方式',
         type: 'enum',
-        default: 'left'
+        default: 'left',
+        values: ['left', 'center', 'right']
     },
     {
         key: 'class-name',
@@ -141,7 +145,8 @@ const attr = [
         key: 'filter-placement',
         describe: '过滤弹出框的定位',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end', 'right', 'right-start', 'right-end']
     },
     {
         key: 'filter-class-name',
@@ -174,19 +179,37 @@ const attr = [
         default: '—'
     }
 ];
-
-const event: any = [];
+const event: any[] = [];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'header',
+        describe: '头部内容'
+    },
+    {
+        key: 'filter-icon',
+        describe: 'Custom content for filter icon'
+    },
+    {
+        key: 'expand',
+        describe: 'Custom content for expand columns. The `expandable` property is supported starting from v2.13.2.'
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/table.html#table-column-%E5%B1%9E%E6%80%A7';
 });
 
-event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/table.html#table-column-%E5%B1%9E%E6%80%A7';
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/table.html#%E6%8F%92%E6%A7%BD';
 });
 
 export default {
     key: 'el-table-column',
     attr,
-    event
+    event,
+    slot
 };

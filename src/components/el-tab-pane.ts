@@ -3,7 +3,7 @@ const attr = [
         key: 'label',
         describe: '选项卡标题',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'disabled',
@@ -30,19 +30,29 @@ const attr = [
         default: 'false'
     }
 ];
-
-const event: any = [];
+const event: any[] = [];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'label',
+        describe: '标签内容'
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/tabs.html#tab-pane-%E5%B1%9E%E6%80%A7';
 });
 
-event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/tabs.html#tab-pane-%E4%BA%8B%E4%BB%B6';
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/tabs.html#%E6%8F%92%E6%A7%BD';
 });
 
 export default {
     key: 'el-tab-pane',
     attr,
-    event
+    event,
+    slot
 };

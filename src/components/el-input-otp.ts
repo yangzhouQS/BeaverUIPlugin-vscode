@@ -33,13 +33,15 @@ const attr = [
         key: 'type',
         describe: 'OTP 字段类型',
         type: 'enum',
-        default: 'outlined'
+        default: 'outlined',
+        values: ['outlined', 'filled', 'underlined']
     },
     {
         key: 'size',
         describe: 'OTP 字段的尺寸',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'mask',
@@ -84,7 +86,6 @@ const attr = [
         default: '—'
     }
 ];
-
 const event = [
     {
         key: '@update:modelValue',
@@ -112,6 +113,12 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'separator',
+        describe: 'The separator between OTP fields'
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/input-otp.html#%E5%B1%9E%E6%80%A7';
@@ -121,8 +128,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/input-otp.html#events';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/input-otp.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-input-otp',
     attr,
-    event
+    event,
+    slot
 };

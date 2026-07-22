@@ -11,7 +11,8 @@ const attr = [
         key: 'effect',
         describe: 'Tooltip 主题，内置了 dark / light 两种主题',
         type: 'enum / string',
-        default: 'light'
+        default: 'light',
+        values: ['dark', 'light']
     },
     {
         key: 'confirm-button-text',
@@ -29,13 +30,15 @@ const attr = [
         key: 'confirm-button-type',
         describe: '确认按钮类型',
         type: 'enum',
-        default: 'primary'
+        default: 'primary',
+        values: ['primary', 'success', 'warning', 'danger', 'info', 'text']
     },
     {
         key: 'cancel-button-type',
         describe: '取消按钮类型',
         type: 'enum',
-        default: 'text'
+        default: 'text',
+        values: ['primary', 'success', 'warning', 'danger', 'info', 'text']
     },
     {
         key: 'icon',
@@ -92,15 +95,29 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'reference',
+        describe: '触发提示的参考元素内容'
+    },
+    {
+        key: 'actions',
+        describe: 'content of the Popconfirm footer'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/popconfirm.html#attributes';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/popconfirm.html#events';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/popconfirm.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-popconfirm',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-popconfirm.js.map

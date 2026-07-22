@@ -11,19 +11,19 @@ const attr = [
         key: 'props',
         describe: 'options 的配置',
         type: 'object',
-        default: "{value: 'value', label: 'label', disabled: 'disabled'}"
+        default: '{value: \'value\', label: \'label\', disabled: \'disabled\'}'
     },
     {
         key: 'prefix',
         describe: '触发字段的前缀，字符串长度必须且只能为 1',
         type: 'string / array',
-        default: "'@'"
+        default: '\'@\''
     },
     {
         key: 'split',
         describe: '用于拆分提及的字符，字符串长度必须且只能为 1',
         type: 'string',
-        default: "' '"
+        default: '\' \''
     },
     {
         key: 'filter-option',
@@ -35,7 +35,8 @@ const attr = [
         key: 'placement',
         describe: '设置弹出位置',
         type: 'enum',
-        default: "'bottom'"
+        default: '\'bottom\'',
+        values: ['bottom', 'top']
     },
     {
         key: 'show-arrow',
@@ -83,7 +84,7 @@ const attr = [
         key: 'popper-class',
         describe: '自定义浮层类名',
         type: 'string / object',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'popper-style',
@@ -115,15 +116,41 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'label',
+        describe: '标签内容'
+    },
+    {
+        key: 'loading',
+        describe: 'content as option loading'
+    },
+    {
+        key: 'header',
+        describe: '头部内容'
+    },
+    {
+        key: 'footer',
+        describe: '底部内容'
+    },
+    {
+        key: '[input slots]',
+        describe: ''
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/mention.html#mention-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/mention.html#mention-%E4%BA%8B%E4%BB%B6';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/mention.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-mention',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-mention.js.map

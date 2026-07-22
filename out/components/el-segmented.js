@@ -29,7 +29,8 @@ const attr = [
         key: 'size',
         describe: '组件大小。',
         type: 'enum',
-        default: "''"
+        default: '\'\'',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'block',
@@ -71,7 +72,8 @@ const attr = [
         key: 'direction',
         describe: '展示的方向，版本 2.8.7 引入。',
         type: 'enum',
-        default: 'horizontal'
+        default: 'horizontal',
+        values: ['horizontal', 'vertical']
     }
 ];
 const event = [
@@ -81,15 +83,25 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/segmented.html#segmented-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/segmented.html#segmented-%E4%BA%8B%E4%BB%B6';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/segmented.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-segmented',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-segmented.js.map

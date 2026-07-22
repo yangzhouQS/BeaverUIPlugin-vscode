@@ -5,7 +5,7 @@ const attr = [
         key: 'timestamp',
         describe: '时间戳',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'hide-timestamp',
@@ -23,25 +23,28 @@ const attr = [
         key: 'placement',
         describe: '时间戳位置，可选值: bottom',
         type: 'enum',
-        default: 'bottom'
+        default: 'bottom',
+        values: ['top', 'bottom']
     },
     {
         key: 'type',
         describe: '节点类型',
         type: 'enum',
-        default: "''"
+        default: '\'\'',
+        values: ['primary', 'success', 'warning', 'danger', 'info']
     },
     {
         key: 'color',
         describe: '节点颜色',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'size',
         describe: '节点尺寸，可选值: normal',
         type: 'enum',
-        default: 'normal'
+        default: 'normal',
+        values: ['normal', 'large']
     },
     {
         key: 'icon',
@@ -57,15 +60,26 @@ const attr = [
     }
 ];
 const event = [];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'dot',
+        describe: 'customize defined node for timeline item'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/timeline.html#timeline-item-%E5%B1%9E%E6%80%A7';
 });
-event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/timeline.html#timeline-item-%E4%BA%8B%E4%BB%B6';
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/timeline.html#%E6%8F%92%E6%A7%BD';
 });
 exports.default = {
     key: 'el-timeline-item',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-timeline-item.js.map

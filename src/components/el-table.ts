@@ -33,7 +33,8 @@ const attr = [
         key: 'size',
         describe: 'Table 的尺寸',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'fit',
@@ -141,13 +142,15 @@ const attr = [
         key: 'tooltip-effect',
         describe: '溢出的 tooltip 的 effect',
         type: 'enum',
-        default: 'dark'
+        default: 'dark',
+        values: ['dark', 'light']
     },
     {
         key: 'tooltip-options',
         describe: '溢出 tooltip 的选项 (2.2.28 版本新增)',
         type: 'object',
-        default: 'object'
+        default: 'object',
+        values: ['enterable', 'hideAfter', 'offset', 'placement', 'popperClass', 'popperOptions', 'showAfter']
     },
     {
         key: 'append-filter-panel-to',
@@ -213,7 +216,8 @@ const attr = [
         key: 'table-layout',
         describe: '表格单元、行和列的布局方式',
         type: 'enum',
-        default: 'fixed'
+        default: 'fixed',
+        values: ['fixed', 'auto']
     },
     {
         key: 'scrollbar-always-on',
@@ -270,8 +274,7 @@ const attr = [
         default: '—'
     }
 ];
-
-const event: any = [
+const event = [
     {
         key: '@select',
         describe: '当用户手动勾选数据行的 Checkbox 时触发的事件',
@@ -368,6 +371,20 @@ const event: any = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'append',
+        describe: '输入框后置内容'
+    },
+    {
+        key: 'empty',
+        describe: '空状态内容'
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/table.html#table-%E5%B1%9E%E6%80%A7';
@@ -377,8 +394,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/table.html#table-%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/table.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-table',
     attr,
-    event
+    event,
+    slot
 };

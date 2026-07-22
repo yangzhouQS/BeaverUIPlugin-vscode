@@ -91,15 +91,37 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'viewer',
+        describe: 'custom content'
+    },
+    {
+        key: 'progress',
+        describe: 'custom progress content (Priority is higher than `show-progress` prop)'
+    },
+    {
+        key: 'toolbar',
+        describe: 'custom toolbar content'
+    },
+    {
+        key: 'viewer-error',
+        describe: 'custom image load failed content.'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/image.html#image-viewer-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/image.html#image-viewer-%E4%BA%8B%E4%BB%B6';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/image.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-image-viewer',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-image-viewer.js.map

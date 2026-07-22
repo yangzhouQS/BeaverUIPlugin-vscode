@@ -15,13 +15,13 @@ const attr = [
         key: 'title',
         describe: 'Dialog 对话框 Dialog 的标题， 也可通过具名 slot （见下表）传入',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'width',
         describe: '对话框的宽度，默认值为 50%',
         type: 'string / number',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'fullscreen',
@@ -33,7 +33,7 @@ const attr = [
         key: 'top',
         describe: 'dialog CSS 中的 margin-top 值，默认为 15vh',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'modal',
@@ -183,11 +183,10 @@ const attr = [
         key: 'custom-class',
         describe: 'Dialog 的自定义类名 (deprecated)',
         type: 'string',
-        default: "''"
+        default: '\'\''
     }
 ];
-
-const event: any = [
+const event = [
     {
         key: '@open',
         describe: 'Dialog 打开的回调',
@@ -219,6 +218,24 @@ const event: any = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'header',
+        describe: '头部内容'
+    },
+    {
+        key: 'footer',
+        describe: '底部内容'
+    },
+    {
+        key: 'title',
+        describe: '标题内容'
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/dialog.html#attributes';
@@ -228,8 +245,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/dialog.html#%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/dialog.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-dialog',
     attr,
-    event
+    event,
+    slot
 };

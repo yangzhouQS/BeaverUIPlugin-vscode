@@ -23,25 +23,29 @@ const attr = [
         key: 'tag-type',
         describe: '标签类型',
         type: 'enum',
-        default: 'info'
+        default: 'info',
+        values: ['success', 'info', 'warning', 'danger']
     },
     {
         key: 'tag-effect',
         describe: '标签效果',
         type: 'enum',
-        default: 'light'
+        default: 'light',
+        values: ['light', 'dark', 'plain']
     },
     {
         key: 'effect',
         describe: 'tooltip 主题，内置主题：dark / light',
         type: 'string',
-        default: 'light'
+        default: 'light',
+        values: ['dark', 'light']
     },
     {
         key: 'trigger',
         describe: '触发输入标签的按键',
         type: 'enum',
-        default: 'Enter'
+        default: 'Enter',
+        values: ['Enter', 'Space']
     },
     {
         key: 'draggable',
@@ -59,7 +63,8 @@ const attr = [
         key: 'size',
         describe: '输入框尺寸',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'collapse-tags',
@@ -206,15 +211,33 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'tag',
+        describe: 'content as tag'
+    },
+    {
+        key: 'prefix',
+        describe: '输入框头部内容 / 前缀内容'
+    },
+    {
+        key: 'suffix',
+        describe: '输入框尾部内容 / 后缀内容'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/input-tag.html#%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/input-tag.html#%E4%BA%8B%E4%BB%B6';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/input-tag.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-input-tag',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-input-tag.js.map

@@ -45,15 +45,33 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'start-collapsible',
+        describe: 'Custom content for the start collapsible button'
+    },
+    {
+        key: 'end-collapsible',
+        describe: 'Custom content for the end collapsible button'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/splitter.html#splitterpanel-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/splitter.html#splitterpanel-%E4%BA%8B%E4%BB%B6';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/splitter.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-splitter-panel',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-splitter-panel.js.map

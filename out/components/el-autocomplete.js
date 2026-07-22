@@ -47,7 +47,8 @@ const attr = [
         key: 'placement',
         describe: '菜单弹出位置',
         type: 'enum',
-        default: 'bottom-start'
+        default: 'bottom-start',
+        values: ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end']
     },
     {
         key: 'fetch-suggestions',
@@ -89,7 +90,7 @@ const attr = [
         key: 'popper-class',
         describe: '下拉列表的类名',
         type: 'string / object',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'popper-style',
@@ -178,15 +179,53 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'header',
+        describe: '头部内容'
+    },
+    {
+        key: 'footer',
+        describe: '底部内容'
+    },
+    {
+        key: 'prefix',
+        describe: '输入框头部内容 / 前缀内容'
+    },
+    {
+        key: 'suffix',
+        describe: '输入框尾部内容 / 后缀内容'
+    },
+    {
+        key: 'prepend',
+        describe: '输入框前置内容'
+    },
+    {
+        key: 'append',
+        describe: '输入框后置内容'
+    },
+    {
+        key: 'loading',
+        describe: 'override loading content'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/autocomplete.html#autocomplete-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/autocomplete.html#autocomplete-%E4%BA%8B%E4%BB%B6';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/autocomplete.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-autocomplete',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-autocomplete.js.map

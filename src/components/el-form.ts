@@ -21,19 +21,20 @@ const attr = [
         key: 'label-position',
         describe: '表单域标签的位置。当设置为 left 或 right 时，则也需要设置 label-width 属性。',
         type: 'enum',
-        default: 'right'
+        default: 'right',
+        values: ['left', 'right', 'top']
     },
     {
         key: 'label-width',
         describe: '标签的长度，例如 "50px"。作为 Form 直接子元素的 form-item 会继承该值。可以使用 auto。',
         type: 'string / number',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'label-suffix',
         describe: '表单域标签的后缀。',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'hide-required-asterisk',
@@ -45,7 +46,8 @@ const attr = [
         key: 'require-asterisk-position',
         describe: '星号的位置。',
         type: 'enum',
-        default: 'left'
+        default: 'left',
+        values: ['left', 'right']
     },
     {
         key: 'show-message',
@@ -75,7 +77,8 @@ const attr = [
         key: 'size',
         describe: '用于控制该表单内组件的尺寸。',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'disabled',
@@ -96,12 +99,17 @@ const attr = [
         default: 'true'
     }
 ];
-
 const event = [
     {
         key: '@validate',
         describe: '任一表单项被校验后触发',
         type: 'function'
+    }
+];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
     }
 ];
 
@@ -113,8 +121,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/form.html#form-%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/form.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-form',
     attr,
-    event
+    event,
+    slot
 };

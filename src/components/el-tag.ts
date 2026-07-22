@@ -3,7 +3,8 @@ const attr = [
         key: 'type',
         describe: 'Tag 的类型，可选值: primary',
         type: 'enum',
-        default: 'primary'
+        default: 'primary',
+        values: ['primary', 'success', 'info', 'warning', 'danger']
     },
     {
         key: 'closable',
@@ -33,13 +34,15 @@ const attr = [
         key: 'size',
         describe: 'Tag 的尺寸',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'effect',
         describe: 'Tag 的主题，可选值: light',
         type: 'enum',
-        default: 'light'
+        default: 'light',
+        values: ['dark', 'light', 'plain']
     },
     {
         key: 'round',
@@ -48,8 +51,7 @@ const attr = [
         default: 'false'
     }
 ];
-
-const event: any = [
+const event = [
     {
         key: '@click',
         describe: '点击 Tag 时触发的事件',
@@ -61,6 +63,12 @@ const event: any = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/tag.html#tag-%E5%B1%9E%E6%80%A7';
@@ -70,8 +78,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/tag.html#tag-%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/tag.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-tag',
     attr,
-    event
+    event,
+    slot
 };

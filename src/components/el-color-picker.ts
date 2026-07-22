@@ -27,7 +27,8 @@ const attr = [
         key: 'size',
         describe: '尺寸',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'show-alpha',
@@ -39,13 +40,14 @@ const attr = [
         key: 'color-format',
         describe: '写入 v-model 的颜色的格式',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['rgb', 'prgb', 'hex', 'hex3', 'hex4', 'hex6', 'hex8', 'name', 'hsl', 'hsv']
     },
     {
         key: 'popper-class',
         describe: 'ColorPicker 下拉框的类名',
         type: 'string / object',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'popper-style',
@@ -120,7 +122,6 @@ const attr = [
         default: '—'
     }
 ];
-
 const event = [
     {
         key: '@change',

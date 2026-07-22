@@ -11,7 +11,8 @@ const attr = [
         key: 'type',
         describe: 'Alert 类型。',
         type: 'enum',
-        default: 'info'
+        default: 'info',
+        values: ['primary', 'success', 'warning', 'info', 'error']
     },
     {
         key: 'description',
@@ -47,7 +48,8 @@ const attr = [
         key: 'effect',
         describe: '主题样式',
         type: 'enum',
-        default: 'light'
+        default: 'light',
+        values: ['light', 'dark']
     }
 ];
 const event = [
@@ -57,15 +59,33 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'title',
+        describe: '标题内容'
+    },
+    {
+        key: 'icon',
+        describe: '图标内容'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/alert.html#alert-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/alert.html#alert-%E4%BA%8B%E4%BB%B6';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/alert.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-alert',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-alert.js.map

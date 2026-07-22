@@ -5,13 +5,14 @@ const attr = [
         key: 'space',
         describe: '每个 step 的间距，不填写将自适应间距。支持百分比。',
         type: 'string / number',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'direction',
         describe: '显示方向。',
         type: 'enum',
-        default: 'horizontal'
+        default: 'horizontal',
+        values: ['vertical', 'horizontal']
     },
     {
         key: 'active',
@@ -23,13 +24,15 @@ const attr = [
         key: 'process-status',
         describe: '设置当前步骤的状态。',
         type: 'enum',
-        default: 'process'
+        default: 'process',
+        values: ['wait', 'process', 'finish', 'error', 'success']
     },
     {
         key: 'finish-status',
         describe: '设置结束步骤的状态。',
         type: 'enum',
-        default: 'finish'
+        default: 'finish',
+        values: ['wait', 'process', 'finish', 'error', 'success']
     },
     {
         key: 'align-center',
@@ -45,15 +48,22 @@ const attr = [
     }
 ];
 const event = [];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/steps.html#steps-%E5%B1%9E%E6%80%A7';
 });
-event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/steps.html#steps-%E4%BA%8B%E4%BB%B6';
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/steps.html#%E6%8F%92%E6%A7%BD';
 });
 exports.default = {
     key: 'el-steps',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-steps.js.map

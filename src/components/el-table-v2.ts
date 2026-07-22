@@ -3,7 +3,7 @@ const attr = [
         key: 'cache',
         describe: '为了更好的渲染效果预先多加载的行数',
         type: 'number',
-        default: 2
+        default: '2'
     },
     {
         key: 'estimated-row-height',
@@ -33,13 +33,13 @@ const attr = [
         key: 'header-height',
         describe: 'Header 的高度由 height 设置。如果传入数组，它会使 header row 等于数组长度',
         type: 'number / number[]',
-        default: 50
+        default: '50'
     },
     {
         key: 'footer-height',
         describe: 'Footer 部分的高度，当传入值时，这部分将被计算入 table 的高度里',
         type: 'number',
-        default: 0
+        default: '0'
     },
     {
         key: 'row-class',
@@ -63,7 +63,7 @@ const attr = [
         key: 'row-height',
         describe: '每行的高度, 用于计算表的总高度',
         type: 'number',
-        default: 50
+        default: '50'
     },
     {
         key: 'row-event-handlers',
@@ -129,7 +129,7 @@ const attr = [
         key: 'fixed',
         describe: '单元格宽度是自适应还是固定',
         type: 'boolean',
-        default: false
+        default: 'false'
     },
     {
         key: 'width',
@@ -153,25 +153,25 @@ const attr = [
         key: 'indent-size',
         describe: '树形表的水平缩进',
         type: 'number',
-        default: 12
+        default: '12'
     },
     {
         key: 'h-scrollbar-size',
         describe: '配置表格的水平滚动条大小，防止水平和垂直滚动条重叠',
         type: 'number',
-        default: 6
+        default: '6'
     },
     {
         key: 'v-scrollbar-size',
         describe: '配置表格的垂直滚动条大小，防止水平和垂直滚动条重叠',
         type: 'number',
-        default: 6
+        default: '6'
     },
     {
         key: 'scrollbar-always-on',
         describe: '如果开启，滚动条将一直显示，反之只会在鼠标经过时显示',
         type: 'boolean',
-        default: false
+        default: 'false'
     },
     {
         key: 'sort-by',
@@ -186,8 +186,7 @@ const attr = [
         default: 'undefined'
     }
 ];
-
-const event: any = [
+const event = [
     {
         key: '@column-sort',
         describe: '列排序时调用',
@@ -219,6 +218,36 @@ const event: any = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'cell',
+        describe: ''
+    },
+    {
+        key: 'header',
+        describe: '头部内容'
+    },
+    {
+        key: 'header-cell',
+        describe: ''
+    },
+    {
+        key: 'row',
+        describe: ''
+    },
+    {
+        key: 'footer',
+        describe: '底部内容'
+    },
+    {
+        key: 'empty',
+        describe: '空状态内容'
+    },
+    {
+        key: 'overlay',
+        describe: ''
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/table-v2.html#tablev2-%E5%B1%9E%E6%80%A7';
@@ -228,8 +257,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/table-v2.html#tablev2-%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/table-v2.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-table-v2',
     attr,
-    event
+    event,
+    slot
 };

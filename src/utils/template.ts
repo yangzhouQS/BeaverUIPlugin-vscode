@@ -1,5 +1,5 @@
-export const markdownString = (item: any) => {
-    let result = `## ${item.key} 属性\n`;
+export const markdownString = (item: any, label: string = '属性') => {
+    let result = `## ${item.key} ${label}\n`;
 
     if (item.describe) {
         result += `**描述**: ${item.describe}\n\n`;
@@ -11,6 +11,10 @@ export const markdownString = (item: any) => {
 
     if (item.default) {
         result += `**默认值**: \`${item.default}\`\n\n`;
+    }
+
+    if (item.values && item.values.length) {
+        result += `**可选值**: ${item.values.map((x: string) => `\`${x}\``).join(' / ')}\n\n`;
     }
 
     if (item.link) {

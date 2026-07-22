@@ -21,7 +21,8 @@ const attr = [
         key: 'type',
         describe: '风格类型',
         type: 'enum',
-        default: "''"
+        default: '\'\'',
+        values: ['card', 'border-card']
     },
     {
         key: 'closable',
@@ -45,7 +46,8 @@ const attr = [
         key: 'tab-position',
         describe: '选项卡所在位置',
         type: 'enum',
-        default: 'top'
+        default: 'top',
+        values: ['top', 'right', 'bottom', 'left']
     },
     {
         key: 'stretch',
@@ -66,8 +68,7 @@ const attr = [
         default: '0'
     }
 ];
-
-const event: any = [
+const event = [
     {
         key: '@tab-click',
         describe: 'tab 被选中时触发',
@@ -94,6 +95,20 @@ const event: any = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'add-icon',
+        describe: 'customize add button icon'
+    },
+    {
+        key: 'add-icon',
+        describe: 'customize add button icon'
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/tabs.html#tabs-%E5%B1%9E%E6%80%A7';
@@ -103,8 +118,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/tabs.html#tabs-%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/tabs.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-tabs',
     attr,
-    event
+    event,
+    slot
 };

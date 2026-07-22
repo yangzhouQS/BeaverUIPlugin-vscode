@@ -5,13 +5,14 @@ const attr = [
         key: 'trigger',
         describe: '触发方式，在受控模式下无效',
         type: 'enum / array',
-        default: 'hover'
+        default: 'hover',
+        values: ['click', 'focus', 'hover', 'contextmenu']
     },
     {
         key: 'trigger-keys',
         describe: '当通过鼠标点击使触发元素获得焦点时，可以定义一组键盘按键代码，通过键盘控制气泡框的显示，在受控模式下无效',
         type: 'array',
-        default: "['Enter','Space']"
+        default: '[\'Enter\',\'Space\']'
     },
     {
         key: 'title',
@@ -23,13 +24,14 @@ const attr = [
         key: 'effect',
         describe: 'Tooltip 主题，Element Plus 内置了 dark / light 两种主题',
         type: 'enum / string',
-        default: 'light'
+        default: 'light',
+        values: ['dark', 'light']
     },
     {
         key: 'content',
         describe: '显示的内容，也可以通过写入默认 slot 修改显示内容',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'width',
@@ -41,7 +43,8 @@ const attr = [
         key: 'placement',
         describe: '出现位置',
         type: 'enum',
-        default: 'bottom'
+        default: 'bottom',
+        values: ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end', 'right', 'right-start', 'right-end']
     },
     {
         key: 'disabled',
@@ -83,7 +86,7 @@ const attr = [
         key: 'popper-options',
         describe: 'popper.js 的参数',
         type: 'object',
-        default: "{modifiers: [{name: 'computeStyles',options: {gpuAcceleration: false}}]}"
+        default: '{modifiers: [{name: \'computeStyles\',options: {gpuAcceleration: false}}]}'
     },
     {
         key: 'popper-class',
@@ -184,15 +187,29 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'reference',
+        describe: '触发提示的参考元素内容'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/popover.html#attributes';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/popover.html#events';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/popover.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-popover',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-popover.js.map

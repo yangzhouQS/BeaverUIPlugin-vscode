@@ -33,13 +33,14 @@ const attr = [
     },
     {
         key: 'step',
-        describe: "步长，可以是数字或 'mark'（2.13.6版本开始支持），用于将值限制为刻度。当设置为 'mark' 时，必须设置 marks 属性",
+        describe: '步长，可以是数字或 \'mark\'（2.13.6版本开始支持），用于将值限制为刻度。当设置为 \'mark\' 时，必须设置 marks 属性',
         type: 'number / string',
-        default: '1'
+        default: '1',
+        values: ['mark']
     },
     {
         key: 'show-input',
-        describe: "是否显示输入框，仅在 range 为 false 且 step 不为 'mark' 时生效",
+        describe: '是否显示输入框，仅在 range 为 false 且 step 不为 \'mark\' 时生效',
         type: 'boolean',
         default: 'false'
     },
@@ -53,13 +54,15 @@ const attr = [
         key: 'size',
         describe: 'slider 包装器的大小，垂直模式下该属性不可用',
         type: 'enum',
-        default: 'default'
+        default: 'default',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'input-size',
         describe: '输入框的大小，如果设置了 size 属性，默认值自动取 size',
         type: 'enum',
-        default: 'default'
+        default: 'default',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'show-stops',
@@ -131,7 +134,8 @@ const attr = [
         key: 'placement',
         describe: 'Tooltip 出现的位置',
         type: 'enum',
-        default: 'top'
+        default: 'top',
+        values: ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end', 'right', 'right-start', 'right-end']
     },
     {
         key: 'marks',

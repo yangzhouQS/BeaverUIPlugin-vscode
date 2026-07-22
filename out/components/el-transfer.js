@@ -41,7 +41,8 @@ const attr = [
         key: 'target-order',
         describe: '右侧列表元素的排序策略：若为 original，则保持与数据源相同的顺序；若为 push，则新加入的元素排在最后；若为 unshift，则新加入的元素排在最前',
         type: 'enum',
-        default: 'original'
+        default: 'original',
+        values: ['original', 'push', 'unshift']
     },
     {
         key: 'titles',
@@ -121,15 +122,41 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'left-footer',
+        describe: 'content of left list footer'
+    },
+    {
+        key: 'right-footer',
+        describe: 'content of right list footer'
+    },
+    {
+        key: 'left-empty',
+        describe: 'content when left panel is empty or when no data matches the filter'
+    },
+    {
+        key: 'right-empty',
+        describe: 'content when right panel is empty or when no data matches the filter'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/transfer.html#transfer-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/transfer.html#transfer-%E4%BA%8B%E4%BB%B6';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/transfer.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-transfer',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-transfer.js.map

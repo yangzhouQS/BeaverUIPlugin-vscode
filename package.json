@@ -4,17 +4,24 @@
     "icon": "images/element-plus.png",
     "displayName": "Element Plus",
     "description": "Element Plus Snippets",
-    "version": "2.0.4",
+    "version": "2.1.0",
     "engines": {
         "vscode": "^1.46.0"
     },
     "categories": [
         "Snippets"
     ],
+    "keywords": [
+        "element-plus",
+        "element",
+        "vue",
+        "vue3",
+        "snippets",
+        "autocomplete"
+    ],
     "activationEvents": [
-        "onCommand:extension.helloWorld",
         "onLanguage:html",
-        "onStartupFinished"
+        "onLanguage:vue"
     ],
     "main": "./out/extension.js",
     "contributes": {
@@ -26,28 +33,6 @@
             {
                 "language": "html",
                 "path": "./snippets/template.code-snippets"
-            }
-        ],
-        "languages": [
-            {
-                "id": "html",
-                "extensions": [
-                    ".html",
-                    ".vue"
-                ],
-                "aliases": [
-                    "HTML",
-                    "html"
-                ]
-            }
-        ],
-        "completionItemProvider": [
-            {
-                "language": "html",
-                "triggerCharacters": [
-                    "<",
-                    " "
-                ]
             }
         ]
     },

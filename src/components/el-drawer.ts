@@ -81,7 +81,8 @@ const attr = [
         key: 'direction',
         describe: 'Drawer 打开的方向',
         type: 'enum',
-        default: 'rtl'
+        default: 'rtl',
+        values: ['rtl', 'ltr', 'ttb', 'btt']
     },
     {
         key: 'resizable',
@@ -97,7 +98,7 @@ const attr = [
     },
     {
         key: 'size',
-        describe: "Drawer 窗体的大小, 当使用 number 类型时, 以像素为单位, 当使用 string 类型时, 请传入 'x%', 否则便会以 number 类型解释",
+        describe: 'Drawer 窗体的大小, 当使用 number 类型时, 以像素为单位, 当使用 string 类型时, 请传入 \'x%\', 否则便会以 number 类型解释',
         type: 'number / string',
         default: '30%'
     },
@@ -153,11 +154,10 @@ const attr = [
         key: 'custom-class',
         describe: 'Drawer 的自定义类名 (deprecated)',
         type: 'string',
-        default: "''"
+        default: '\'\''
     }
 ];
-
-const event: any = [
+const event = [
     {
         key: '@open',
         describe: 'Drawer 打开的回调',
@@ -204,6 +204,24 @@ const event: any = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'header',
+        describe: '头部内容'
+    },
+    {
+        key: 'footer',
+        describe: '底部内容'
+    },
+    {
+        key: 'title',
+        describe: '标题内容'
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/drawer.html#%E5%B1%9E%E6%80%A7';
@@ -213,8 +231,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/drawer.html#%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/drawer.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-drawer',
     attr,
-    event
+    event,
+    slot
 };

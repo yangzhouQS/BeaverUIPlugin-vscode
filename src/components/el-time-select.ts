@@ -39,7 +39,8 @@ const attr = [
         key: 'size',
         describe: '输入框尺寸',
         type: 'enum',
-        default: 'default'
+        default: 'default',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'placeholder',
@@ -57,7 +58,8 @@ const attr = [
         key: 'effect',
         describe: 'Tooltip 主题，内置了 dark / light 两种主题',
         type: 'string / enum',
-        default: 'light'
+        default: 'light',
+        values: ['dark', 'light']
     },
     {
         key: 'prefix-icon',
@@ -123,7 +125,7 @@ const attr = [
         key: 'popper-class',
         describe: 'TimeSelect 下拉菜单的自定义类名',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'popper-style',
@@ -132,7 +134,6 @@ const attr = [
         default: '—'
     }
 ];
-
 const event = [
     {
         key: '@change',

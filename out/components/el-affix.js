@@ -5,13 +5,14 @@ const attr = [
         key: 'offset',
         describe: '偏移距离。',
         type: 'number',
-        default: 0
+        default: '0'
     },
     {
         key: 'position',
         describe: '固钉位置。',
         type: 'enum',
-        default: 'top'
+        default: 'top',
+        values: ['top', 'bottom']
     },
     {
         key: 'target',
@@ -23,7 +24,7 @@ const attr = [
         key: 'z-index',
         describe: 'z-index。',
         type: 'number',
-        default: 100
+        default: '100'
     },
     {
         key: 'teleported',
@@ -50,15 +51,25 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/affix.html#%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/affix.html#%E4%BA%8B%E4%BB%B6';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/affix.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-affix',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-affix.js.map

@@ -21,15 +21,21 @@ const attr = [
         key: 'type',
         describe: 'CheckTag 类型，可选值: primary，2.5.4 版本新增',
         type: 'enum',
-        default: 'primary'
+        default: 'primary',
+        values: ['primary', 'success', 'info', 'warning', 'danger']
     }
 ];
-
-const event: any = [
+const event = [
     {
         key: '@change',
         describe: '点击 Check Tag 时触发的事件',
         type: 'function'
+    }
+];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
     }
 ];
 
@@ -41,8 +47,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/tag.html#check-tag-%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/tag.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-check-tag',
     attr,
-    event
+    event,
+    slot
 };

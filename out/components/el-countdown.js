@@ -50,15 +50,33 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'prefix',
+        describe: '输入框头部内容 / 前缀内容'
+    },
+    {
+        key: 'suffix',
+        describe: '输入框尾部内容 / 后缀内容'
+    },
+    {
+        key: 'title',
+        describe: '标题内容'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/statistic.html#countdown-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/statistic.html#countdown-%E4%BA%8B%E4%BB%B6';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/statistic.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-countdown',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-countdown.js.map

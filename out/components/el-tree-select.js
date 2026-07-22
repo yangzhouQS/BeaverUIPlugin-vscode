@@ -149,7 +149,7 @@ const attr = [
         key: 'popper-class',
         describe: '选择器下拉菜单的自定义类名。',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'reserve-keyword',
@@ -245,7 +245,7 @@ const attr = [
         key: 'fallback-placements',
         describe: 'dropdown 可用的 positions 请查看 popper.js 文档。版本 2.5.6 引入。',
         type: 'array',
-        default: "['bottom-start', 'top-start', 'right', 'left']"
+        default: '[\'bottom-start\', \'top-start\', \'right\', \'left\']'
     },
     {
         key: 'max-collapse-tags',
@@ -447,7 +447,7 @@ const attr = [
     },
     {
         key: 'allow-drop',
-        describe: "拖拽时判定目标节点能否成为拖动目标位置。 如果返回 false ，拖动节点不能被拖放到目标节点。 type 参数有三种情况：'prev'、'inner' 和 'next'，分别表示放置在目标节点前、插入至目标节点和放置在目标节点后",
+        describe: '拖拽时判定目标节点能否成为拖动目标位置。 如果返回 false ，拖动节点不能被拖放到目标节点。 type 参数有三种情况：\'prev\'、\'inner\' 和 \'next\'，分别表示放置在目标节点前、插入至目标节点和放置在目标节点后',
         type: 'function',
         default: '—'
     }

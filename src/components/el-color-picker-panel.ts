@@ -33,7 +33,8 @@ const attr = [
         key: 'color-format',
         describe: '写入 v-model 的颜色的格式',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['rgb', 'prgb', 'hex', 'hex3', 'hex4', 'hex6', 'hex8', 'name', 'hsl', 'hsv']
     },
     {
         key: 'predefine',
@@ -60,15 +61,25 @@ const attr = [
         default: '—'
     }
 ];
-
 const event: any[] = [];
+const slot = [
+    {
+        key: 'footer',
+        describe: '底部内容'
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/color-picker-panel.html#color-picker-panel-%E5%B1%9E%E6%80%A7';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/color-picker-panel.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-color-picker-panel',
     attr,
-    event
+    event,
+    slot
 };

@@ -3,13 +3,15 @@ const attr = [
         key: 'type',
         describe: '类型',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['primary', 'success', 'warning', 'danger', 'info']
     },
     {
         key: 'size',
         describe: '大小',
         type: 'enum',
-        default: 'default'
+        default: 'default',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'truncated',
@@ -30,15 +32,25 @@ const attr = [
         default: 'span'
     }
 ];
-
 const event: any[] = [];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/text.html#attributes';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/text.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-text',
     attr,
-    event
+    event,
+    slot
 };

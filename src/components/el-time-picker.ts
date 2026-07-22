@@ -3,13 +3,13 @@ const attr = [
         key: 'model-value',
         describe: '绑定值，如果它是数组，长度应该是 2',
         type: 'number / string / object',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'v-model',
         describe: '绑定值，如果它是数组，长度应该是 2',
         type: 'number / string / object',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'readonly',
@@ -39,13 +39,14 @@ const attr = [
         key: 'size',
         describe: '输入框尺寸',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'placeholder',
         describe: '非范围选择时的占位内容',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'start-placeholder',
@@ -75,7 +76,7 @@ const attr = [
         key: 'popper-class',
         describe: 'TimePicker 下拉框的类名',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'popper-style',
@@ -93,7 +94,7 @@ const attr = [
         key: 'fallback-placements',
         describe: 'Tooltip 可用的 positions，2.8.4版本开始支持，请查看 popper.js 文档',
         type: 'array',
-        default: "['bottom', 'top', 'right', 'left']"
+        default: '[\'bottom\', \'top\', \'right\', \'left\']'
     },
     {
         key: 'placement',
@@ -105,7 +106,7 @@ const attr = [
         key: 'range-separator',
         describe: '选择范围时的分隔符',
         type: 'string',
-        default: "'-'"
+        default: '\'-\''
     },
     {
         key: 'format',
@@ -135,7 +136,7 @@ const attr = [
         key: 'name',
         describe: '等价于原生 input name 属性',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'aria-label',
@@ -210,7 +211,6 @@ const attr = [
         default: '—'
     }
 ];
-
 const event = [
     {
         key: '@change',

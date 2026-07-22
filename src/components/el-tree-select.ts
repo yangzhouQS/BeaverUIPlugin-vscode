@@ -147,7 +147,7 @@ const attr = [
         key: 'popper-class',
         describe: '选择器下拉菜单的自定义类名。',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'reserve-keyword',
@@ -243,7 +243,7 @@ const attr = [
         key: 'fallback-placements',
         describe: 'dropdown 可用的 positions 请查看 popper.js 文档。版本 2.5.6 引入。',
         type: 'array',
-        default: "['bottom-start', 'top-start', 'right', 'left']"
+        default: '[\'bottom-start\', \'top-start\', \'right\', \'left\']'
     },
     {
         key: 'max-collapse-tags',
@@ -445,13 +445,11 @@ const attr = [
     },
     {
         key: 'allow-drop',
-        describe:
-            "拖拽时判定目标节点能否成为拖动目标位置。 如果返回 false ，拖动节点不能被拖放到目标节点。 type 参数有三种情况：'prev'、'inner' 和 'next'，分别表示放置在目标节点前、插入至目标节点和放置在目标节点后",
+        describe: '拖拽时判定目标节点能否成为拖动目标位置。 如果返回 false ，拖动节点不能被拖放到目标节点。 type 参数有三种情况：\'prev\'、\'inner\' 和 \'next\'，分别表示放置在目标节点前、插入至目标节点和放置在目标节点后',
         type: 'function',
         default: '—'
     }
 ];
-
 const event = [
     {
         key: '@change',
@@ -495,20 +493,17 @@ const event = [
     },
     {
         key: '@node-contextmenu',
-        describe:
-            '当某一节点被鼠标右键点击时会触发该事件。回调参数：共四个参数，依次为：event、传递给 data 属性的数组中该节点所对应的对象、节点对应的 Node、节点组件本身。',
+        describe: '当某一节点被鼠标右键点击时会触发该事件。回调参数：共四个参数，依次为：event、传递给 data 属性的数组中该节点所对应的对象、节点对应的 Node、节点组件本身。',
         type: 'function'
     },
     {
         key: '@check-change',
-        describe:
-            '当复选框被点击的时候触发。回调参数：共三个参数，依次为：传递给 data 属性的数组中该节点所对应的对象、节点本身是否被选中、节点的子树中是否有被选中的节点。',
+        describe: '当复选框被点击的时候触发。回调参数：共三个参数，依次为：传递给 data 属性的数组中该节点所对应的对象、节点本身是否被选中、节点的子树中是否有被选中的节点。',
         type: 'function'
     },
     {
         key: '@check',
-        describe:
-            '点击节点复选框之后触发。回调参数：共两个参数，依次为：传递给 data 属性的数组中该节点所对应的对象、树目前的选中状态对象，包含 checkedNodes、checkedKeys、halfCheckedNodes、halfCheckedKeys 四个属性。',
+        describe: '点击节点复选框之后触发。回调参数：共两个参数，依次为：传递给 data 属性的数组中该节点所对应的对象、树目前的选中状态对象，包含 checkedNodes、checkedKeys、halfCheckedNodes、halfCheckedKeys 四个属性。',
         type: 'function'
     },
     {
@@ -548,14 +543,12 @@ const event = [
     },
     {
         key: '@node-drag-end',
-        describe:
-            '拖拽结束时（可能未成功）触发的事件。回调参数：共四个参数，依次为：被拖拽节点对应的 Node、结束拖拽时最后进入的节点（可能为空）、被拖拽节点的放置位置（before、after、inner）、event。',
+        describe: '拖拽结束时（可能未成功）触发的事件。回调参数：共四个参数，依次为：被拖拽节点对应的 Node、结束拖拽时最后进入的节点（可能为空）、被拖拽节点的放置位置（before、after、inner）、event。',
         type: 'function'
     },
     {
         key: '@node-drop',
-        describe:
-            '拖拽成功完成时触发的事件。回调参数：共四个参数，依次为：被拖拽节点对应的 Node、结束拖拽时最后进入的节点、被拖拽节点的放置位置（before、after、inner）、event。',
+        describe: '拖拽成功完成时触发的事件。回调参数：共四个参数，依次为：被拖拽节点对应的 Node、结束拖拽时最后进入的节点、被拖拽节点的放置位置（before、after、inner）、event。',
         type: 'function'
     }
 ];

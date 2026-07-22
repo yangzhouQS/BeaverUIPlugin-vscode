@@ -27,7 +27,8 @@ const attr = [
         key: 'size',
         describe: '尺寸',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'placeholder',
@@ -81,7 +82,7 @@ const attr = [
         key: 'separator',
         describe: '用于分隔选项的字符，默认值为 " / "',
         type: 'string',
-        default: "' / '"
+        default: '\' / \''
     },
     {
         key: 'filterable',
@@ -111,7 +112,7 @@ const attr = [
         key: 'popper-class',
         describe: '弹出内容的自定义类名，默认值为空字符串',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'popper-style',
@@ -129,19 +130,22 @@ const attr = [
         key: 'effect',
         describe: 'tooltip 主题，内置了 dark / light 两种',
         type: 'enum / string',
-        default: 'light'
+        default: 'light',
+        values: ['dark', 'light']
     },
     {
         key: 'tag-type',
         describe: '标签类型，默认值为 info',
         type: 'enum',
-        default: 'info'
+        default: 'info',
+        values: ['success', 'info', 'warning', 'danger']
     },
     {
         key: 'tag-effect',
         describe: 'tag effect，版本 2.7.8 之后为 light',
         type: 'enum',
-        default: 'light'
+        default: 'light',
+        values: ['light', 'dark', 'plain']
     },
     {
         key: 'validate-event',
@@ -183,7 +187,8 @@ const attr = [
         key: 'placement',
         describe: '下拉框出现的位置，版本 2.8.1 默认为 bottom-start',
         type: 'enum',
-        default: 'bottom-start'
+        default: 'bottom-start',
+        values: ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end', 'right', 'right-start', 'right-end']
     },
     {
         key: 'popper-append-to-body',
@@ -195,7 +200,8 @@ const attr = [
         key: 'show-checked-strategy',
         describe: '多选模式下已选节点的展示策略，parent 显示更简洁，child 显示每个子项',
         type: 'enum',
-        default: 'child'
+        default: 'child',
+        values: ['parent', 'child']
     },
     {
         key: 'virtual-scroll',
@@ -222,8 +228,6 @@ const attr = [
         default: '204'
     }
 ];
-
-
 const event = [
     {
         key: '@change',
@@ -261,7 +265,36 @@ const event = [
         type: 'function'
     }
 ];
-
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'empty',
+        describe: '空状态内容'
+    },
+    {
+        key: 'prefix',
+        describe: '输入框头部内容 / 前缀内容'
+    },
+    {
+        key: 'suggestion-item',
+        describe: 'custom content for suggestion item when searching'
+    },
+    {
+        key: 'tag',
+        describe: 'custom tags style'
+    },
+    {
+        key: 'header',
+        describe: '头部内容'
+    },
+    {
+        key: 'footer',
+        describe: '底部内容'
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/cascader.html#cascader-%E5%B1%9E%E6%80%A7';
@@ -271,9 +304,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/cascader.html#cascader-%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/cascader.html#%E6%8F%92%E6%A7%BD';
+});
 
 export default {
     key: 'el-cascader',
     attr,
-    event
+    event,
+    slot
 };

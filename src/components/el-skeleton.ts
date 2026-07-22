@@ -25,25 +25,34 @@ const attr = [
     },
     {
         key: 'throttle',
-        describe:
-            '渲染延迟（以毫秒为单位）。数字代表延迟显示，也可以设置为延迟隐藏，例如 { leading: 500, trailing: 500 }。当需要控制初始加载值时，可以设置 { initVal: true }。',
+        describe: '渲染延迟（以毫秒为单位）。数字代表延迟显示，也可以设置为延迟隐藏，例如 { leading: 500, trailing: 500 }。当需要控制初始加载值时，可以设置 { initVal: true }。',
         type: 'number / object',
         default: '0'
     }
 ];
-
-const event: any = [];
+const event: any[] = [];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'template',
+        describe: 'content as rendering skeleton template'
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/skeleton.html#skeleton-%E5%B1%9E%E6%80%A7';
 });
 
-event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/skeleton.html#skeleton-%E4%BA%8B%E4%BB%B6';
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/skeleton.html#%E6%8F%92%E6%A7%BD';
 });
 
 export default {
     key: 'el-skeleton',
     attr,
-    event
+    event,
+    slot
 };

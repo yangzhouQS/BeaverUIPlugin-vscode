@@ -33,15 +33,26 @@ const attr = [
     }
 ];
 const event = [];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'template',
+        describe: 'content as rendering skeleton template'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/skeleton.html#skeleton-%E5%B1%9E%E6%80%A7';
 });
-event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/skeleton.html#skeleton-%E4%BA%8B%E4%BB%B6';
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/skeleton.html#%E6%8F%92%E6%A7%BD';
 });
 exports.default = {
     key: 'el-skeleton',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-skeleton.js.map

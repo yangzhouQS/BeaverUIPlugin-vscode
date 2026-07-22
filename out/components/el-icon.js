@@ -15,12 +15,22 @@ const attr = [
     }
 ];
 const event = [];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/icon.html#attributes';
+});
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/icon.html#%E6%8F%92%E6%A7%BD';
 });
 exports.default = {
     key: 'el-icon',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-icon.js.map

@@ -9,7 +9,8 @@ const attr = [
         key: 'size',
         describe: '全局组件尺寸',
         type: 'enum',
-        default: 'default'
+        default: 'default',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'z-index',
@@ -72,15 +73,25 @@ const attr = [
         default: '见下表'
     }
 ];
-
 const event: any[] = [];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/config-provider.html#config-provider-%E5%B1%9E%E6%80%A7';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/config-provider.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-config-provider',
     attr,
-    event
+    event,
+    slot
 };

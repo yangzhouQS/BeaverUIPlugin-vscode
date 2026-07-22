@@ -3,13 +3,15 @@ const attr = [
         key: 'size',
         describe: '控制头像组中的头像大小',
         type: 'number / enum',
-        default: '—'
+        default: '—',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'shape',
         describe: '控制头像组中的头像形状',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['circle', 'square']
     },
     {
         key: 'collapse-avatars',
@@ -33,19 +35,21 @@ const attr = [
         key: 'effect',
         describe: 'tooltip 主题，内置了 dark / light 两种',
         type: 'enum / string',
-        default: 'light'
+        default: 'light',
+        values: ['dark', 'light']
     },
     {
         key: 'placement',
         describe: 'tooltip 的位置',
         type: 'enum',
-        default: 'top'
+        default: 'top',
+        values: ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end', 'right', 'right-start', 'right-end']
     },
     {
         key: 'popper-class',
         describe: 'tooltip 的自定义类名',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'popper-style',
@@ -57,7 +61,7 @@ const attr = [
         key: 'collapse-class',
         describe: 'collapse-avatar 的自定义类名',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'collapse-style',
@@ -66,15 +70,10 @@ const attr = [
         default: '—'
     }
 ];
-
-const event: any = [];
+const event: any[] = [];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/avatar.html#avatargroup-%E5%B1%9E%E6%80%A7';
-});
-
-event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/avatar.html#avatargroup-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

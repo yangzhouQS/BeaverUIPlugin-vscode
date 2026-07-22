@@ -12,19 +12,25 @@ const attr = [
         default: '—'
     }
 ];
-
-const event: any = [];
+const event: any[] = [];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/breadcrumb.html#breadcrumb-%E5%B1%9E%E6%80%A7';
 });
 
-event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/breadcrumb.html#breadcrumb-%E4%BA%8B%E4%BB%B6';
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/breadcrumb.html#%E6%8F%92%E6%A7%BD';
 });
 
 export default {
     key: 'el-breadcrumb',
     attr,
-    event
+    event,
+    slot
 };

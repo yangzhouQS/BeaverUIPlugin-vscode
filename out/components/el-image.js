@@ -5,13 +5,14 @@ const attr = [
         key: 'src',
         describe: '图片源地址，同原生属性一致。',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'fit',
         describe: '确定图片如何适应容器框，同原生 object-fit。',
         type: 'enum',
-        default: "''"
+        default: '\'\'',
+        values: ['fill', 'contain', 'cover', 'none', 'scale-down']
     },
     {
         key: 'hide-on-click-modal',
@@ -23,7 +24,8 @@ const attr = [
         key: 'loading',
         describe: '浏览器加载图像的策略，和浏览器原生能力一致。自 2.2.3 版本起支持。',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['eager', 'lazy']
     },
     {
         key: 'lazy',
@@ -53,7 +55,8 @@ const attr = [
         key: 'crossorigin',
         describe: '原生属性 crossorigin。',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['anonymous', 'use-credentials']
     },
     {
         key: 'preview-src-list',
@@ -149,15 +152,33 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'placeholder',
+        describe: 'custom placeholder content when image hasn\'t loaded yet.'
+    },
+    {
+        key: 'error',
+        describe: '验证错误信息内容'
+    },
+    {
+        key: '[image viewer slots]',
+        describe: 'when you allow big image preview, image viewer slots all can be used.'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/image.html#image-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/image.html#image-%E4%BA%8B%E4%BB%B6';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/image.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-image',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-image.js.map

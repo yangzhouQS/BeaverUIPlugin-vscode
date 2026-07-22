@@ -5,7 +5,8 @@ const attr = [
         key: 'type',
         describe: 'Tag 的类型，可选值: primary',
         type: 'enum',
-        default: 'primary'
+        default: 'primary',
+        values: ['primary', 'success', 'info', 'warning', 'danger']
     },
     {
         key: 'closable',
@@ -35,13 +36,15 @@ const attr = [
         key: 'size',
         describe: 'Tag 的尺寸',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'effect',
         describe: 'Tag 的主题，可选值: light',
         type: 'enum',
-        default: 'light'
+        default: 'light',
+        values: ['dark', 'light', 'plain']
     },
     {
         key: 'round',
@@ -62,15 +65,25 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/tag.html#tag-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/tag.html#tag-%E4%BA%8B%E4%BB%B6';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/tag.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-tag',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-tag.js.map

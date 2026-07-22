@@ -72,8 +72,7 @@ const attr = [
         default: 'false'
     }
 ];
-
-const event: any = [
+const event = [
     {
         key: '@close',
         describe: '当点击 X 按钮或者在 hide-on-click-modal 为 true 时点击遮罩层时触发。',
@@ -90,6 +89,24 @@ const event: any = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'viewer',
+        describe: 'custom content'
+    },
+    {
+        key: 'progress',
+        describe: 'custom progress content (Priority is higher than `show-progress` prop)'
+    },
+    {
+        key: 'toolbar',
+        describe: 'custom toolbar content'
+    },
+    {
+        key: 'viewer-error',
+        describe: 'custom image load failed content.'
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/image.html#image-viewer-%E5%B1%9E%E6%80%A7';
@@ -99,8 +116,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/image.html#image-viewer-%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/image.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-image-viewer',
     attr,
-    event
+    event,
+    slot
 };

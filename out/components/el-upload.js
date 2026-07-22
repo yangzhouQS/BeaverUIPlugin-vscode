@@ -59,13 +59,14 @@ const attr = [
         key: 'accept',
         describe: '接受上传的文件类型（thumbnail-mode 模式下此参数无效）。',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'crossorigin',
         describe: '原生属性 crossorigin。',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['anonymous', 'use-credentials']
     },
     {
         key: 'on-preview',
@@ -137,7 +138,8 @@ const attr = [
         key: 'list-type',
         describe: '文件列表的类型。',
         type: 'enum',
-        default: 'text'
+        default: 'text',
+        values: ['text', 'picture', 'picture-card']
     },
     {
         key: 'auto-upload',
@@ -171,15 +173,34 @@ const attr = [
     }
 ];
 const event = [];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'trigger',
+        describe: 'content which triggers file dialog.'
+    },
+    {
+        key: 'tip',
+        describe: '提示说明内容'
+    },
+    {
+        key: 'file',
+        describe: 'content of thumbnail template.'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/upload.html#upload-%E5%B1%9E%E6%80%A7';
 });
-event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/upload.html#upload-%E4%BA%8B%E4%BB%B6';
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/upload.html#%E6%8F%92%E6%A7%BD';
 });
 exports.default = {
     key: 'el-upload',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-upload.js.map

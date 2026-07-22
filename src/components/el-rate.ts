@@ -21,7 +21,8 @@ const attr = [
         key: 'size',
         describe: '尺寸',
         type: 'enum',
-        default: '—'
+        default: '—',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'disabled',
@@ -51,7 +52,7 @@ const attr = [
         key: 'colors',
         describe: 'icon 的颜色。若传入数组，共有 3 个元素，为 3 个分段所对应的颜色；若传入对象，可自定义分段，键名为分段的界限值，键值为对应的颜色',
         type: 'array / object',
-        default: "['#f7ba2a', '#f7ba2a', '#f7ba2a']"
+        default: '[\'#f7ba2a\', \'#f7ba2a\', \'#f7ba2a\']'
     },
     {
         key: 'void-color',
@@ -99,13 +100,13 @@ const attr = [
         key: 'text-color',
         describe: '辅助文字的颜色',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'texts',
         describe: '辅助文字数组',
         type: 'array',
-        default: "['Extremely bad', 'Disappointed', 'Fair', 'Satisfied', 'Surprise']"
+        default: '[\'Extremely bad\', \'Disappointed\', \'Fair\', \'Satisfied\', \'Surprise\']'
     },
     {
         key: 'score-template',
@@ -138,7 +139,6 @@ const attr = [
         default: '—'
     }
 ];
-
 const event = [
     {
         key: '@change',

@@ -27,15 +27,26 @@ const attr = [
     }
 ];
 const event = [];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'icon',
+        describe: '图标内容'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/dropdown.html#dropdown-item-%E5%B1%9E%E6%80%A7';
 });
-event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/dropdown.html#dropdown-item-%E4%BA%8B%E4%BB%B6';
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/dropdown.html#%E6%8F%92%E6%A7%BD';
 });
 exports.default = {
     key: 'el-dropdown-item',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-dropdown-item.js.map

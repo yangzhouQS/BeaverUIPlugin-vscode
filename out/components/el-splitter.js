@@ -5,7 +5,8 @@ const attr = [
         key: 'layout',
         describe: '分割面板布局方向',
         type: 'enum',
-        default: 'horizontal'
+        default: 'horizontal',
+        values: ['horizontal', 'vertical']
     },
     {
         key: 'lazy',

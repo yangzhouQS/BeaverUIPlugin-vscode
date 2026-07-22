@@ -3,7 +3,7 @@ const attr = [
         key: 'value',
         describe: '显示值。',
         type: 'string / number',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'max',
@@ -27,7 +27,8 @@ const attr = [
         key: 'type',
         describe: 'badge 类型。',
         type: 'enum',
-        default: 'danger'
+        default: 'danger',
+        values: ['primary', 'success', 'warning', 'danger', 'info']
     },
     {
         key: 'show-zero',
@@ -60,19 +61,29 @@ const attr = [
         default: '—'
     }
 ];
-
-const event: any = [];
+const event: any[] = [];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'content',
+        describe: '弹出的内容'
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/badge.html#attributes';
 });
 
-event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/badge.html#attributes';
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/badge.html#%E6%8F%92%E6%A7%BD';
 });
 
 export default {
     key: 'el-badge',
     attr,
-    event
+    event,
+    slot
 };

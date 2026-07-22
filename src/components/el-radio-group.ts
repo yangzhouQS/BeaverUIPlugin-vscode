@@ -75,21 +75,27 @@ const attr = [
         key: 'props',
         describe: 'options 的配置，2.11.2版本开始支持',
         type: 'object',
-        default: "{value: 'value', label: 'label', disabled: 'disabled'}"
+        default: '{value: \'value\', label: \'label\', disabled: \'disabled\'}'
     },
     {
         key: 'type',
         describe: '用于渲染选项的组件类型，2.11.5版本开始支持',
         type: 'enum',
-        default: "'radio'"
+        default: '\'radio\'',
+        values: ['radio', 'button']
     }
 ];
-
 const event = [
     {
         key: '@change',
         describe: '绑定值变化时触发的事件',
         type: 'function'
+    }
+];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
     }
 ];
 
@@ -101,8 +107,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/radio.html#radio-group-%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/radio.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-radio-group',
     attr,
-    event
+    event,
+    slot
 };

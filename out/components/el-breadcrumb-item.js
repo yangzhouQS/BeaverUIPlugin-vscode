@@ -5,7 +5,7 @@ const attr = [
         key: 'to',
         describe: '路由跳转目标，同 vue-router 的 to 属性。',
         type: 'string / object',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'replace',
@@ -15,15 +15,22 @@ const attr = [
     }
 ];
 const event = [];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/breadcrumb.html#breadcrumb-item-%E5%B1%9E%E6%80%A7';
 });
-event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/breadcrumb.html#breadcrumb-item-%E4%BA%8B%E4%BB%B6';
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/breadcrumb.html#%E6%8F%92%E6%A7%BD';
 });
 exports.default = {
     key: 'el-breadcrumb-item',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-breadcrumb-item.js.map

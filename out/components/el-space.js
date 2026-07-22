@@ -5,7 +5,8 @@ const attr = [
         key: 'alignment',
         describe: '对齐的方式',
         type: 'enum',
-        default: 'center'
+        default: 'center',
+        values: ['center', 'normal', 'stretch']
     },
     {
         key: 'class',
@@ -17,7 +18,8 @@ const attr = [
         key: 'direction',
         describe: '排列的方向',
         type: 'enum',
-        default: 'horizontal'
+        default: 'horizontal',
+        values: ['vertical', 'horizontal']
     },
     {
         key: 'prefix-cls',
@@ -41,7 +43,8 @@ const attr = [
         key: 'size',
         describe: '间隔大小',
         type: 'enum / number / array',
-        default: 'small'
+        default: 'small',
+        values: ['default', 'small', 'large']
     },
     {
         key: 'wrap',

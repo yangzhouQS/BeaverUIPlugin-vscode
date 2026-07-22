@@ -9,7 +9,7 @@ const attr = [
         key: 'title',
         describe: '面板标题。',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'icon',
@@ -24,15 +24,10 @@ const attr = [
         default: 'false'
     }
 ];
-
-const event: any = [];
+const event: any[] = [];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/collapse.html#collapse-item-%E5%B1%9E%E6%80%A7';
-});
-
-event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/collapse.html#collapse-item-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

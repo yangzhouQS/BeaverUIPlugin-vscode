@@ -47,7 +47,8 @@ const attr = [
         key: 'size',
         describe: '组件大小',
         type: 'enum',
-        default: "''"
+        default: '\'\'',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'clearable',
@@ -89,7 +90,8 @@ const attr = [
         key: 'effect',
         describe: 'tooltip 主题，内置了 dark / light 两种',
         type: 'enum / string',
-        default: 'light'
+        default: 'light',
+        values: ['dark', 'light']
     },
     {
         key: 'autocomplete',
@@ -161,7 +163,7 @@ const attr = [
         key: 'popper-class',
         describe: 'Select 下拉菜单和标签提示的自定义类名',
         type: 'string / object',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'popper-style',
@@ -281,13 +283,14 @@ const attr = [
         key: 'placement',
         describe: '下拉框出现的位置',
         type: 'enum',
-        default: 'bottom-start'
+        default: 'bottom-start',
+        values: ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end', 'right', 'right-start', 'right-end']
     },
     {
         key: 'fallback-placements',
         describe: 'dropdown 可用的 positions 请查看 popper.js 文档。版本 2.5.6',
         type: 'array',
-        default: "['bottom-start', 'top-start', 'right', 'left']"
+        default: '[\'bottom-start\', \'top-start\', \'right\', \'left\']'
     },
     {
         key: 'collapse-tags-tooltip',
@@ -311,13 +314,15 @@ const attr = [
         key: 'tag-type',
         describe: '标签类型。版本 2.5.0',
         type: 'enum',
-        default: 'info'
+        default: 'info',
+        values: ['success', 'info', 'warning', 'danger']
     },
     {
         key: 'tag-effect',
         describe: '标签效果。版本 2.7.7',
         type: 'enum',
-        default: 'light'
+        default: 'light',
+        values: ['light', 'dark', 'plain']
     },
     {
         key: 'aria-label',
@@ -387,15 +392,53 @@ const event = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    },
+    {
+        key: 'header',
+        describe: '头部内容'
+    },
+    {
+        key: 'footer',
+        describe: '底部内容'
+    },
+    {
+        key: 'empty',
+        describe: '空状态内容'
+    },
+    {
+        key: 'prefix',
+        describe: '输入框头部内容 / 前缀内容'
+    },
+    {
+        key: 'tag',
+        describe: 'content as Select tag, subTags `data`, `selectDisabled` and `deleteTag` introduced in'
+    },
+    {
+        key: 'loading',
+        describe: 'content as Select loading'
+    },
+    {
+        key: 'label',
+        describe: '标签内容'
+    }
+];
 attr.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/select-v2.html#select-v2-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
     x.link = 'https://element-plus.org/zh-CN/component/select-v2.html#select-v2-%E4%BA%8B%E4%BB%B6';
 });
+slot.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/select-v2.html#%E6%8F%92%E6%A7%BD';
+});
 exports.default = {
     key: 'el-select-v2',
     attr,
-    event
+    event,
+    slot
 };
 //# sourceMappingURL=el-select-v2.js.map

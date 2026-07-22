@@ -3,7 +3,8 @@ const attr = [
         key: 'size',
         describe: '分页大小。版本 2.7.6+。',
         type: 'enum',
-        default: "'default'"
+        default: '\'default\'',
+        values: ['large', 'default', 'small']
     },
     {
         key: 'background',
@@ -69,7 +70,7 @@ const attr = [
         key: 'layout',
         describe: '组件布局，子组件名用逗号分隔。',
         type: 'string',
-        default: "'prev, pager, next, jumper, ->, total'"
+        default: '\'prev, pager, next, jumper, ->, total\''
     },
     {
         key: 'page-sizes',
@@ -87,7 +88,7 @@ const attr = [
         key: 'popper-class',
         describe: '每页显示个数选择器的下拉框类名。',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'popper-style',
@@ -99,7 +100,7 @@ const attr = [
         key: 'prev-text',
         describe: '替代图标显示的上一页文字。',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'prev-icon',
@@ -111,7 +112,7 @@ const attr = [
         key: 'next-text',
         describe: '替代图标显示的下一页文字。',
         type: 'string',
-        default: "''"
+        default: '\'\''
     },
     {
         key: 'next-icon',
@@ -144,8 +145,7 @@ const attr = [
         default: 'false'
     }
 ];
-
-const event: any = [
+const event = [
     {
         key: '@size-change',
         describe: 'page-size 改变时触发。',
@@ -172,6 +172,12 @@ const event: any = [
         type: 'function'
     }
 ];
+const slot = [
+    {
+        key: 'default',
+        describe: '自定义默认内容'
+    }
+];
 
 attr.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/pagination.html#pagination-%E5%B1%9E%E6%80%A7';
@@ -181,8 +187,13 @@ event.forEach((x: any) => {
     x.link = 'https://element-plus.org/zh-CN/component/pagination.html#pagination-%E4%BA%8B%E4%BB%B6';
 });
 
+slot.forEach((x: any) => {
+    x.link = 'https://element-plus.org/zh-CN/component/pagination.html#%E6%8F%92%E6%A7%BD';
+});
+
 export default {
     key: 'el-pagination',
     attr,
-    event
+    event,
+    slot
 };
