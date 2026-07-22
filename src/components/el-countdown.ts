@@ -1,55 +1,37 @@
 const attr = [
     {
         key: 'value',
-        describe: '数字内容。',
-        type: 'number',
-        default: '0'
-    },
-    {
-        key: 'decimal-separator',
-        describe: '设置小数点符号。',
-        type: 'string',
-        default: '.'
-    },
-    {
-        key: 'formatter',
-        describe: '自定义数字格式化。',
-        type: 'function',
+        describe: '目标时间',
+        type: 'number / Dayjs',
         default: '—'
     },
     {
-        key: 'group-separator',
-        describe: '设置千分位标识符。',
+        key: 'format',
+        describe: '格式化倒计时',
         type: 'string',
-        default: ','
-    },
-    {
-        key: 'precision',
-        describe: '数字精度。',
-        type: 'number',
-        default: '0'
+        default: 'HH:mm:ss'
     },
     {
         key: 'prefix',
-        describe: '设置数字的前缀。',
+        describe: '设置倒计时前缀',
         type: 'string',
         default: '—'
     },
     {
         key: 'suffix',
-        describe: '设置数字的后缀。',
+        describe: '设置倒计时的后缀',
         type: 'string',
         default: '—'
     },
     {
         key: 'title',
-        describe: '数字标题。',
+        describe: '倒计时标题',
         type: 'string',
         default: '—'
     },
     {
         key: 'value-style',
-        describe: '数字样式。',
+        describe: '倒计时值的样式',
         type: 'string / object',
         default: '—'
     }
@@ -69,11 +51,11 @@ const event: any = [
 ];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/statistic.html#countdown-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/statistic.html#countdown-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/statistic.html#countdown-events';
+    x.link = 'https://element-plus.org/zh-CN/component/statistic.html#countdown-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

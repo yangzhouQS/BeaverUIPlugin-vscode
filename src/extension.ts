@@ -9,7 +9,9 @@ import ElContainer from './components/el-container';
 import ElHeader from './components/el-header';
 import ElFooter from './components/el-footer';
 import ElAside from './components/el-aside';
+import ElMain from './components/el-main';
 import ElIcon from './components/el-icon';
+import ElConfigProvider from './components/el-config-provider';
 
 import ElLink from './components/el-link';
 import ElText from './components/el-text';
@@ -18,12 +20,16 @@ import ElSpace from './components/el-space';
 import ElAutocomplete from './components/el-autocomplete';
 import ElCascader from './components/el-cascader';
 import ElCascaderPanel from './components/el-cascader-panel';
+import ElColorPickerPanel from './components/el-color-picker-panel';
 import ElColorPicker from './components/el-color-picker';
+import ElCheckboxButton from './components/el-checkbox-button';
 import ElCheckboxGroup from './components/el-checkbox-group';
 import ElCheckbox from './components/el-checkbox';
+import ElDatePickerPanel from './components/el-date-picker-panel';
 import ElDatePicker from './components/el-date-picker';
 import ElFormItem from './components/el-form-item';
 import ElForm from './components/el-form';
+import ElInputOtp from './components/el-input-otp';
 import ElInput from './components/el-input';
 import ElInputNumber from './components/el-input-number';
 import ElMention from './components/el-mention';
@@ -42,6 +48,7 @@ import ElTimeSelect from './components/el-time-select';
 import ElTransfer from './components/el-transfer';
 import ElTreeSelect from './components/el-tree-select';
 import ElUpload from './components/el-upload';
+import ElAvatarGroup from './components/el-avatar-group';
 import ElAvatar from './components/el-avatar';
 import ElBadge from './components/el-badge';
 import ElCalendar from './components/el-calendar';
@@ -66,16 +73,19 @@ import ElTableV2 from './components/el-table-v2';
 import ElCheckTag from './components/el-check-tag';
 import ElTag from './components/el-tag';
 import ElTimelineItem from './components/el-timeline-item';
+import ElTimeline from './components/el-timeline';
 import ElTour from './components/el-tour';
 import ElTourStep from './components/el-tour-step';
 import ElTree from './components/el-tree';
 import ElTreeV2 from './components/el-tree-v2';
 import ElStatistic from './components/el-statistic';
+import ElCountdown from './components/el-countdown';
 import ElSegmented from './components/el-segmented';
 import ElAffix from './components/el-affix';
 import ElBreadcrumbItem from './components/el-breadcrumb-item';
 import ElBreadcrumb from './components/el-breadcrumb';
 import ElMenuItemGroup from './components/el-menu-item-group';
+import ElMenuItem from './components/el-menu-item';
 import ElSubMenu from './components/el-sub-menu';
 import ElMenu from './components/el-menu';
 import ElPageHeader from './components/el-page-header';
@@ -91,10 +101,15 @@ import ElPopover from './components/el-popover';
 import ElTooltip from './components/el-tooltip';
 import ElDivider from './components/el-divider';
 import ElBacktop from './components/el-backtop';
+import ElDropdownItem from './components/el-dropdown-item';
+import ElDropdownMenu from './components/el-dropdown-menu';
 import ElDropdown from './components/el-dropdown';
 import ElInputTag from './components/el-input-tag';
 import ElAnchorLink from './components/el-anchor-link';
 import ElAnchor from './components/el-anchor';
+import ElWatermark from './components/el-watermark';
+import ElSplitterPanel from './components/el-splitter-panel';
+import ElSplitter from './components/el-splitter';
 
 export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(
@@ -112,7 +127,9 @@ export function activate(context: vscode.ExtensionContext) {
                         ElHeader,
                         ElFooter,
                         ElAside,
+                        ElMain,
                         ElIcon,
+                        ElConfigProvider,
                         ElLink,
                         ElText,
                         ElScrollbar,
@@ -120,14 +137,18 @@ export function activate(context: vscode.ExtensionContext) {
                         ElAutocomplete,
                         ElCascaderPanel,
                         ElCascader,
+                        ElColorPickerPanel,
                         ElColorPicker,
+                        ElCheckboxButton,
                         ElCheckboxGroup,
                         ElCheckbox,
+                        ElDatePickerPanel,
                         ElDatePicker,
                         ElFormItem,
                         ElForm,
                         ElInputNumber,
                         ElInputTag,
+                        ElInputOtp,
                         ElInput,
                         ElMention,
                         ElRadioGroup,
@@ -149,6 +170,7 @@ export function activate(context: vscode.ExtensionContext) {
                         ElTransfer,
                         ElTreeSelect,
                         ElUpload,
+                        ElAvatarGroup,
                         ElAvatar,
                         ElBadge,
                         ElCalendar,
@@ -171,11 +193,13 @@ export function activate(context: vscode.ExtensionContext) {
                         ElCheckTag,
                         ElTag,
                         ElTimelineItem,
+                        ElTimeline,
                         ElTourStep,
                         ElTour,
                         ElTree,
                         ElTreeV2,
                         ElStatistic,
+                        ElCountdown,
                         ElSegmented,
                         ElAffix,
                         ElAnchorLink,
@@ -183,8 +207,11 @@ export function activate(context: vscode.ExtensionContext) {
                         ElBacktop,
                         ElBreadcrumbItem,
                         ElBreadcrumb,
+                        ElDropdownItem,
+                        ElDropdownMenu,
                         ElDropdown,
                         ElMenuItemGroup,
+                        ElMenuItem,
                         ElSubMenu,
                         ElMenu,
                         ElPageHeader,
@@ -198,7 +225,10 @@ export function activate(context: vscode.ExtensionContext) {
                         ElPopconfirm,
                         ElPopover,
                         ElTooltip,
-                        ElDivider
+                        ElDivider,
+                        ElWatermark,
+                        ElSplitterPanel,
+                        ElSplitter
                     ];
 
                     /**

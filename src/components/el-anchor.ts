@@ -1,9 +1,9 @@
 const attr = [
     {
         key: 'container',
-        describe: '滚动的容器，可以是 `string` 选择器、`HTMLElement` 或 `Window`',
-        type: 'string | HTMLElement | Window',
-        default: ''
+        describe: '滚动的容器，可以是 string 选择器、HTMLElement 或 Window',
+        type: 'string / HTMLElement / Window',
+        default: '—'
     },
     {
         key: 'offset',
@@ -53,21 +53,21 @@ const event: any = [
     {
         key: '@change',
         describe: 'step 改变时的回调',
-        type: 'Function'
+        type: 'function'
     },
     {
         key: '@click',
         describe: '当用户点击链接时触发',
-        type: 'Function'
+        type: 'function'
     }
 ];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/affix.html#%E5%B1%9E%E6%80%A7';
+    x.link = 'https://element-plus.org/zh-CN/component/anchor.html#anchor-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/affix.html#%E4%BA%8B%E4%BB%B6';
+    x.link = 'https://element-plus.org/zh-CN/component/anchor.html#anchor-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

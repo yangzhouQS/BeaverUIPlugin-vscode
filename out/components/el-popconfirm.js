@@ -8,6 +8,12 @@ const attr = [
         default: '—'
     },
     {
+        key: 'effect',
+        describe: 'Tooltip 主题，内置了 dark / light 两种主题',
+        type: 'enum / string',
+        default: 'light'
+    },
+    {
         key: 'confirm-button-text',
         describe: '确认按钮文字',
         type: 'string',

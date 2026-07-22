@@ -4,13 +4,13 @@ const attr = [
     {
         key: 'model-value',
         describe: '绑定值',
-        type: 'string | number | boolean',
+        type: 'string / number / boolean',
         default: '—'
     },
     {
         key: 'v-model',
         describe: '绑定值',
-        type: 'string | number | boolean',
+        type: 'string / number / boolean',
         default: '—'
     },
     {
@@ -66,6 +66,24 @@ const attr = [
         describe: '与 RadioGroup 中的 aria-label 属性相同',
         type: 'string',
         default: '—'
+    },
+    {
+        key: 'options',
+        describe: '选项的数据源，value、label、disabled 的 key 可以通过 props 自定义，2.11.2版本开始支持',
+        type: 'array',
+        default: '—'
+    },
+    {
+        key: 'props',
+        describe: 'options 的配置，2.11.2版本开始支持',
+        type: 'object',
+        default: "{value: 'value', label: 'label', disabled: 'disabled'}"
+    },
+    {
+        key: 'type',
+        describe: '用于渲染选项的组件类型，2.11.5版本开始支持',
+        type: 'enum',
+        default: "'radio'"
     }
 ];
 const event = [
@@ -76,10 +94,10 @@ const event = [
     }
 ];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/radio.html#radiogroup-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/radio.html#radio-group-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/radio.html#radiogroup-events';
+    x.link = 'https://element-plus.org/zh-CN/component/radio.html#radio-group-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-radio-group',

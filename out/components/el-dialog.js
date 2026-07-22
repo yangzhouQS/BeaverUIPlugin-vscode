@@ -5,13 +5,13 @@ const attr = [
         key: 'model-value',
         describe: '是否显示 Dialog',
         type: 'boolean',
-        default: '—'
+        default: 'false'
     },
     {
         key: 'v-model',
         describe: '是否显示 Dialog',
         type: 'boolean',
-        default: '—'
+        default: 'false'
     },
     {
         key: 'title',
@@ -42,6 +42,12 @@ const attr = [
         describe: '是否需要遮罩层',
         type: 'boolean',
         default: 'true'
+    },
+    {
+        key: 'modal-penetrable',
+        describe: '是否允许穿透遮罩层，modal 属性必须为 false',
+        type: 'boolean',
+        default: 'false'
     },
     {
         key: 'modal-class',
@@ -168,6 +174,12 @@ const attr = [
         describe: 'header 的 aria-level 属性 (a11y)',
         type: 'string',
         default: '2'
+    },
+    {
+        key: 'transition',
+        describe: '对话框动画的自定义过渡配置，可以是字符串（过渡名称），也可以是包含 Vue 过渡属性的对象',
+        type: 'string / object',
+        default: 'dialog-fade'
     },
     {
         key: 'custom-class',

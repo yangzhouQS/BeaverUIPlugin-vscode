@@ -40,7 +40,7 @@ const attr = [
     {
         key: 'default-openeds',
         describe: '默认打开的 sub-menu 的 index 的数组。',
-        type: 'object',
+        type: 'array',
         default: '[]'
     },
     {
@@ -83,6 +83,12 @@ const attr = [
         key: 'popper-class',
         describe: '为 popper 添加类名（2.5.0 版本新增）。',
         type: 'string',
+        default: '—'
+    },
+    {
+        key: 'popper-style',
+        describe: '用于所有弹出菜单和标题提示的自定义样式（2.11.5 版本新增）。',
+        type: 'string / object',
         default: '—'
     },
     {
@@ -140,10 +146,10 @@ const event = [
     }
 ];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/menu.html#menu-events';
+    x.link = 'https://element-plus.org/zh-CN/component/menu.html#menu-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/menu.html#menu-events';
+    x.link = 'https://element-plus.org/zh-CN/component/menu.html#menu-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-menu',

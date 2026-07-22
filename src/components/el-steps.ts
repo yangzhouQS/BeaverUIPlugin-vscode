@@ -2,7 +2,7 @@ const attr = [
     {
         key: 'space',
         describe: '每个 step 的间距，不填写将自适应间距。支持百分比。',
-        type: 'number / string',
+        type: 'string / number',
         default: "''"
     },
     {
@@ -46,11 +46,11 @@ const attr = [
 const event: any = [];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/steps.html#steps-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/steps.html#steps-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = '';
+    x.link = 'https://element-plus.org/zh-CN/component/steps.html#steps-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

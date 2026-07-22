@@ -7,9 +7,9 @@ const attr = [
     },
     {
         key: 'underline',
-        describe: '是否下划线',
-        type: 'boolean',
-        default: 'true'
+        describe: '控制下划线是否出现',
+        type: 'enum / boolean',
+        default: 'hover'
     },
     {
         key: 'disabled',

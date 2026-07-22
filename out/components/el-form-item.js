@@ -23,7 +23,7 @@ const attr = [
         key: 'label-width',
         describe: "标签宽度，例如 '50px'。可以使用 auto。",
         type: 'string / number',
-        default: "''"
+        default: '—'
     },
     {
         key: 'required',
@@ -52,8 +52,8 @@ const attr = [
     {
         key: 'inline-message',
         describe: '是否在行内显示校验信息',
-        type: 'string / boolean',
-        default: "''"
+        type: 'boolean',
+        default: 'false'
     },
     {
         key: 'size',
@@ -75,7 +75,7 @@ const attr = [
     }
 ];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/form.html#formitem-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/form.html#form-item-%E5%B1%9E%E6%80%A7';
 });
 exports.default = {
     key: 'el-form-item',

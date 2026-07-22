@@ -2,26 +2,26 @@ const attr = [
     {
         key: 'model-value',
         describe: '选中项绑定值，支持 v-model',
-        type: 'number',
+        type: 'number / null',
         default: '—'
     },
     {
         key: 'v-model',
         describe: '双向绑定选中项的值，等价于 model-value',
-        type: 'number',
+        type: 'number / null',
         default: '—'
     },
     {
         key: 'min',
         describe: '设置计数器允许的最小值',
         type: 'number',
-        default: '-Infinity'
+        default: 'Number.MIN_SAFE_INTEGER'
     },
     {
         key: 'max',
         describe: '设置计数器允许的最大值',
         type: 'number',
-        default: 'Infinity'
+        default: 'Number.MAX_SAFE_INTEGER'
     },
     {
         key: 'step',
@@ -98,7 +98,7 @@ const attr = [
     {
         key: 'value-on-clear',
         describe: '当输入框被清空时显示的值，支持 number / null / enum，2.2.0 版本支持',
-        type: 'number | null | enum',
+        type: 'number / null / enum',
         default: '—'
     },
     {
@@ -111,6 +111,42 @@ const attr = [
         key: 'label',
         describe: '等价于原生 input aria-label 属性，已废弃',
         type: 'string',
+        default: '—'
+    },
+    {
+        key: 'inputmode',
+        describe: '等价于原生 input inputmode 属性，2.10.3 版本支持',
+        type: 'string',
+        default: '—'
+    },
+    {
+        key: 'align',
+        describe: '内部输入文本对齐，2.10.5 版本支持',
+        type: 'enum',
+        default: 'center'
+    },
+    {
+        key: 'disabled-scientific',
+        describe: '禁用科学计数法的输入（例如输入 e），2.10.5 版本支持',
+        type: 'boolean',
+        default: 'false'
+    },
+    {
+        key: 'tabindex',
+        describe: '等价于原生 input tabindex 属性',
+        type: 'string / number',
+        default: '0'
+    },
+    {
+        key: 'formatter',
+        describe: '指定输入值的显示格式',
+        type: 'function',
+        default: '—'
+    },
+    {
+        key: 'parser',
+        describe: '指定从格式化后的输入中提取的值',
+        type: 'function',
         default: '—'
     }
 ];

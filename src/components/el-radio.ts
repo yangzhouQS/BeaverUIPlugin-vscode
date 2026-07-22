@@ -2,25 +2,25 @@ const attr = [
     {
         key: 'model-value',
         describe: '选中项绑定值',
-        type: 'string | number | boolean',
+        type: 'string / number / boolean',
         default: '—'
     },
     {
         key: 'v-model',
         describe: '选中项绑定值',
-        type: 'string | number | boolean',
+        type: 'string / number / boolean',
         default: '—'
     },
     {
         key: 'value',
         describe: '单选框的值',
-        type: 'string | number | boolean',
+        type: 'string / number / boolean',
         default: '—'
     },
     {
         key: 'label',
         describe: '单选框的 label 如果value没有值， label则作为value使用',
-        type: 'string | number | boolean',
+        type: 'string / number / boolean',
         default: '—'
     },
     {
@@ -58,11 +58,11 @@ const event = [
 ];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/radio.html#radio-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/radio.html#radio-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/radio.html#radio-events';
+    x.link = 'https://element-plus.org/zh-CN/component/radio.html#radio-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

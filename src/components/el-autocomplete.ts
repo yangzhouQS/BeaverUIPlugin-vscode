@@ -86,14 +86,38 @@ const attr = [
     {
         key: 'popper-class',
         describe: '下拉列表的类名',
-        type: 'string',
+        type: 'string / object',
+        default: "''"
+    },
+    {
+        key: 'popper-style',
+        describe: '下拉列表的样式',
+        type: 'string / object',
         default: '—'
+    },
+    {
+        key: 'popper-options',
+        describe: 'popper.js 参数',
+        type: 'object',
+        default: '{}'
+    },
+    {
+        key: 'show-arrow',
+        describe: '下拉菜单是否带有箭头',
+        type: 'boolean',
+        default: 'true'
     },
     {
         key: 'teleported',
         describe: '是否将下拉列表元素插入 append-to 指向的元素下',
         type: 'boolean',
         default: 'true'
+    },
+    {
+        key: 'append-to',
+        describe: '下拉框挂载到哪个 DOM 元素',
+        type: 'string / object',
+        default: '—'
     },
     {
         key: 'highlight-first-item',
@@ -112,6 +136,12 @@ const attr = [
         describe: '是否将下拉列表插入至 body 元素。 在下拉列表的定位出现问题时，可将该属性设置为 false（已废弃）',
         type: 'boolean',
         default: 'false'
+    },
+    {
+        key: 'loop-navigation',
+        describe: '键盘导航是否从末尾循环到开头',
+        type: 'boolean',
+        default: 'true'
     }
 ];
 
@@ -149,13 +179,12 @@ const event: any[] = [
 ];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/autocomplete.html#attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/autocomplete.html#autocomplete-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/autocomplete.html#events';
+    x.link = 'https://element-plus.org/zh-CN/component/autocomplete.html#autocomplete-%E4%BA%8B%E4%BB%B6';
 });
-
 
 export default {
     key: 'el-autocomplete',

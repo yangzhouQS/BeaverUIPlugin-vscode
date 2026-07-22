@@ -4,7 +4,7 @@ const attr = [
     {
         key: 'url-list',
         describe: '用于预览的图片链接列表。',
-        type: 'object',
+        type: 'array',
         default: '[]'
     },
     {
@@ -42,6 +42,12 @@ const attr = [
         describe: '图像查看器缩放事件的缩放速率。版本 2.2.27+。',
         type: 'number',
         default: '1.2'
+    },
+    {
+        key: 'scale',
+        describe: '预览图片的缩放比例。',
+        type: 'number',
+        default: '1'
     },
     {
         key: 'min-scale',
@@ -86,10 +92,10 @@ const event = [
     }
 ];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/image.html#image-viewer-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/image.html#image-viewer-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/image.html#image-viewer-events';
+    x.link = 'https://element-plus.org/zh-CN/component/image.html#image-viewer-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-image-viewer',

@@ -2,7 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const attr = [
     {
-        key: 'model-value / v-model',
+        key: 'model-value',
+        describe: '选中项绑定值',
+        type: 'string / number / boolean',
+        default: '—'
+    },
+    {
+        key: 'v-model',
         describe: '选中项绑定值',
         type: 'string / number / boolean',
         default: '—'
@@ -35,13 +41,13 @@ const attr = [
         key: 'disabled',
         describe: '是否禁用',
         type: 'boolean',
-        default: 'FALSE'
+        default: 'false'
     },
     {
         key: 'border',
         describe: '是否显示边框',
         type: 'boolean',
-        default: 'FALSE'
+        default: 'false'
     },
     {
         key: 'size',
@@ -59,19 +65,19 @@ const attr = [
         key: 'checked',
         describe: '当前是否勾选',
         type: 'boolean',
-        default: 'FALSE'
+        default: 'false'
     },
     {
         key: 'indeterminate',
         describe: '设置不确定状态，仅负责样式控制',
         type: 'boolean',
-        default: 'FALSE'
+        default: 'false'
     },
     {
         key: 'validate-event',
         describe: '输入时是否触发表单的校验',
         type: 'boolean',
-        default: 'TRUE'
+        default: 'true'
     },
     {
         key: 'tabindex',
@@ -88,6 +94,12 @@ const attr = [
     {
         key: 'aria-controls',
         describe: '与 aria-control一致, 当 indeterminate为 true时生效，2.7.2版本开始支持',
+        type: 'string',
+        default: '—'
+    },
+    {
+        key: 'aria-label',
+        describe: '原生 aria-label 属性',
         type: 'string',
         default: '—'
     },
@@ -118,10 +130,10 @@ const event = [
     }
 ];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/checkbox.html#checkbox-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/checkbox.html#checkbox-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/checkbox.html#checkbox-events';
+    x.link = 'https://element-plus.org/zh-CN/component/checkbox.html#checkbox-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-checkbox',

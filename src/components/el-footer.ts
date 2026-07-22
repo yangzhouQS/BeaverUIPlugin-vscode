@@ -10,7 +10,7 @@ const attr = [
 const event: any[] = [];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/container.html#footer-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/container.html#footer-%E5%B1%9E%E6%80%A7';
 });
 
 export default {

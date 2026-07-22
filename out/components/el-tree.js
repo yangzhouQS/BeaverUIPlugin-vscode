@@ -4,7 +4,7 @@ const attr = [
     {
         key: 'data',
         describe: '展示数据',
-        type: 'object',
+        type: 'array',
         default: '—'
     },
     {
@@ -22,7 +22,7 @@ const attr = [
     {
         key: 'props',
         describe: '配置选项，具体看下表',
-        type: 'Props',
+        type: 'object',
         default: '—'
     },
     {
@@ -82,7 +82,7 @@ const attr = [
     {
         key: 'default-expanded-keys',
         describe: '默认展开的节点的 key 的数组',
-        type: 'object',
+        type: 'array',
         default: '—'
     },
     {
@@ -100,7 +100,7 @@ const attr = [
     {
         key: 'default-checked-keys',
         describe: '默认勾选的节点的 key 的数组',
-        type: 'object',
+        type: 'array',
         default: '—'
     },
     {

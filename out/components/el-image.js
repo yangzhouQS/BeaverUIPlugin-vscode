@@ -34,7 +34,7 @@ const attr = [
     {
         key: 'scroll-container',
         describe: '开启懒加载功能后，监听 scroll 事件的容器。',
-        type: 'string | object',
+        type: 'string / object',
         default: '—'
     },
     {
@@ -58,7 +58,7 @@ const attr = [
     {
         key: 'preview-src-list',
         describe: '开启图片预览功能。',
-        type: 'object',
+        type: 'array',
         default: '[]'
     },
     {
@@ -98,6 +98,12 @@ const attr = [
         default: '1.2'
     },
     {
+        key: 'scale',
+        describe: '预览图片的缩放比例。',
+        type: 'number',
+        default: '1'
+    },
+    {
         key: 'min-scale',
         describe: '图像查看器缩放事件的最小缩放比例。自 2.4.0 版本起支持。',
         type: 'number',
@@ -108,6 +114,12 @@ const attr = [
         describe: '图像查看器缩放事件的最大缩放比例。自 2.4.0 版本起支持。',
         type: 'number',
         default: '7'
+    },
+    {
+        key: 'show-progress',
+        describe: '是否显示预览图片的进度条内容。自 2.9.4 版本起支持。',
+        type: 'boolean',
+        default: 'false'
     }
 ];
 const event = [
@@ -138,10 +150,10 @@ const event = [
     }
 ];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/image.html#image-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/image.html#image-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/image.html#image-events';
+    x.link = 'https://element-plus.org/zh-CN/component/image.html#image-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-image',

@@ -4,13 +4,13 @@ const attr = [
     {
         key: 'model-value',
         describe: '选中项绑定值',
-        type: 'number / object',
+        type: 'number / array',
         default: '0'
     },
     {
         key: 'v-model',
         describe: '选中项绑定值',
-        type: 'number / object',
+        type: 'number / array',
         default: '0'
     },
     {
@@ -33,13 +33,13 @@ const attr = [
     },
     {
         key: 'step',
-        describe: '步长',
-        type: 'number',
+        describe: "步长，可以是数字或 'mark'（2.13.6版本开始支持），用于将值限制为刻度。当设置为 'mark' 时，必须设置 marks 属性",
+        type: 'number / string',
         default: '1'
     },
     {
         key: 'show-input',
-        describe: '是否显示输入框，仅在非范围选择时有效',
+        describe: "是否显示输入框，仅在 range 为 false 且 step 不为 'mark' 时生效",
         type: 'boolean',
         default: 'false'
     },
@@ -122,12 +122,6 @@ const attr = [
         default: '—'
     },
     {
-        key: 'debounce',
-        describe: '输入时的去抖延迟，毫秒，仅在 show-input 等于 true 时有效',
-        type: 'number',
-        default: '300'
-    },
-    {
         key: 'tooltip-class',
         describe: 'tooltip 的自定义类名',
         type: 'string',
@@ -153,7 +147,7 @@ const attr = [
     },
     {
         key: 'persistent',
-        describe: '当 slider 的 tooltip 处于非活动状态且 persistent 为 false 时，Popconfirm 将被销毁。 当 show-tooltip 为 false 时，persistent 将始终为 false。 (版本 2.9.5)',
+        describe: '当 slider 的 tooltip 处于非活动状态且 persistent 为 false 时，tooltip 将被销毁。 当 show-tooltip 为 false 时，persistent 将始终为 false。 (版本 2.9.5)',
         type: 'boolean',
         default: 'true'
     },
@@ -168,21 +162,19 @@ const event = [
     {
         key: '@change',
         describe: '值改变时触发（使用鼠标拖曳时，只在松开鼠标后触发）',
-        type: 'function',
-        default: '—'
+        type: 'function'
     },
     {
         key: '@input',
         describe: '数据改变时触发（使用鼠标拖曳时，活动过程实时触发）',
-        type: 'function',
-        default: '—'
+        type: 'function'
     }
 ];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/slider.html#%E5%B1%9E%E6%80%A7';
+    x.link = 'https://element-plus.org/zh-CN/component/slider.html#slider-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/slider.html#%E4%BA%8B%E4%BB%B6';
+    x.link = 'https://element-plus.org/zh-CN/component/slider.html#slider-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-slider',

@@ -74,7 +74,7 @@ const attr = [
     {
         key: 'filter-method',
         describe: '对树节点进行筛选时执行的方法，返回 true 表示这个节点可以显示，返回 false 则表示这个节点会被隐藏。',
-        type: 'Function(value, data, node)',
+        type: 'function',
         default: '—'
     },
     {
@@ -86,7 +86,7 @@ const attr = [
     {
         key: 'icon',
         describe: '自定义树节点的图标。',
-        type: 'string | Component',
+        type: 'string / Component',
         default: '—'
     },
     {
@@ -94,17 +94,70 @@ const attr = [
         describe: '自定义树节点的高度。版本 2.2.33 引入。',
         type: 'number',
         default: '26'
+    },
+    {
+        key: 'scrollbar-always-on',
+        describe: '总是显示滚动条。版本 2.10.4 引入。',
+        type: 'boolean',
+        default: 'false'
+    },
+    {
+        key: 'height',
+        describe: 'tree 的高度',
+        type: 'number',
+        default: '200'
     }
 ];
 
-const event: any = [];
+const event: any = [
+    {
+        key: '@node-click',
+        describe: '当节点被点击的时候触发',
+        type: 'function'
+    },
+    {
+        key: '@node-drop',
+        describe: '拖放到节点时触发。版本 2.8.3 引入',
+        type: 'function'
+    },
+    {
+        key: '@node-contextmenu',
+        describe: '当某一节点被鼠标右键点击时会触发该事件',
+        type: 'function'
+    },
+    {
+        key: '@check-change',
+        describe: '当复选框被点击的时候触发',
+        type: 'function'
+    },
+    {
+        key: '@check',
+        describe: '点击节点复选框之后触发',
+        type: 'function'
+    },
+    {
+        key: '@current-change',
+        describe: '当前选中节点变化时触发的事件',
+        type: 'function'
+    },
+    {
+        key: '@node-expand',
+        describe: '节点被展开时触发的事件',
+        type: 'function'
+    },
+    {
+        key: '@node-collapse',
+        describe: '节点被关闭时触发的事件',
+        type: 'function'
+    }
+];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/tree-v2.html#treev2-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/tree-v2.html#treev2-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/tree-v2.html#treev2-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/tree-v2.html#treev2-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

@@ -5,12 +5,12 @@ const attr = [
         key: 'height',
         describe: '顶栏高度',
         type: 'string',
-        default: '	60px'
+        default: '60px'
     }
 ];
 const event = [];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/container.html#header-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/container.html#header-%E5%B1%9E%E6%80%A7';
 });
 exports.default = {
     key: 'el-header',

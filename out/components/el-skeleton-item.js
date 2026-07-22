@@ -10,10 +10,10 @@ const attr = [
 ];
 const event = [];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/skeleton.html#skeletonitem-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/skeleton.html#skeleton-item-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/skeleton.html#skeletonitem-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/skeleton.html#skeleton-item-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-skeleton-item',

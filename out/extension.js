@@ -48,7 +48,9 @@ const el_container_1 = __importDefault(require("./components/el-container"));
 const el_header_1 = __importDefault(require("./components/el-header"));
 const el_footer_1 = __importDefault(require("./components/el-footer"));
 const el_aside_1 = __importDefault(require("./components/el-aside"));
+const el_main_1 = __importDefault(require("./components/el-main"));
 const el_icon_1 = __importDefault(require("./components/el-icon"));
+const el_config_provider_1 = __importDefault(require("./components/el-config-provider"));
 const el_link_1 = __importDefault(require("./components/el-link"));
 const el_text_1 = __importDefault(require("./components/el-text"));
 const el_scrollbar_1 = __importDefault(require("./components/el-scrollbar"));
@@ -56,12 +58,16 @@ const el_space_1 = __importDefault(require("./components/el-space"));
 const el_autocomplete_1 = __importDefault(require("./components/el-autocomplete"));
 const el_cascader_1 = __importDefault(require("./components/el-cascader"));
 const el_cascader_panel_1 = __importDefault(require("./components/el-cascader-panel"));
+const el_color_picker_panel_1 = __importDefault(require("./components/el-color-picker-panel"));
 const el_color_picker_1 = __importDefault(require("./components/el-color-picker"));
+const el_checkbox_button_1 = __importDefault(require("./components/el-checkbox-button"));
 const el_checkbox_group_1 = __importDefault(require("./components/el-checkbox-group"));
 const el_checkbox_1 = __importDefault(require("./components/el-checkbox"));
+const el_date_picker_panel_1 = __importDefault(require("./components/el-date-picker-panel"));
 const el_date_picker_1 = __importDefault(require("./components/el-date-picker"));
 const el_form_item_1 = __importDefault(require("./components/el-form-item"));
 const el_form_1 = __importDefault(require("./components/el-form"));
+const el_input_otp_1 = __importDefault(require("./components/el-input-otp"));
 const el_input_1 = __importDefault(require("./components/el-input"));
 const el_input_number_1 = __importDefault(require("./components/el-input-number"));
 const el_mention_1 = __importDefault(require("./components/el-mention"));
@@ -80,6 +86,7 @@ const el_time_select_1 = __importDefault(require("./components/el-time-select"))
 const el_transfer_1 = __importDefault(require("./components/el-transfer"));
 const el_tree_select_1 = __importDefault(require("./components/el-tree-select"));
 const el_upload_1 = __importDefault(require("./components/el-upload"));
+const el_avatar_group_1 = __importDefault(require("./components/el-avatar-group"));
 const el_avatar_1 = __importDefault(require("./components/el-avatar"));
 const el_badge_1 = __importDefault(require("./components/el-badge"));
 const el_calendar_1 = __importDefault(require("./components/el-calendar"));
@@ -104,16 +111,19 @@ const el_table_v2_1 = __importDefault(require("./components/el-table-v2"));
 const el_check_tag_1 = __importDefault(require("./components/el-check-tag"));
 const el_tag_1 = __importDefault(require("./components/el-tag"));
 const el_timeline_item_1 = __importDefault(require("./components/el-timeline-item"));
+const el_timeline_1 = __importDefault(require("./components/el-timeline"));
 const el_tour_1 = __importDefault(require("./components/el-tour"));
 const el_tour_step_1 = __importDefault(require("./components/el-tour-step"));
 const el_tree_1 = __importDefault(require("./components/el-tree"));
 const el_tree_v2_1 = __importDefault(require("./components/el-tree-v2"));
 const el_statistic_1 = __importDefault(require("./components/el-statistic"));
+const el_countdown_1 = __importDefault(require("./components/el-countdown"));
 const el_segmented_1 = __importDefault(require("./components/el-segmented"));
 const el_affix_1 = __importDefault(require("./components/el-affix"));
 const el_breadcrumb_item_1 = __importDefault(require("./components/el-breadcrumb-item"));
 const el_breadcrumb_1 = __importDefault(require("./components/el-breadcrumb"));
 const el_menu_item_group_1 = __importDefault(require("./components/el-menu-item-group"));
+const el_menu_item_1 = __importDefault(require("./components/el-menu-item"));
 const el_sub_menu_1 = __importDefault(require("./components/el-sub-menu"));
 const el_menu_1 = __importDefault(require("./components/el-menu"));
 const el_page_header_1 = __importDefault(require("./components/el-page-header"));
@@ -129,10 +139,15 @@ const el_popover_1 = __importDefault(require("./components/el-popover"));
 const el_tooltip_1 = __importDefault(require("./components/el-tooltip"));
 const el_divider_1 = __importDefault(require("./components/el-divider"));
 const el_backtop_1 = __importDefault(require("./components/el-backtop"));
+const el_dropdown_item_1 = __importDefault(require("./components/el-dropdown-item"));
+const el_dropdown_menu_1 = __importDefault(require("./components/el-dropdown-menu"));
 const el_dropdown_1 = __importDefault(require("./components/el-dropdown"));
 const el_input_tag_1 = __importDefault(require("./components/el-input-tag"));
 const el_anchor_link_1 = __importDefault(require("./components/el-anchor-link"));
 const el_anchor_1 = __importDefault(require("./components/el-anchor"));
+const el_watermark_1 = __importDefault(require("./components/el-watermark"));
+const el_splitter_panel_1 = __importDefault(require("./components/el-splitter-panel"));
+const el_splitter_1 = __importDefault(require("./components/el-splitter"));
 function activate(context) {
     context.subscriptions.push(vscode.languages.registerCompletionItemProvider('html', {
         provideCompletionItems(document, position) {
@@ -146,7 +161,9 @@ function activate(context) {
                 el_header_1.default,
                 el_footer_1.default,
                 el_aside_1.default,
+                el_main_1.default,
                 el_icon_1.default,
+                el_config_provider_1.default,
                 el_link_1.default,
                 el_text_1.default,
                 el_scrollbar_1.default,
@@ -154,14 +171,18 @@ function activate(context) {
                 el_autocomplete_1.default,
                 el_cascader_panel_1.default,
                 el_cascader_1.default,
+                el_color_picker_panel_1.default,
                 el_color_picker_1.default,
+                el_checkbox_button_1.default,
                 el_checkbox_group_1.default,
                 el_checkbox_1.default,
+                el_date_picker_panel_1.default,
                 el_date_picker_1.default,
                 el_form_item_1.default,
                 el_form_1.default,
                 el_input_number_1.default,
                 el_input_tag_1.default,
+                el_input_otp_1.default,
                 el_input_1.default,
                 el_mention_1.default,
                 el_radio_group_1.default,
@@ -183,6 +204,7 @@ function activate(context) {
                 el_transfer_1.default,
                 el_tree_select_1.default,
                 el_upload_1.default,
+                el_avatar_group_1.default,
                 el_avatar_1.default,
                 el_badge_1.default,
                 el_calendar_1.default,
@@ -205,11 +227,13 @@ function activate(context) {
                 el_check_tag_1.default,
                 el_tag_1.default,
                 el_timeline_item_1.default,
+                el_timeline_1.default,
                 el_tour_step_1.default,
                 el_tour_1.default,
                 el_tree_1.default,
                 el_tree_v2_1.default,
                 el_statistic_1.default,
+                el_countdown_1.default,
                 el_segmented_1.default,
                 el_affix_1.default,
                 el_anchor_link_1.default,
@@ -217,8 +241,11 @@ function activate(context) {
                 el_backtop_1.default,
                 el_breadcrumb_item_1.default,
                 el_breadcrumb_1.default,
+                el_dropdown_item_1.default,
+                el_dropdown_menu_1.default,
                 el_dropdown_1.default,
                 el_menu_item_group_1.default,
+                el_menu_item_1.default,
                 el_sub_menu_1.default,
                 el_menu_1.default,
                 el_page_header_1.default,
@@ -232,7 +259,10 @@ function activate(context) {
                 el_popconfirm_1.default,
                 el_popover_1.default,
                 el_tooltip_1.default,
-                el_divider_1.default
+                el_divider_1.default,
+                el_watermark_1.default,
+                el_splitter_panel_1.default,
+                el_splitter_1.default
             ];
             /**
              * 提取行前缀

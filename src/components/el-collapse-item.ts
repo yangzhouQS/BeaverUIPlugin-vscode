@@ -2,7 +2,7 @@ const attr = [
     {
         key: 'name',
         describe: '唯一标志符。',
-        type: 'string | number',
+        type: 'string / number',
         default: '—'
     },
     {
@@ -14,7 +14,7 @@ const attr = [
     {
         key: 'icon',
         describe: '折叠项目的图标。自 2.8.3 版本起支持。',
-        type: 'string | Component',
+        type: 'string / Component',
         default: 'ArrowRight'
     },
     {
@@ -28,11 +28,11 @@ const attr = [
 const event: any = [];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/collapse.html#collapse-item-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/collapse.html#collapse-item-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/collapse.html#collapse-item-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/collapse.html#collapse-item-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

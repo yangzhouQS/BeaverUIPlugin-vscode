@@ -14,6 +14,12 @@ const attr = [
         default: '—'
     },
     {
+        key: 'default-value',
+        describe: '初始渲染时处于激活状态的标签的值（避免初始化时变动），2.11.9 版本新增',
+        type: 'string / number',
+        default: '—'
+    },
+    {
         key: 'type',
         describe: '风格类型',
         type: 'enum',
@@ -51,48 +57,49 @@ const attr = [
     },
     {
         key: 'before-leave',
-        describe: '切换标签之前的钩子函数， 若返回 false  或者返回被 reject 的 Promise，则阻止切换。',
+        describe: '切换标签之前的钩子函数，若返回 false 或者返回被 reject 的 Promise，则阻止切换。',
         type: 'function',
         default: '() => true'
+    },
+    {
+        key: 'tabindex',
+        describe: 'tabs 的 tabindex，2.11.7 版本新增',
+        type: 'string / number',
+        default: '0'
     }
 ];
 const event = [
     {
         key: '@tab-click',
         describe: 'tab 被选中时触发',
-        type: 'function',
-        default: '—'
+        type: 'function'
     },
     {
         key: '@tab-change',
         describe: 'activeName 改变时触发',
-        type: 'function',
-        default: '—'
+        type: 'function'
     },
     {
         key: '@tab-remove',
         describe: '点击 tab 移除按钮时触发',
-        type: 'function',
-        default: '—'
+        type: 'function'
     },
     {
         key: '@tab-add',
         describe: '点击 tab 新增按钮时触发',
-        type: 'function',
-        default: '—'
+        type: 'function'
     },
     {
         key: '@edit',
         describe: '点击 tab 的新增或移除按钮后触发',
-        type: 'function',
-        default: '—'
+        type: 'function'
     }
 ];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/tabs.html#tabs-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/tabs.html#tabs-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = '';
+    x.link = 'https://element-plus.org/zh-CN/component/tabs.html#tabs-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-tabs',

@@ -50,7 +50,7 @@ const attr = [
         default: "''"
     },
     {
-        key: 'cardScale',
+        key: 'card-scale',
         describe: '当 type 为 card时，二级卡的缩放大小。 (版本 2.7.8 引入)',
         type: 'number',
         default: 0.83
@@ -88,10 +88,10 @@ const event = [
     }
 ];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/carousel.html#carousel-api';
+    x.link = 'https://element-plus.org/zh-CN/component/carousel.html#carousel-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/carousel.html#carousel-events';
+    x.link = 'https://element-plus.org/zh-CN/component/carousel.html#carousel-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-carousel',

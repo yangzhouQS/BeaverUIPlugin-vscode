@@ -10,7 +10,7 @@ const attr = [
 ];
 const event = [];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/container.html#container-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/container.html#container-%E5%B1%9E%E6%80%A7';
 });
 exports.default = {
     key: 'el-container',

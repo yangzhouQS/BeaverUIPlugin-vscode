@@ -22,6 +22,18 @@ const attr = [
         describe: 'z-index。',
         type: 'number',
         default: 100
+    },
+    {
+        key: 'teleported',
+        describe: '固钉元素是否使用 teleport 特性，设置为 true 将会传送至 append-to 设置的位置，2.13.0版本开始支持',
+        type: 'boolean',
+        default: 'false'
+    },
+    {
+        key: 'append-to',
+        describe: '固钉元素将被挂载至哪个元素，2.13.0版本开始支持',
+        type: 'string / HTMLElement',
+        default: 'body'
     }
 ];
 

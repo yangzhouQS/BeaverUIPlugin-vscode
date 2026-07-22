@@ -1,6 +1,6 @@
 const attr = [
     {
-        key: 'action-required',
+        key: 'action',
         describe: '请求 URL。',
         type: 'string',
         default: '#'
@@ -122,13 +122,13 @@ const attr = [
     {
         key: 'file-list',
         describe: '默认上传文件。',
-        type: 'object',
+        type: 'array',
         default: '[]'
     },
     {
         key: 'v-model:file-list',
         describe: '绑定文件列表，控制上传文件。',
-        type: 'object',
+        type: 'array',
         default: '[]'
     },
     {
@@ -160,17 +160,23 @@ const attr = [
         describe: '允许上传文件的最大数量。',
         type: 'number',
         default: '—'
+    },
+    {
+        key: 'directory',
+        describe: '是否支持上传文件夹。启用后，只能选择文件夹；选择文件夹后，文件夹内的文件将被扁平化处理（2.13.1版本开始支持）。',
+        type: 'boolean',
+        default: 'false'
     }
 ];
 
-const event: any = [];
+const event: any[] = [];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/upload.html#%E5%B1%9E%E6%80%A7';
+    x.link = 'https://element-plus.org/zh-CN/component/upload.html#upload-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = '';
+    x.link = 'https://element-plus.org/zh-CN/component/upload.html#upload-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

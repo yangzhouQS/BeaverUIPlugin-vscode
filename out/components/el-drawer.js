@@ -22,7 +22,7 @@ const attr = [
     {
         key: 'append-to',
         describe: '挂载到哪个 DOM 元素 将覆盖 append-to-body (2.8.0)',
-        type: 'string',
+        type: 'string / HTMLElement',
         default: 'body'
     },
     {
@@ -74,10 +74,22 @@ const attr = [
         default: 'true'
     },
     {
+        key: 'modal-penetrable',
+        describe: '是否允许穿透遮罩层，modal 属性必须为 false',
+        type: 'boolean',
+        default: 'false'
+    },
+    {
         key: 'direction',
         describe: 'Drawer 打开的方向',
         type: 'enum',
         default: 'rtl'
+    },
+    {
+        key: 'resizable',
+        describe: '为抽屉启用可调整大小的功能 (2.11.0)',
+        type: 'boolean',
+        default: 'false'
     },
     {
         key: 'show-close',
@@ -175,6 +187,21 @@ const event = [
     {
         key: '@close-auto-focus',
         describe: '输入焦点从 Drawer 内容失焦时的回调',
+        type: 'function'
+    },
+    {
+        key: '@resize-start',
+        describe: '当开始调整大小时触发（当启用 resizable 时）',
+        type: 'function'
+    },
+    {
+        key: '@resize',
+        describe: '调整大小时触发（启用 resizable 时）',
+        type: 'function'
+    },
+    {
+        key: '@resize-end',
+        describe: '当调整大小结束时触发（当启用 resizable 时）',
         type: 'function'
     }
 ];

@@ -15,7 +15,7 @@ const attr = [
     },
     {
         key: 'name',
-        describe: '与选项卡绑定值 value 对应的标识符，表示选项卡别名。默认值是tab面板的序列号，如第一个 tab 是 0',
+        describe: '与选项卡绑定值 value 对应的标识符，表示选项卡别名。默认值是 tab 面板的序列号，如第一个 tab 是 0',
         type: 'string / number',
         default: '—'
     },
@@ -34,10 +34,10 @@ const attr = [
 ];
 const event = [];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/tabs.html#tab-pane-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/tabs.html#tab-pane-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = '';
+    x.link = 'https://element-plus.org/zh-CN/component/tabs.html#tab-pane-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-tab-pane',

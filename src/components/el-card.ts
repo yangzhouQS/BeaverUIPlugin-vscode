@@ -18,8 +18,20 @@ const attr = [
         default: '—'
     },
     {
+        key: 'header-class',
+        describe: 'card header 的自定义类名。 (版本 2.9.8 引入)',
+        type: 'string',
+        default: '—'
+    },
+    {
         key: 'body-class',
         describe: 'body 的自定义类名。 (版本 2.3.10 引入)',
+        type: 'string',
+        default: '—'
+    },
+    {
+        key: 'footer-class',
+        describe: 'footer 的自定义类名。 (版本 2.9.8 引入)',
         type: 'string',
         default: '—'
     },
@@ -34,11 +46,11 @@ const attr = [
 const event: any = [];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/card.html#attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/card.html#card-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/card.html#attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/card.html#card-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

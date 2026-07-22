@@ -52,7 +52,7 @@ const attr = [
     {
         key: 'colors',
         describe: 'icon 的颜色。若传入数组，共有 3 个元素，为 3 个分段所对应的颜色；若传入对象，可自定义分段，键名为分段的界限值，键值为对应的颜色',
-        type: 'object',
+        type: 'array / object',
         default: "['#f7ba2a', '#f7ba2a', '#f7ba2a']"
     },
     {
@@ -70,7 +70,7 @@ const attr = [
     {
         key: 'icons',
         describe: '图标组件 若传入数组，则需要传入 3 个元素，分别为 3 个部分所对应的类名；若传入对象，则可自定义分段，键名为分段的界限值，键值为对应的类名',
-        type: 'object',
+        type: 'array / object',
         default: '[StarFilled, StarFilled, StarFilled]'
     },
     {
@@ -113,7 +113,7 @@ const attr = [
         key: 'score-template',
         describe: '分数显示模板',
         type: 'string',
-        default: '—'
+        default: '{value}'
     },
     {
         key: 'clearable',
@@ -148,10 +148,10 @@ const event = [
     }
 ];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/rate.html#attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/rate.html#rate-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/rate.html#events';
+    x.link = 'https://element-plus.org/zh-CN/component/rate.html#rate-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-rate',

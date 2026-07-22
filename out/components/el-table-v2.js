@@ -68,6 +68,12 @@ const attr = [
         default: 50
     },
     {
+        key: 'row-event-handlers',
+        describe: '附加到每一行的事件处理器的集合',
+        type: 'object<RowEventHandlers>',
+        default: '—'
+    },
+    {
         key: 'cell-props',
         describe: '每个单元格 cell 的自定义 props (除了 header cell 以外)',
         type: 'object / Function<CellPropsGetter>',
@@ -186,44 +192,39 @@ const event = [
     {
         key: '@column-sort',
         describe: '列排序时调用',
-        type: 'object<ColumnSortParam>'
+        type: 'function'
     },
     {
         key: '@expanded-rows-change',
         describe: '行展开状态改变时触发',
-        type: 'KeyType[]'
+        type: 'function'
     },
     {
         key: '@end-reached',
-        describe: '到达表格末尾时触发',
-        type: '—'
+        describe: '到达表格末尾时触发。回调包含剩余距离，它通常是滚动条高度',
+        type: 'function'
     },
     {
         key: '@scroll',
         describe: '表格被用户滚动后触发',
-        type: 'object<ScrollParams>'
+        type: 'function'
     },
     {
         key: '@rows-rendered',
         describe: '当行被渲染后触发',
-        type: 'object<RowsRenderedParams>'
+        type: 'function'
     },
     {
         key: '@row-expand',
         describe: '点击箭头图标展开/折叠树节点时触发',
-        type: 'object<RowExpandParams>'
-    },
-    {
-        key: '@row-event-handlers',
-        describe: '当每行添加了一系列事件处理器时触发',
-        type: 'object<RowEventHandlers>'
+        type: 'function'
     }
 ];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/table-v2.html#tablev2-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/table-v2.html#tablev2-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/table-v2.html#tablev2-events';
+    x.link = 'https://element-plus.org/zh-CN/component/table-v2.html#tablev2-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-table-v2',

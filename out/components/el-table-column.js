@@ -70,13 +70,13 @@ const attr = [
     {
         key: 'sort-by',
         describe: '指定数据排序的属性，仅当 sortable=true 且未设置 sort-method 时有效。可传数组，按优先级排序',
-        type: 'Function / string / object',
+        type: 'Function / string / array',
         default: '—'
     },
     {
         key: 'sort-orders',
         describe: '数据在排序时所使用排序策略的轮转顺序，仅当 sortable 为 true 时有效。随着用户点击表头，该列依次按照数组中元素的顺序进行排序',
-        type: 'object',
+        type: 'array',
         default: "['ascending', 'descending', null]"
     },
     {
@@ -166,7 +166,7 @@ const attr = [
     {
         key: 'filtered-value',
         describe: '选中的数据过滤项。如果需要自定义表头过滤的渲染方式，可能会需要此属性',
-        type: 'object',
+        type: 'array',
         default: '—'
     },
     {

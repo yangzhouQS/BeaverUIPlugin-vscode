@@ -19,7 +19,7 @@ const attr = [
     },
     {
         key: 'status',
-        describe: '设置当前步骤的状态， 不设置则根据 steps 确定状态',
+        describe: '设置当前步骤的状态，不设置则根据 steps 确定状态',
         type: 'enum',
         default: "''"
     }
@@ -28,11 +28,11 @@ const attr = [
 const event: any = [];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/steps.html#step-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/steps.html#step-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = '';
+    x.link = 'https://element-plus.org/zh-CN/component/steps.html#step-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

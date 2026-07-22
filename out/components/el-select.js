@@ -20,6 +20,18 @@ const attr = [
         default: 'false'
     },
     {
+        key: 'options',
+        describe: '选项的数据源，value 的 key 和 label 和 disabled 可以通过 props 自定义。版本 2.10.5 引入。',
+        type: 'array',
+        default: '—'
+    },
+    {
+        key: 'props',
+        describe: 'options 的配置。版本 2.10.5 引入。',
+        type: 'object',
+        default: '—'
+    },
+    {
         key: 'disabled',
         describe: '是否禁用。',
         type: 'boolean',
@@ -56,10 +68,22 @@ const attr = [
         default: 'false'
     },
     {
+        key: 'tag-tooltip',
+        describe: '折叠标签工具提示的配置对象。要使用此项，collapse-tags 和 collapse-tags-tooltip 必须为 true。版本 2.13.3 引入。',
+        type: 'object',
+        default: '{}'
+    },
+    {
         key: 'multiple-limit',
         describe: 'multiple 属性设置为 true 时，代表多选场景下用户最多可以选择的项目数，为 0 则不限制。',
         type: 'number',
         default: '0'
+    },
+    {
+        key: 'id',
+        describe: '原生 input 的 id。',
+        type: 'string',
+        default: '—'
     },
     {
         key: 'name',
@@ -110,6 +134,12 @@ const attr = [
         default: 'false'
     },
     {
+        key: 'debounce',
+        describe: '远程搜索时的防抖延迟（以毫秒为单位）。版本 2.11.7 引入。',
+        type: 'number',
+        default: '300'
+    },
+    {
         key: 'remote-method',
         describe: '自定义远程搜索方法。',
         type: 'function',
@@ -147,9 +177,15 @@ const attr = [
     },
     {
         key: 'popper-class',
-        describe: '选择器下拉菜单的自定义类名。',
+        describe: '为 Select 下拉菜单和标签提示设置自定义类名。',
         type: 'string',
         default: "''"
+    },
+    {
+        key: 'popper-style',
+        describe: '为 Select 下拉菜单和标签提示设置自定义样式。版本 2.11.0 引入。',
+        type: 'string / object',
+        default: '—'
     },
     {
         key: 'reserve-keyword',
@@ -172,7 +208,7 @@ const attr = [
     {
         key: 'append-to',
         describe: '下拉框挂载到哪个 DOM 元素。版本 2.8.4 引入。',
-        type: 'string',
+        type: 'CSSSelector / HTMLElement',
         default: '—'
     },
     {
@@ -190,7 +226,7 @@ const attr = [
     {
         key: 'clear-icon',
         describe: '自定义清除图标。',
-        type: 'string / object',
+        type: 'string / Component',
         default: 'CircleClose'
     },
     {
@@ -202,7 +238,7 @@ const attr = [
     {
         key: 'suffix-icon',
         describe: '自定义后缀图标组件。',
-        type: 'string / object',
+        type: 'string / Component',
         default: 'ArrowDown'
     },
     {
@@ -325,13 +361,18 @@ const event = [
         key: '@popup-scroll',
         describe: '下拉滚动时触发（版本 2.9.4）',
         type: 'function'
+    },
+    {
+        key: '@end-reached',
+        describe: '下拉滚动到结束时触发（版本 2.14.0）',
+        type: 'function'
     }
 ];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/select.html#select-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/select.html#select-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/select.html#select-events';
+    x.link = 'https://element-plus.org/zh-CN/component/select.html#select-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-select',

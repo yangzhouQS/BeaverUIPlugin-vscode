@@ -5,25 +5,25 @@ const attr = [
         key: 'type',
         describe: 'Tag 的类型，可选值: primary',
         type: 'enum',
-        default: '—'
+        default: 'primary'
     },
     {
         key: 'closable',
         describe: '是否可关闭',
         type: 'boolean',
-        default: false
+        default: 'false'
     },
     {
         key: 'disable-transitions',
         describe: '是否禁用渐变动画',
         type: 'boolean',
-        default: false
+        default: 'false'
     },
     {
         key: 'hit',
         describe: '是否有边框描边',
         type: 'boolean',
-        default: false
+        default: 'false'
     },
     {
         key: 'color',
@@ -47,7 +47,7 @@ const attr = [
         key: 'round',
         describe: 'Tag 是否为圆形',
         type: 'boolean',
-        default: false
+        default: 'false'
     }
 ];
 const event = [
@@ -63,10 +63,10 @@ const event = [
     }
 ];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/tag.html#tag-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/tag.html#tag-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/tag.html#tag-events';
+    x.link = 'https://element-plus.org/zh-CN/component/tag.html#tag-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-tag',

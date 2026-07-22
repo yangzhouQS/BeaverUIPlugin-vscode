@@ -15,7 +15,7 @@ const attr = [
         key: 'inline',
         describe: '行内表单模式。',
         type: 'boolean',
-        default: false
+        default: 'false'
     },
     {
         key: 'label-position',
@@ -26,7 +26,7 @@ const attr = [
     {
         key: 'label-width',
         describe: '标签的长度，例如 "50px"。作为 Form 直接子元素的 form-item 会继承该值。可以使用 auto。',
-        type: ['string', 'number'],
+        type: 'string / number',
         default: "''"
     },
     {
@@ -39,7 +39,7 @@ const attr = [
         key: 'hide-required-asterisk',
         describe: '是否隐藏必填字段标签旁边的红色星号。',
         type: 'boolean',
-        default: false
+        default: 'false'
     },
     {
         key: 'require-asterisk-position',
@@ -51,25 +51,25 @@ const attr = [
         key: 'show-message',
         describe: '是否显示校验错误信息。',
         type: 'boolean',
-        default: true
+        default: 'true'
     },
     {
         key: 'inline-message',
         describe: '是否以行内形式展示校验信息。',
         type: 'boolean',
-        default: false
+        default: 'false'
     },
     {
         key: 'status-icon',
         describe: '是否在输入框中显示校验结果反馈图标。',
         type: 'boolean',
-        default: false
+        default: 'false'
     },
     {
         key: 'validate-on-rule-change',
         describe: '是否在 rules 属性改变后立即触发一次验证。',
         type: 'boolean',
-        default: true
+        default: 'true'
     },
     {
         key: 'size',
@@ -79,21 +79,21 @@ const attr = [
     },
     {
         key: 'disabled',
-        describe: '是否禁用该表单内的所有组件。如果设置为 true, 它将覆盖内部组件的 disabled 属性。',
+        describe: '是否禁用该表单内的所有组件。在 2.12.0 以前，如果设置为 true，它将覆盖内部组件的 disabled 属性。在 2.12.0 之后，内部组件的配置优先。',
         type: 'boolean',
-        default: false
+        default: 'false'
     },
     {
         key: 'scroll-to-error',
         describe: '当校验失败时，滚动到第一个错误表单项。',
         type: 'boolean',
-        default: false
+        default: 'false'
     },
     {
         key: 'scroll-into-view-options',
         describe: '当校验有失败结果时，滚动到第一个失败的表单项目。可通过 scrollIntoView 配置（2.3.2）。',
-        type: ['object', 'boolean'],
-        default: '—'
+        type: 'object / boolean',
+        default: 'true'
     }
 ];
 
@@ -106,7 +106,7 @@ const event = [
 ];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/form.html#form-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/form.html#form-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {

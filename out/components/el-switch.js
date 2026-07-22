@@ -106,7 +106,7 @@ const attr = [
     {
         key: 'before-change',
         describe: 'switch 状态改变前的钩子， 返回 false 或者返回 Promise 且被 reject 则停止切换',
-        type: 'boolean / Function',
+        type: 'function',
         default: '—'
     },
     {
@@ -156,15 +156,14 @@ const event = [
     {
         key: '@change',
         describe: 'switch 状态发生变化时的回调函数',
-        type: 'function',
-        default: '—'
+        type: 'function'
     }
 ];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/switch.html#attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/switch.html#switch-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/switch.html#%E4%BA%8B%E4%BB%B6';
+    x.link = 'https://element-plus.org/zh-CN/component/switch.html#switch-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-switch',

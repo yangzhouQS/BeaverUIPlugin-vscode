@@ -118,6 +118,18 @@ const attr = [
         describe: '清空选项的值 (v2.7.0及以上)，参考 config-provider',
         type: 'string / number / boolean / Function',
         default: '—'
+    },
+    {
+        key: 'popper-class',
+        describe: 'TimeSelect 下拉菜单的自定义类名',
+        type: 'string',
+        default: "''"
+    },
+    {
+        key: 'popper-style',
+        describe: 'TimeSelect 下拉菜单的自定义样式',
+        type: 'string / object',
+        default: '—'
     }
 ];
 
@@ -145,11 +157,11 @@ const event = [
 ];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/time-select.html#attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/time-select.html#time-select-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/time-select.html#events';
+    x.link = 'https://element-plus.org/zh-CN/component/time-select.html#time-select-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

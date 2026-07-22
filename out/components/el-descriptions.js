@@ -40,16 +40,16 @@ const attr = [
     {
         key: 'label-width',
         describe: '每一列的标签宽度。自 2.8.8 版本起支持。',
-        type: 'string | number',
-        default: "''"
+        type: 'string / number',
+        default: '—'
     }
 ];
 const event = [];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/descriptions.html#descriptions-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/descriptions.html#descriptions-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/descriptions.html#descriptions-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/descriptions.html#descriptions-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-descriptions',

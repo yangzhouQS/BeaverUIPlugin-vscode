@@ -14,6 +14,12 @@ const attr = [
         default: '—'
     },
     {
+        key: 'popper-style',
+        describe: '为 popper 添加自定义样式（2.11.5 版本新增）。',
+        type: 'string / object',
+        default: '—'
+    },
+    {
         key: 'show-timeout',
         describe: '子菜单出现之前的延迟，(继承 menu 的 show-timeout 配置)。',
         type: 'number',
@@ -70,10 +76,10 @@ const attr = [
 ];
 const event = [];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/menu.html#submenu-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/menu.html#submenu-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/menu.html#submenu-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/menu.html#submenu-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-sub-menu',

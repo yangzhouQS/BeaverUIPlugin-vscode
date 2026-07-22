@@ -46,8 +46,8 @@ const attr = [
     {
         key: 'offset',
         describe: 'badge 的偏移量（从 2.7.0 版本开始支持）。',
-        type: '[ number , number ]',
-        default: '—'
+        type: 'array',
+        default: '[0, 0]'
     },
     {
         key: 'badge-style',

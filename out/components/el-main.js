@@ -1,19 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const attr = [
-    {
-        key: 'direction',
-        describe: '子元素的排列方向',
-        type: 'enum',
-        default: '子元素中有 el-header 或 el-footer 时为 vertical，否则为 horizontal'
-    }
-];
+const attr = [];
 const event = [];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/container.html#container-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/container.html#main-%E5%B1%9E%E6%80%A7';
+});
+event.forEach((x) => {
+    x.link = 'https://element-plus.org/zh-CN/component/container.html#main-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
-    key: 'el-container',
+    key: 'el-main',
     attr,
     event
 };

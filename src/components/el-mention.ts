@@ -6,9 +6,15 @@ const attr = [
         default: '[]'
     },
     {
+        key: 'props',
+        describe: 'options 的配置',
+        type: 'object',
+        default: "{value: 'value', label: 'label', disabled: 'disabled'}"
+    },
+    {
         key: 'prefix',
         describe: '触发字段的前缀，字符串长度必须且只能为 1',
-        type: 'string | array',
+        type: 'string / array',
         default: "'@'"
     },
     {
@@ -20,13 +26,13 @@ const attr = [
     {
         key: 'filter-option',
         describe: '定制筛选器选项逻辑',
-        type: 'false | Function',
+        type: 'false / function',
         default: '—'
     },
     {
         key: 'placement',
         describe: '设置弹出位置',
-        type: 'string',
+        type: 'enum',
         default: "'bottom'"
     },
     {
@@ -74,7 +80,13 @@ const attr = [
     {
         key: 'popper-class',
         describe: '自定义浮层类名',
-        type: 'string',
+        type: 'string / object',
+        default: "''"
+    },
+    {
+        key: 'popper-style',
+        describe: '自定义浮层样式',
+        type: 'string / object',
         default: '—'
     },
     {
@@ -95,15 +107,20 @@ const event = [
         key: '@select',
         describe: '当用户选择选项时触发',
         type: 'function'
+    },
+    {
+        key: '@whole-remove',
+        describe: '当整个 mention 被移除，且 whole 为 true 或 check-is-whole 为 true 时触发',
+        type: 'function'
     }
 ];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/mention.html#%E5%B1%9E%E6%80%A7';
+    x.link = 'https://element-plus.org/zh-CN/component/mention.html#mention-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/mention.html#%E4%BA%8B%E4%BB%B6';
+    x.link = 'https://element-plus.org/zh-CN/component/mention.html#mention-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

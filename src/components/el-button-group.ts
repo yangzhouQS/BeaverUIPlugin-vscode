@@ -10,6 +10,12 @@ const attr = [
         describe: '用于控制该按钮组内按钮的类型',
         type: 'enum',
         default: '—'
+    },
+    {
+        key: 'direction',
+        describe: '展示的方向，2.11.9版本开始支持',
+        type: 'enum',
+        default: 'horizontal'
     }
 ];
 

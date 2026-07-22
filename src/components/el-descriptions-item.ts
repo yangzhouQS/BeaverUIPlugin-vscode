@@ -20,20 +20,20 @@ const attr = [
     {
         key: 'width',
         describe: '列的宽度，不同行相同列的宽度按最大值设定（如无 border，宽度包含标签与内容）。',
-        type: 'string | number',
+        type: 'string / number',
         default: "''"
     },
     {
         key: 'min-width',
         describe: '列的最小宽度，与 width 的区别是 width 是固定的，min-width 会把剩余宽度按比例分配给设置了 min-width 的列（如无 border，宽度包含标签与内容）。',
-        type: 'string | number',
+        type: 'string / number',
         default: "''"
     },
     {
         key: 'label-width',
         describe: '列标签宽，如果未设置，它将与列宽度相同。比 Descriptions 的 label-width 优先级高。自 2.8.8 版本起支持。',
-        type: 'string | number',
-        default: "''"
+        type: 'string / number',
+        default: '—'
     },
     {
         key: 'align',
@@ -45,7 +45,7 @@ const attr = [
         key: 'label-align',
         describe: '列的标签对齐方式，若不设置该项，则使用内容的对齐方式（如无 border，请使用 align 参数）。',
         type: 'enum',
-        default: "''"
+        default: '—'
     },
     {
         key: 'class-name',
@@ -64,11 +64,11 @@ const attr = [
 const event: any = [];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/descriptions.html#descriptionsitem-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/descriptions.html#descriptionsitem-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/descriptions.html#descriptionsitem-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/descriptions.html#descriptionsitem-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

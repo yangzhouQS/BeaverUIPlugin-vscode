@@ -11,13 +11,13 @@ const attr = [
         key: 'size',
         describe: 'Avatar 大小。',
         type: 'number / enum',
-        default: 'default'
+        default: '—'
     },
     {
         key: 'shape',
         describe: 'Avatar 形状。',
         type: 'enum',
-        default: 'circle'
+        default: '—'
     },
     {
         key: 'src',
@@ -52,10 +52,10 @@ const event = [
     }
 ];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/avatar.html#attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/avatar.html#avatar-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/avatar.html#events';
+    x.link = 'https://element-plus.org/zh-CN/component/avatar.html#avatar-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-avatar',

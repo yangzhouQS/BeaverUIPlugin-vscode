@@ -28,7 +28,7 @@ const attr = [
 ];
 const event = [];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/layout.html#row-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/layout.html#row-%E5%B1%9E%E6%80%A7';
 });
 exports.default = {
     key: 'el-row',

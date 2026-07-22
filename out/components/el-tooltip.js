@@ -74,6 +74,12 @@ const attr = [
         default: '{}'
     },
     {
+        key: 'arrow-offset',
+        describe: '控制 Tooltip 的箭头相对于弹出窗口的偏移（2.9.10版本开始支持）',
+        type: 'number',
+        default: '5'
+    },
+    {
         key: 'show-after',
         describe: '在触发后多久显示内容，单位毫秒',
         type: 'number',
@@ -104,6 +110,12 @@ const attr = [
         default: '—'
     },
     {
+        key: 'popper-style',
+        describe: '为 Tooltip 的 popper 添加自定义样式',
+        type: 'string / object',
+        default: '—'
+    },
+    {
         key: 'enterable',
         describe: '鼠标是否可进入到 tooltip 中',
         type: 'boolean',
@@ -118,7 +130,7 @@ const attr = [
     {
         key: 'trigger',
         describe: '如何触发 Tooltip',
-        type: 'enum',
+        type: 'enum / array',
         default: 'hover'
     },
     {
@@ -136,7 +148,7 @@ const attr = [
     {
         key: 'trigger-keys',
         describe: '当鼠标点击或者聚焦在触发元素上时， 可以定义一组键盘按键并且通过它们来控制 Tooltip 的显示',
-        type: 'Array',
+        type: 'array',
         default: "['Enter','Space']"
     },
     {
@@ -150,14 +162,41 @@ const attr = [
         describe: '和 aria-label 属性保持一致',
         type: 'string',
         default: '—'
+    },
+    {
+        key: 'focus-on-target',
+        describe: '当通过悬停触发提示时，是否聚焦触发元素，以提升可访问性（2.11.2版本开始支持）',
+        type: 'boolean',
+        default: 'false'
     }
 ];
-const event = [];
+const event = [
+    {
+        key: '@before-show',
+        describe: '在显示提示框之前触发，将触发原因作为参数传入',
+        type: 'function'
+    },
+    {
+        key: '@show',
+        describe: '在提示框显示时触发，将触发原因作为参数传入',
+        type: 'function'
+    },
+    {
+        key: '@before-hide',
+        describe: '在提示框隐藏之前触发，将触发原因作为参数传入',
+        type: 'function'
+    },
+    {
+        key: '@hide',
+        describe: '在提示框隐藏时触发，将触发原因作为参数传入',
+        type: 'function'
+    }
+];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/tooltip.html#attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/tooltip.html#tooltip-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = '';
+    x.link = 'https://element-plus.org/zh-CN/component/tooltip.html#tooltip-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-tooltip',

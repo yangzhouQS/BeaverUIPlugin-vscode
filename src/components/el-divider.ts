@@ -22,7 +22,7 @@ const attr = [
 const event: any = [];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/divider.html#attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/divider.html#%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {

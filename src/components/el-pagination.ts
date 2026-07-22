@@ -74,7 +74,7 @@ const attr = [
     {
         key: 'page-sizes',
         describe: '每页显示个数选择器的选项设置。',
-        type: 'object',
+        type: 'array',
         default: '[10, 20, 30, 40, 50, 100]'
     },
     {
@@ -88,6 +88,12 @@ const attr = [
         describe: '每页显示个数选择器的下拉框类名。',
         type: 'string',
         default: "''"
+    },
+    {
+        key: 'popper-style',
+        describe: '每页显示个数选择器的下拉框样式。版本 2.11.5+。',
+        type: 'string / object',
+        default: '—'
     },
     {
         key: 'prev-text',
@@ -168,11 +174,11 @@ const event: any = [
 ];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/pagination.html#%E5%B1%9E%E6%80%A7';
+    x.link = 'https://element-plus.org/zh-CN/component/pagination.html#pagination-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/pagination.html#%E4%BA%8B%E4%BB%B6';
+    x.link = 'https://element-plus.org/zh-CN/component/pagination.html#pagination-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

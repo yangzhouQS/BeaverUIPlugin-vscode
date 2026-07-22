@@ -42,20 +42,44 @@ const attr = [
         default: 'bottom'
     },
     {
+        key: 'effect',
+        describe: 'Tooltip 主题，内置了 dark / light 两种主题。',
+        type: 'enum / string',
+        default: 'light'
+    },
+    {
         key: 'trigger',
         describe: '触发下拉的行为。',
-        type: 'enum',
+        type: 'enum / array',
         default: 'hover'
     },
     {
-        key: 'triggerKeys',
+        key: 'trigger-keys',
         describe: '指定键盘上哪些按键可以触发操作（2.9.1 版本新增）。',
         type: 'array',
         default: "['Enter', 'Space', 'ArrowDown', 'NumpadEnter']"
     },
     {
+        key: 'virtual-triggering',
+        describe: '是否启用虚拟触发器（2.11.3 版本新增）。',
+        type: 'boolean',
+        default: '—'
+    },
+    {
+        key: 'virtual-ref',
+        describe: '指示下拉框所依附的参考元素（2.11.3 版本新增）。',
+        type: 'HTMLElement',
+        default: '—'
+    },
+    {
         key: 'hide-on-click',
         describe: '是否在点击菜单项后隐藏菜单。',
+        type: 'boolean',
+        default: 'true'
+    },
+    {
+        key: 'show-arrow',
+        describe: 'tooltip 的内容是否有箭头（2.11.3 版本新增）。',
         type: 'boolean',
         default: 'true'
     },
@@ -86,8 +110,14 @@ const attr = [
     {
         key: 'popper-class',
         describe: '自定义浮层类名。',
-        type: 'string',
+        type: 'string / object',
         default: "''"
+    },
+    {
+        key: 'popper-style',
+        describe: '自定义浮层样式（2.11.5 版本新增）。',
+        type: 'string / object',
+        default: '—'
     },
     {
         key: 'popper-options',
@@ -100,6 +130,12 @@ const attr = [
         describe: '是否将下拉列表插入至 body 元素（2.2.20 版本新增）。',
         type: 'boolean',
         default: 'true'
+    },
+    {
+        key: 'append-to',
+        describe: 'dropdown 的内容将挂载到哪一个元素上（2.13.0 版本新增）。',
+        type: 'CSSSelector / HTMLElement',
+        default: '—'
     },
     {
         key: 'persistent',
@@ -128,11 +164,11 @@ const event: any = [
 ];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/dropdown.html#dropdown-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/dropdown.html#dropdown-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/dropdown.html#dropdown-events';
+    x.link = 'https://element-plus.org/zh-CN/component/dropdown.html#dropdown-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

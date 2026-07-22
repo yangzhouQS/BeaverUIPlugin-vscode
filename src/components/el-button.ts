@@ -48,6 +48,12 @@ const attr = [
         default: 'false'
     },
     {
+        key: 'dashed',
+        describe: '是否是虚线按钮，2.13.3版本开始支持',
+        type: 'boolean',
+        default: 'false'
+    },
+    {
         key: 'loading',
         describe: '是否为加载中状态',
         type: 'boolean',
@@ -87,7 +93,7 @@ const attr = [
         key: 'auto-insert-space',
         describe: '自动在两个中文字符之间插入空格',
         type: 'boolean',
-        default: '—'
+        default: 'false'
     },
     {
         key: 'color',

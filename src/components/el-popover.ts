@@ -1,9 +1,15 @@
 const attr = [
     {
         key: 'trigger',
-        describe: '触发方式',
-        type: 'enum',
+        describe: '触发方式，在受控模式下无效',
+        type: 'enum / array',
         default: 'hover'
+    },
+    {
+        key: 'trigger-keys',
+        describe: '当通过鼠标点击使触发元素获得焦点时，可以定义一组键盘按键代码，通过键盘控制气泡框的显示，在受控模式下无效',
+        type: 'array',
+        default: "['Enter','Space']"
     },
     {
         key: 'title',
@@ -44,13 +50,13 @@ const attr = [
     {
         key: 'visible',
         describe: 'Popover 是否显示',
-        type: 'boolean',
+        type: 'boolean / null',
         default: 'null'
     },
     {
         key: 'v-model:visible',
         describe: 'Popover 是否显示',
-        type: 'boolean',
+        type: 'boolean / null',
         default: 'null'
     },
     {
@@ -118,6 +124,12 @@ const attr = [
         describe: '是否将 popover 的下拉列表插入至 body 元素',
         type: 'boolean',
         default: 'true'
+    },
+    {
+        key: 'append-to',
+        describe: '指示 popover 的内容将附加到哪个网页元素上',
+        type: 'string / HTMLElement',
+        default: 'body'
     },
     {
         key: 'persistent',

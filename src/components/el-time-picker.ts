@@ -78,6 +78,30 @@ const attr = [
         default: "''"
     },
     {
+        key: 'popper-style',
+        describe: '为 TimePicker 的下拉菜单自定义样式',
+        type: 'string / object',
+        default: '—'
+    },
+    {
+        key: 'popper-options',
+        describe: '自定义 popper 选项，更多请参考 popper.js',
+        type: 'object',
+        default: '{}'
+    },
+    {
+        key: 'fallback-placements',
+        describe: 'Tooltip 可用的 positions，2.8.4版本开始支持，请查看 popper.js 文档',
+        type: 'array',
+        default: "['bottom', 'top', 'right', 'left']"
+    },
+    {
+        key: 'placement',
+        describe: '下拉框出现的位置，2.8.4版本开始支持',
+        type: 'Placement',
+        default: 'bottom'
+    },
+    {
         key: 'range-separator',
         describe: '选择范围时的分隔符',
         type: 'string',
@@ -85,26 +109,26 @@ const attr = [
     },
     {
         key: 'format',
-        describe: '显示在输入框中的格式',
+        describe: '显示在输入框中的格式，参见 date formats',
         type: 'string',
-        default: 'see date formats'
+        default: '—'
     },
     {
         key: 'default-value',
         describe: '可选，选择器打开时默认显示的时间',
-        type: 'Date / object',
+        type: 'date / array',
         default: '—'
     },
     {
         key: 'value-format',
-        describe: '可选，绑定值的格式。不指定则绑定值为 Date 对象',
+        describe: '可选，绑定值的格式。不指定则绑定值为 Date 对象，参见 date formats',
         type: 'string',
-        default: '参考 日期格式'
+        default: '—'
     },
     {
         key: 'id',
         describe: '等价于原生 input id 属性',
-        type: 'string / object',
+        type: 'string / array',
         default: '—'
     },
     {
@@ -172,6 +196,12 @@ const attr = [
         describe: '清空选项的值 参考 config-provider (v2.7.0及以上)',
         type: 'string / number / boolean / Function',
         default: '—'
+    },
+    {
+        key: 'save-on-blur',
+        describe: '当未选择任何值时，是否在获得焦点时自动填充为当前时间，2.13.4版本开始支持',
+        type: 'boolean',
+        default: 'true'
     },
     {
         key: 'label',

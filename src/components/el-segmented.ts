@@ -18,6 +18,12 @@ const attr = [
         default: '[]'
     },
     {
+        key: 'props',
+        describe: '选项的配置，见下表',
+        type: 'object',
+        default: '—'
+    },
+    {
         key: 'size',
         describe: '组件大小。',
         type: 'enum',
@@ -27,7 +33,7 @@ const attr = [
         key: 'block',
         describe: '是否撑满父元素宽度。',
         type: 'boolean',
-        default: '—'
+        default: 'false'
     },
     {
         key: 'disabled',
@@ -76,11 +82,11 @@ const event: any = [
 ];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/segmented.html#%E5%B1%9E%E6%80%A7';
+    x.link = 'https://element-plus.org/zh-CN/component/segmented.html#segmented-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/segmented.html#%E4%BA%8B%E4%BB%B6';
+    x.link = 'https://element-plus.org/zh-CN/component/segmented.html#segmented-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

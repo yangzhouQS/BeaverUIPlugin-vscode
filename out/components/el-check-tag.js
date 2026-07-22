@@ -5,19 +5,19 @@ const attr = [
         key: 'checked',
         describe: '是否选中，可与 v-model 绑定',
         type: 'boolean',
-        default: false
+        default: 'false'
     },
     {
         key: 'v-model:checked',
         describe: '是否选中，支持 v-model 绑定',
         type: 'boolean',
-        default: false
+        default: 'false'
     },
     {
         key: 'disabled',
         describe: '是否禁用，2.8.2 版本新增',
         type: 'boolean',
-        default: false
+        default: 'false'
     },
     {
         key: 'type',
@@ -34,10 +34,10 @@ const event = [
     }
 ];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/tag.html#checktag-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/tag.html#check-tag-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/tag.html#checktag-events';
+    x.link = 'https://element-plus.org/zh-CN/component/tag.html#check-tag-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-check-tag',

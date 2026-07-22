@@ -56,7 +56,7 @@ const attr = [
     {
         key: 'clear-icon',
         describe: '自定义清除图标',
-        type: 'string / object',
+        type: 'string / Component',
         default: 'CircleClose'
     },
     {
@@ -70,6 +70,12 @@ const attr = [
         describe: '多选时可被选择的最大数目。 当被设置为0时，可被选择的数目不设限。',
         type: 'number',
         default: '0'
+    },
+    {
+        key: 'id',
+        describe: '原生 input 的 id',
+        type: 'string',
+        default: '—'
     },
     {
         key: 'name',
@@ -109,7 +115,7 @@ const attr = [
     },
     {
         key: 'filter-method',
-        describe: '自定义筛选方法',
+        describe: '自定义筛选方法，第一个参数是当前输入的值。当 filterable 设置为 true 时才会生效',
         type: 'function',
         default: '—'
     },
@@ -132,6 +138,12 @@ const attr = [
         default: 'true'
     },
     {
+        key: 'default-first-option',
+        describe: '是否在输入框按下回车时，选择第一个匹配项。需配合 filterable 或 remote 使用',
+        type: 'boolean',
+        default: 'false'
+    },
+    {
         key: 'no-match-text',
         describe: '搜索条件无匹配时显示的文字，也可以使用 empty 插槽设置，默认是 “No matching data”',
         type: 'string',
@@ -145,9 +157,15 @@ const attr = [
     },
     {
         key: 'popper-class',
-        describe: '选择器下拉菜单的自定义类名',
-        type: 'string',
+        describe: 'Select 下拉菜单和标签提示的自定义类名',
+        type: 'string / object',
         default: "''"
+    },
+    {
+        key: 'popper-style',
+        describe: 'Select 下拉菜单和标签提示的自定义样式。版本 2.11.0',
+        type: 'string / object',
+        default: '—'
     },
     {
         key: 'teleported',
@@ -158,7 +176,7 @@ const attr = [
     {
         key: 'append-to',
         describe: '下拉框挂载到哪个 DOM 元素。 版本 2.8.8',
-        type: 'string',
+        type: 'string / HTMLElement',
         default: '—'
     },
     {
@@ -186,6 +204,12 @@ const attr = [
         default: 'true'
     },
     {
+        key: 'suffix-icon',
+        describe: '自定义后缀图标组件。版本 2.9.8',
+        type: 'string / Component',
+        default: 'ArrowDown'
+    },
+    {
         key: 'height',
         describe: '下拉菜单的高度，每一个选项为 34px',
         type: 'number',
@@ -196,6 +220,12 @@ const attr = [
         describe: '下拉项的高度',
         type: 'number',
         default: '34'
+    },
+    {
+        key: 'estimated-option-height',
+        describe: '控制虚拟列表大小模式：未定义时使用 item-height 的固定项目高度；提供时使用动态项目大小，并将此值作为估计的项目高度',
+        type: 'number',
+        default: '—'
     },
     {
         key: 'scrollbar-always-on',
@@ -210,10 +240,22 @@ const attr = [
         default: 'false'
     },
     {
+        key: 'debounce',
+        describe: '远程搜索时的防抖延迟（以毫秒为单位）。版本 2.11.7',
+        type: 'number',
+        default: '300'
+    },
+    {
         key: 'remote-method',
         describe: '当输入值发生变化时触发的函数。它的参数就是当前的输入值。当 filterable 设置为 true 时才会生效',
         type: 'function',
         default: '—'
+    },
+    {
+        key: 'remote-show-suffix',
+        describe: '远程搜索时是否显示后缀图标',
+        type: 'boolean',
+        default: 'false'
     },
     {
         key: 'validate-event',
@@ -250,6 +292,12 @@ const attr = [
         describe: '当鼠标悬停于折叠标签的文本时，是否显示所有选中的标签。 只有当 collapse-tags 设置为 true 时才会生效。版本 2.3.0',
         type: 'boolean',
         default: 'false'
+    },
+    {
+        key: 'tag-tooltip',
+        describe: '折叠标签工具提示的配置对象。要使用此项，collapse-tags 和 collapse-tags-tooltip 必须为 true。版本 2.13.3',
+        type: 'object',
+        default: '{}'
     },
     {
         key: 'max-collapse-tags',
@@ -305,47 +353,46 @@ const event = [
     {
         key: '@change',
         describe: '当所选值更改时触发，参数是当前选中的值',
-        type: 'function',
-        default: '—'
+        type: 'function'
     },
     {
         key: '@visible-change',
         describe: '当下拉菜单出现/消失时触发器, 当它出现时, 参数将是 true, 否则将是 false',
-        type: 'function',
-        default: '—'
+        type: 'function'
     },
     {
         key: '@remove-tag',
         describe: '当一个标签在多个模式下被移除时触发，参数将被移除标签值',
-        type: 'function',
-        default: '—'
+        type: 'function'
     },
     {
         key: '@clear',
         describe: '可清空的单选模式下用户点击清空按钮时触发',
-        type: 'function',
-        default: '—'
+        type: 'function'
     },
     {
         key: '@blur',
         describe: '当选择器的输入框失去焦点时触发',
-        type: 'function',
-        default: '—'
+        type: 'function'
     },
     {
         key: '@focus',
         describe: '当选择器的输入框获得焦点时触发',
-        type: 'function',
-        default: '—'
+        type: 'function'
+    },
+    {
+        key: '@end-reached',
+        describe: '下拉滚动到结束时触发。版本 2.14.0',
+        type: 'function'
     }
 ];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/select-v2.html#attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/select-v2.html#select-v2-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/select-v2.html#%E4%BA%8B%E4%BB%B6';
+    x.link = 'https://element-plus.org/zh-CN/component/select-v2.html#select-v2-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

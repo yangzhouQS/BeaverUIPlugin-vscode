@@ -3,7 +3,7 @@ const attr = [
         key: 'alignment',
         describe: '对齐的方式',
         type: 'enum',
-        default: 'align-items-center'
+        default: 'center'
     },
     {
         key: 'class',

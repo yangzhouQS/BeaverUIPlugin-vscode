@@ -2,13 +2,13 @@ const attr = [
     {
         key: 'model-value',
         describe: '当前活动面板。在手风琴模式下，其类型是 string，在其他模式下是 array。',
-        type: 'string | array',
+        type: 'string / array',
         default: '[]'
     },
     {
         key: 'v-model',
         describe: '当前活动面板。在手风琴模式下，其类型是 string，在其他模式下是 array。（v-model 语法糖）',
-        type: 'string | array',
+        type: 'string / array',
         default: '[]'
     },
     {
@@ -16,6 +16,18 @@ const attr = [
         describe: '是否手风琴模式。',
         type: 'boolean',
         default: 'false'
+    },
+    {
+        key: 'expand-icon-position',
+        describe: '设置展开图标位置',
+        type: 'enum',
+        default: 'right'
+    },
+    {
+        key: 'before-collapse',
+        describe: '折叠状态更改之前的钩子。返回 false 或者返回 Promise 且被 reject 则停止切换',
+        type: 'function',
+        default: '—'
     }
 ];
 
@@ -28,11 +40,11 @@ const event: any = [
 ];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/collapse.html#collapse-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/collapse.html#collapse-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/collapse.html#collapse-events';
+    x.link = 'https://element-plus.org/zh-CN/component/collapse.html#collapse-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

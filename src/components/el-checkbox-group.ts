@@ -1,8 +1,14 @@
 const attr = [
     {
-        key: 'model-value / v-model',
+        key: 'model-value',
         describe: '绑定值',
-        type: 'object',
+        type: 'array',
+        default: '[]'
+    },
+    {
+        key: 'v-model',
+        describe: '绑定值',
+        type: 'array',
         default: '[]'
     },
     {
@@ -64,6 +70,24 @@ const attr = [
         describe: '原生 aria-label 属性，已弃用',
         type: 'string',
         default: '—'
+    },
+    {
+        key: 'options',
+        describe: '选项的数据源，value、label、disabled 的 key 可以通过 props 自定义，2.11.2版本开始支持',
+        type: 'array',
+        default: '—'
+    },
+    {
+        key: 'props',
+        describe: 'options 的配置，2.11.2版本开始支持',
+        type: 'object',
+        default: "{value: 'value', label: 'label', disabled: 'disabled'}"
+    },
+    {
+        key: 'type',
+        describe: '用于渲染选项的组件类型，2.11.5版本开始支持',
+        type: 'enum',
+        default: "'checkbox'"
     }
 ];
 
@@ -76,11 +100,11 @@ const event = [
 ];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/checkbox.html#checkboxgroup-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/checkbox.html#checkbox-group-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/checkbox.html#checkboxgroup-events';
+    x.link = 'https://element-plus.org/zh-CN/component/checkbox.html#checkbox-group-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

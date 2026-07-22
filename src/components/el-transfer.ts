@@ -2,19 +2,19 @@ const attr = [
     {
         key: 'model-value',
         describe: '选中项绑定值',
-        type: 'object',
+        type: 'array',
         default: '[]'
     },
     {
         key: 'v-model',
         describe: '选中项绑定值',
-        type: 'object',
+        type: 'array',
         default: '[]'
     },
     {
         key: 'data',
         describe: 'Transfer 的数据源',
-        type: 'object',
+        type: 'array',
         default: '[]'
     },
     {
@@ -44,19 +44,19 @@ const attr = [
     {
         key: 'titles',
         describe: '自定义列表标题',
-        type: 'object',
+        type: 'array',
         default: '[]'
     },
     {
         key: 'button-texts',
         describe: '自定义按钮文案',
-        type: 'object',
+        type: 'array',
         default: '[]'
     },
     {
         key: 'render-content',
         describe: '自定义数据项渲染函数',
-        type: 'object',
+        type: 'function',
         default: '—'
     },
     {
@@ -74,13 +74,13 @@ const attr = [
     {
         key: 'left-default-checked',
         describe: '初始状态下左侧列表的已勾选项的 key 数组',
-        type: 'object',
+        type: 'array',
         default: '[]'
     },
     {
         key: 'right-default-checked',
         describe: '初始状态下右侧列表的已勾选项的 key 数组',
-        type: 'object',
+        type: 'array',
         default: '[]'
     },
     {
@@ -88,6 +88,18 @@ const attr = [
         describe: '是否触发表单验证',
         type: 'boolean',
         default: 'true'
+    },
+    {
+        key: 'virtual-scroll',
+        describe: '是否启用虚拟滚动',
+        type: 'boolean',
+        default: 'false'
+    },
+    {
+        key: 'item-size',
+        describe: '虚拟滚动的列表项高度',
+        type: 'number',
+        default: '30'
     }
 ];
 
@@ -110,11 +122,11 @@ const event = [
 ];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/transfer.html#transfer-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/transfer.html#transfer-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/transfer.html#transfer-events';
+    x.link = 'https://element-plus.org/zh-CN/component/transfer.html#transfer-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

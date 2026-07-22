@@ -1,15 +1,15 @@
 const attr = [
     {
         key: 'target',
-        describe: '获取引导卡片指向的元素， 为空时居中于屏幕。 自2.5.2以来支持字符串和函数类型。 字符串类型是文档.querySelector的选择器。',
-        type: 'HTMLElement | string | Function',
+        describe: '获取引导卡片指向的元素，为空时居中于屏幕。自 2.5.2 起支持字符串和函数类型，字符串类型是 document.querySelector 的选择器',
+        type: 'string / HTMLElement / function',
         default: '—'
     },
     {
         key: 'show-arrow',
         describe: '是否显示箭头',
         type: 'boolean',
-        default: 'true'
+        default: '—'
     },
     {
         key: 'title',
@@ -31,15 +31,15 @@ const attr = [
     },
     {
         key: 'content-style',
-        describe: '为content自定义样式',
-        type: 'CSSProperties',
+        describe: '为 content 自定义样式',
+        type: 'object',
         default: '—'
     },
     {
         key: 'mask',
         describe: '是否启用蒙层，也可传入配置改变蒙层样式和填充色',
-        type: 'boolean | Object',
-        default: 'true'
+        type: 'boolean / object',
+        default: '—'
     },
     {
         key: 'type',
@@ -50,31 +50,31 @@ const attr = [
     {
         key: 'next-button-props',
         describe: '“下一步”按钮的属性',
-        type: 'Object',
+        type: 'object',
         default: '—'
     },
     {
         key: 'prev-button-props',
         describe: '“上一步”按钮的属性',
-        type: 'Object',
+        type: 'object',
         default: '—'
     },
     {
         key: 'scroll-into-view-options',
         describe: '是否支持当前元素滚动到视窗内，也可传入配置指定滚动视窗的相关参数，默认跟随 Tour 的 scrollIntoViewOptions 属性',
-        type: 'boolean | ScrollIntoViewOptions',
+        type: 'boolean / object',
         default: '—'
     },
     {
         key: 'show-close',
         describe: '是否显示关闭按钮',
         type: 'boolean',
-        default: 'true'
+        default: '—'
     },
     {
         key: 'close-icon',
-        describe: '自定义关闭图标，默认Close',
-        type: 'string | Component',
+        describe: '自定义关闭图标，默认 Close',
+        type: 'string / Component',
         default: '—'
     }
 ];
@@ -88,11 +88,11 @@ const event: any = [
 ];
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/tour.html#tourstep-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/tour.html#tour-step-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/tour.html#tourstep-events';
+    x.link = 'https://element-plus.org/zh-CN/component/tour.html#tour-step-%E4%BA%8B%E4%BB%B6';
 });
 
 export default {

@@ -96,6 +96,12 @@ const attr = [
         describe: '容器的 tabindex（2.8.3+）',
         type: 'number / string',
         default: '—'
+    },
+    {
+        key: 'distance',
+        describe: '触发到达底部事件的距离（像素）（2.10.5+）',
+        type: 'number',
+        default: '0'
     }
 ];
 const event = [
@@ -103,13 +109,18 @@ const event = [
         key: '@scroll',
         describe: '当触发滚动事件时，返回滚动的距离',
         type: 'function'
+    },
+    {
+        key: '@end-reached',
+        describe: '滚动条到达底部时触发',
+        type: 'function'
     }
 ];
 attr.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/scrollbar.html#attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/scrollbar.html#scrollbar-%E5%B1%9E%E6%80%A7';
 });
 event.forEach((x) => {
-    x.link = 'https://element-plus.org/zh-CN/component/scrollbar.html#events';
+    x.link = 'https://element-plus.org/zh-CN/component/scrollbar.html#scrollbar-%E4%BA%8B%E4%BB%B6';
 });
 exports.default = {
     key: 'el-scrollbar',

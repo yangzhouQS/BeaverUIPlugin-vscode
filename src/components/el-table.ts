@@ -84,6 +84,36 @@ const attr = [
         default: '—'
     },
     {
+        key: 'header-row-class-name',
+        describe: '表头行的 className 回调方法或固定 className',
+        type: 'Function | string',
+        default: '—'
+    },
+    {
+        key: 'header-row-style',
+        describe: '表头行的 style 回调方法或固定样式',
+        type: 'Function | object',
+        default: '—'
+    },
+    {
+        key: 'header-cell-class-name',
+        describe: '表头单元格的 className 回调方法或固定 className',
+        type: 'Function | string',
+        default: '—'
+    },
+    {
+        key: 'header-cell-style',
+        describe: '表头单元格的 style 回调方法或固定样式',
+        type: 'Function | object',
+        default: '—'
+    },
+    {
+        key: 'row-key',
+        describe: '行数据的 Key，用来优化 Table 的渲染；在使用 reserve-selection 功能与显示树形数据时为必填',
+        type: 'Function | string',
+        default: '—'
+    },
+    {
         key: 'empty-text',
         describe: '空数据时显示的文本内容，可通过 #empty 设置',
         type: 'string',
@@ -94,6 +124,12 @@ const attr = [
         describe: '是否默认展开所有行，仅对包含展开行或树形表格有效',
         type: 'boolean',
         default: 'false'
+    },
+    {
+        key: 'expand-row-keys',
+        describe: '设置当前展开行的 keys 数组，需先设置 row-key 属性',
+        type: 'array',
+        default: '—'
     },
     {
         key: 'default-sort',
@@ -114,6 +150,12 @@ const attr = [
         default: 'object'
     },
     {
+        key: 'append-filter-panel-to',
+        describe: '筛选面板挂载到哪个 DOM 元素 (2.8.4 版本新增)',
+        type: 'string',
+        default: '—'
+    },
+    {
         key: 'show-summary',
         describe: '是否在表尾显示合计行',
         type: 'boolean',
@@ -124,6 +166,18 @@ const attr = [
         describe: '摘要行第一列的文本',
         type: 'string',
         default: 'Sum'
+    },
+    {
+        key: 'summary-method',
+        describe: '自定义的合计计算方法',
+        type: 'function',
+        default: '—'
+    },
+    {
+        key: 'span-method',
+        describe: '合并行或列的计算方法',
+        type: 'function',
+        default: '—'
     },
     {
         key: 'select-on-indeterminate',
@@ -144,15 +198,45 @@ const attr = [
         default: 'false'
     },
     {
+        key: 'load',
+        describe: '加载子节点数据的函数，lazy 为 true 时生效',
+        type: 'function',
+        default: '—'
+    },
+    {
+        key: 'tree-props',
+        describe: '渲染嵌套数据的配置选项',
+        type: 'object',
+        default: 'object'
+    },
+    {
         key: 'table-layout',
         describe: '表格单元、行和列的布局方式',
         type: 'enum',
         default: 'fixed'
     },
     {
+        key: 'scrollbar-always-on',
+        describe: '总是显示滚动条',
+        type: 'boolean',
+        default: 'false'
+    },
+    {
         key: 'show-overflow-tooltip',
         describe: '隐藏额外内容并在单元格悬停时使用 Tooltip (2.3.7 版本支持 object 类型)',
         type: 'boolean | object',
+        default: '—'
+    },
+    {
+        key: 'flexible',
+        describe: '确保主轴最小尺寸不跟随内容 (2.2.1 版本新增)',
+        type: 'boolean',
+        default: 'false'
+    },
+    {
+        key: 'scrollbar-tabindex',
+        describe: 'body 滚动条包裹容器的 tabindex (2.8.3 版本新增)',
+        type: 'string / number',
         default: '—'
     },
     {
@@ -172,6 +256,18 @@ const attr = [
         describe: '折叠后是否在 DOM 中保留展开行内容 (2.9.7 版本新增)',
         type: 'boolean',
         default: 'false'
+    },
+    {
+        key: 'native-scrollbar',
+        describe: '是否使用原生滚动条样式 (2.10.5 版本新增)',
+        type: 'boolean',
+        default: 'false'
+    },
+    {
+        key: 'row-expandable',
+        describe: '启用可展开行，当表格具有 type="expand" 列时有效 (2.13.2 版本新增)',
+        type: 'function',
+        default: '—'
     }
 ];
 
@@ -248,7 +344,7 @@ const event: any = [
     },
     {
         key: '@filter-change',
-        describe: 'column 的 key， 如果需要使用 filter-change 事件，则需要此属性标识是哪个 column 的筛选条件',
+        describe: '当表格的过滤条件发生变化的时候会触发该事件',
         type: 'function'
     },
     {

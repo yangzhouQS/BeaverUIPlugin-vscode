@@ -80,6 +80,12 @@ const attr = [
         default: '—'
     },
     {
+        key: 'popper-style',
+        describe: '弹出内容的自定义样式',
+        type: 'string / object',
+        default: '—'
+    },
+    {
         key: 'popper-options',
         describe: '自定义 popper 选项，更多请参考 popper.js',
         type: 'object',
@@ -112,13 +118,13 @@ const attr = [
     {
         key: 'id',
         describe: '等价于原生 input id 属性',
-        type: 'string / object',
+        type: 'string / array',
         default: '—'
     },
     {
         key: 'name',
         describe: '等价于原生 input name 属性',
-        type: 'string / object',
+        type: 'string / array',
         default: "''"
     },
     {
@@ -128,15 +134,21 @@ const attr = [
         default: 'false'
     },
     {
+        key: 'single-panel',
+        describe: '在范围选择器中只显示一个面板，2.14.0版本开始支持',
+        type: 'boolean',
+        default: 'false'
+    },
+    {
         key: 'prefix-icon',
         describe: '自定义前缀图标，如果 type 的值是 TimeLikeType，那么就是 Clock，不然就是 Calendar',
-        type: 'string / object',
+        type: 'string / Component',
         default: "''"
     },
     {
         key: 'clear-icon',
         describe: '自定义清除图标',
-        type: 'string / object',
+        type: 'string / Component',
         default: 'CircleClose'
     },
     {
@@ -154,7 +166,7 @@ const attr = [
     {
         key: 'shortcuts',
         describe: '设置快捷选项，需要传入数组对象',
-        type: 'object',
+        type: 'array',
         default: '[]'
     },
     {
@@ -185,19 +197,43 @@ const attr = [
         key: 'fallback-placements',
         describe: 'Tooltip 可用的 positions，2.8.4，请查看 popper.js 文档',
         type: 'array',
-        default: '—'
+        default: "['bottom', 'top', 'right', 'left']"
     },
     {
         key: 'placement',
         describe: '下拉框出现的位置，2.8.4',
         type: 'Placement',
         default: 'bottom'
+    },
+    {
+        key: 'show-footer',
+        describe: '是否显示 footer，2.10.5版本开始支持',
+        type: 'boolean',
+        default: 'true'
+    },
+    {
+        key: 'show-confirm',
+        describe: '是否显示确定按钮，2.11.0版本开始支持',
+        type: 'boolean',
+        default: 'true'
+    },
+    {
+        key: 'show-week-number',
+        describe: '显示周数（除周外），2.10.3版本开始支持',
+        type: 'boolean',
+        default: 'false'
+    },
+    {
+        key: 'automatic-dropdown',
+        describe: '该属性决定在输入框获得焦点时日期选择面板是否弹出，2.11.4版本开始支持',
+        type: 'boolean',
+        default: 'true'
     }
 ];
 const event = [
     {
         key: '@change',
-        describe: '用户确认选定的值时触发',
+        describe: '当用户确认值或点击外部时触发',
         type: 'function'
     },
     {

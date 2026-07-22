@@ -2,19 +2,19 @@ const attr = [
     {
         key: 'model-value',
         describe: '选中项绑定值',
-        type: 'string / number / object',
+        type: 'string / number / array',
         default: '—'
     },
     {
         key: 'v-model',
         describe: 'v-model，选中项的绑定值，和 model-value 属性相同',
-        type: 'string / number / object',
+        type: 'string / number / array',
         default: '—'
     },
     {
         key: 'options',
         describe: '选项的数据源，value 和 label 可以通过 CascaderProps 自定义',
-        type: 'object',
+        type: 'array',
         default: '—'
     },
     {
@@ -48,6 +48,12 @@ const attr = [
         default: '—'
     },
     {
+        key: 'clear-icon',
+        describe: '自定义清除图标',
+        type: 'string / Component',
+        default: 'CircleClose'
+    },
+    {
         key: 'show-all-levels',
         describe: '输入框中是否显示选中值的完整路径，默认值为 true',
         type: 'boolean',
@@ -64,6 +70,12 @@ const attr = [
         describe: '当鼠标悬停于折叠标签的文本时，是否显示所有选中的标签。 要使用此属性，collapse-tags 属性必须设定为 true，默认值为 false',
         type: 'boolean',
         default: 'false'
+    },
+    {
+        key: 'max-collapse-tags-tooltip-height',
+        describe: '折叠标签提示的最大高度',
+        type: 'string / number',
+        default: '—'
     },
     {
         key: 'separator',
@@ -102,10 +114,22 @@ const attr = [
         default: "''"
     },
     {
+        key: 'popper-style',
+        describe: 'Cascader 下拉菜单和标签提示的自定义样式',
+        type: 'string / object',
+        default: '—'
+    },
+    {
         key: 'teleported',
         describe: '弹层是否使用 teleport，默认值为 true',
         type: 'boolean',
         default: 'true'
+    },
+    {
+        key: 'effect',
+        describe: 'tooltip 主题，内置了 dark / light 两种',
+        type: 'enum / string',
+        default: 'light'
     },
     {
         key: 'tag-type',
@@ -166,6 +190,36 @@ const attr = [
         describe: '是否将弹出的内容直接插入到 body 元素。在弹出内容的边框定位出现问题时，可将该属性设置为 false，已弃用',
         type: 'boolean',
         default: 'true'
+    },
+    {
+        key: 'show-checked-strategy',
+        describe: '多选模式下已选节点的展示策略，parent 显示更简洁，child 显示每个子项',
+        type: 'enum',
+        default: 'child'
+    },
+    {
+        key: 'virtual-scroll',
+        describe: '是否为大数据启用虚拟滚动',
+        type: 'boolean',
+        default: 'false'
+    },
+    {
+        key: 'fit-input-width',
+        describe: '建议面板的宽度是否与输入框一致；如果值为 number，则宽度为固定值',
+        type: 'boolean / number',
+        default: 'false'
+    },
+    {
+        key: 'item-size',
+        describe: '虚拟滚动的节点高度 (px)',
+        type: 'number',
+        default: '34'
+    },
+    {
+        key: 'height',
+        describe: '虚拟滚动的菜单高度 (px)',
+        type: 'number',
+        default: '204'
     }
 ];
 
@@ -210,11 +264,11 @@ const event = [
 
 
 attr.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/cascader.html#cascader-attributes';
+    x.link = 'https://element-plus.org/zh-CN/component/cascader.html#cascader-%E5%B1%9E%E6%80%A7';
 });
 
 event.forEach((x: any) => {
-    x.link = 'https://element-plus.org/zh-CN/component/cascader.html#cascader-events';
+    x.link = 'https://element-plus.org/zh-CN/component/cascader.html#cascader-%E4%BA%8B%E4%BB%B6';
 });
 
 
