@@ -4,7 +4,7 @@
     "icon": "images/element-plus.png",
     "displayName": "Element Plus",
     "description": "Element Plus Snippets",
-    "version": "2.1.0",
+    "version": "3.0.1",
     "engines": {
         "vscode": "^1.46.0"
     },
@@ -37,6 +37,7 @@
         ]
     },
     "scripts": {
+        "build": "npx vsce package",
         "vscode:prepublish": "yarn run compile",
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",

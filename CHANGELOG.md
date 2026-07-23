@@ -4,7 +4,7 @@ All notable changes to the "element-plus" extension will be documented in this f
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [2.1.0]
+## [3.0.0]
 
 ### Added
 

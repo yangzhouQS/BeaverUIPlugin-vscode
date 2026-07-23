@@ -60,7 +60,7 @@
 
 ✅ 例如在 `.vue` 文件中输入 `el-` 时就会出现一系列 `Element Plus` 组件的代码提示，选中后自动展开为完整的组件模板。
 
-<img src="https://note.noxussj.top/element-plus/1.png">
+<img src="./images/1.png">
 
 <br />
 
@@ -72,7 +72,7 @@
 -   非字符串类型（boolean、number、array、object 等）会自动带上 `:` 前缀，即插入 `:span="6"` 形式。
 -   绑定值属性会插入 `v-model="value"` 形式。
 
-<img src="https://note.noxussj.top/element-plus/2.png">
+<img src="./images/2.png">
 
 <br />
 
@@ -80,7 +80,7 @@
 
 ✅ 在组件标签中输入 `@` 触发事件提示，例如 `@change`、`@click`，选中后插入 `change="handler"` 形式。
 
-<img src="https://note.noxussj.top/element-plus/3.png">
+<img src="./images/3.png">
 
 <br />
 
