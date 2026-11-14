@@ -3,7 +3,7 @@ import * as vscode from 'vscode';
 
 suite('Integration Test Suite（真实编辑器环境）', () => {
     test('补全项应携带 documentation 文档', async () => {
-        const doc = await vscode.workspace.openTextDocument({ language: 'html', content: '<el-button ' });
+        const doc = await vscode.workspace.openTextDocument({ language: 'html', content: '<b-button ' });
         await vscode.window.showTextDocument(doc);
         // 等待插件激活
         await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -11,7 +11,7 @@ suite('Integration Test Suite（真实编辑器环境）', () => {
         const list = await vscode.commands.executeCommand<vscode.CompletionList>(
             'vscode.executeCompletionItemProvider',
             doc.uri,
-            new vscode.Position(0, 11)
+            new vscode.Position(0, 10)
         );
 
         assert.ok(list && list.items.length > 0, '应返回补全列表');
@@ -24,15 +24,15 @@ suite('Integration Test Suite（真实编辑器环境）', () => {
     });
 
     test('Hover 应返回文档内容', async () => {
-        const doc = await vscode.workspace.openTextDocument({ language: 'html', content: '<el-button type="primary">按钮</el-button>' });
+        const doc = await vscode.workspace.openTextDocument({ language: 'html', content: '<b-button type="primary">按钮</b-button>' });
         await vscode.window.showTextDocument(doc);
         await new Promise((resolve) => setTimeout(resolve, 500));
 
-        // 悬停在 type 上（第 11 个字符处）
+        // 悬停在 type 上（第 10 个字符处）
         const hovers = await vscode.commands.executeCommand<vscode.Hover[]>(
             'vscode.executeHoverProvider',
             doc.uri,
-            new vscode.Position(0, 12)
+            new vscode.Position(0, 11)
         );
 
         assert.ok(hovers && hovers.length > 0, '应返回 Hover 内容');

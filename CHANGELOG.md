@@ -1,10 +1,41 @@
 # Change Log
 
-All notable changes to the "element-plus" extension will be documented in this file.
+All notable changes to the "beaver-ui" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [3.0.0]
+## [1.0.0] — Beaver UI（品牌重塑与数据整体对齐）
+
+发布日期：2026-11-14
+
+基于 [Element Plus Snippets](https://github.com/noxussj2/element-plus) v3.0.1（noxussj，MIT）二次开发，插件整体从 Element Plus 生态迁移至 **Beaver UI（`@cs/beaver-ui`）** 生态。
+
+### Added
+
+- **组件数据整体对齐 beaver-ui@1.0.1**：覆盖 **106 个组件标签**（`b-*`，含全部子组件与 table-kit / list-kit 套件），**2275 条** 属性 / 事件 / 插槽数据，全部来自官方文档站数据集自动提取
+- **新增 beaver 自研组件支持**：`b-grid` / `b-grid-column` 全能表格、`b-table-only` / `b-table-async` / `b-table-report` / `b-tree-table` / `b-table-edit` 表格套件、`b-list` / `b-list-only` / `b-list-async` / `b-list-report` 列表套件、`b-box` / `b-panel` / `b-flex-box` / `b-flex-line` / `b-tool-bar` / `b-filter-item` / `b-label-extend` / `b-navigation`、`b-search-select` / `b-search-tree-select` / `b-search-tree-panel`、`b-date-range-picker` / `b-date-picker-panel` / `b-color-picker-panel` 等
+- **指令提示对齐**：`v-loading`（含 `element-loading-*` 配套属性）、`v-auto-tip`（溢出提示，含 always / content / effect / placement / popper-class）、`v-highlight-query`（关键词高亮）、`v-infinite-scroll`（含 `infinite-scroll-*` 配套属性）
+- **枚举属性选择片段**：插入 `type="${1|default,primary,success,...|}"`，Tab 键在候选值间切换
+- **布尔属性选择片段**：插入 `:plain="${1|true,false|}"`
+- **文档链接切换至 beaver-ui.yearrow.com**：Hover 文档卡片与属性提示均携带官方文档站对应组件页链接
+- **数据自动对齐流水线**：`scripts/generate-data.mjs`（数据集 → 组件数据，标签映射基于 `component.ts` 注册表）与 `scripts/generate-snippets.mjs`（上游 snippet 迁移 + 官方示例提取）；组件升级后 `npm run generate` 一键重新对齐
+- **离线核对脚本** `scripts/verify.mjs`：stub vscode 模块全量校验数据完整性、补全行为、snippets 一致性与包元数据
+- 代码片段合计 **96 条**：上游迁移 64 条（标签与样式引用全部 `el-*` → `b-*`）+ 从官方示例提取 32 条
+
+### Removed
+
+- **移除 17 条已废弃组件的 snippet**（beaver-ui 已移除对应组件）：`el-container` 布局容器族、`el-card`、`el-rate`、`el-statistic` / `el-countdown`、`el-descriptions`、`el-result`、`el-tour`、`el-affix`、`el-splitter`、`el-autocomplete`、`el-table` / `el-table-v2`、`el-page-header`、`el-segmented`、`el-mention`、`el-input-otp`（相关能力由 `b-box` / `b-panel` / `b-grid` / `b-table-*` 等替代）
+- 移除未使用的 `vscode-html-languageservice` 依赖
+
+### Changed
+
+- 插件品牌重塑：名称 `element-plus` → `beaver-ui`，发布者 `noxussj` → `yearrow`，图标更换为 beaver 品牌标（官方 logo 渲染）
+- repository 指向 `github.com/yangzhouQS/BeaverUIPlugin-vscode`
+- 单元测试与集成测试全部切换至 `b-*` 口径（17 + 2 个用例，真实编辑器环境已验证通过）
+- 集成测试超时 2s → 10s（等待插件激活）
+- `.vscodeignore` 增加 `data/`、`scripts/` 排除（VSIX 体积 314KB）
+
+## [3.0.0]（上游 Element Plus Snippets 最终版本）
 
 ### Added
 

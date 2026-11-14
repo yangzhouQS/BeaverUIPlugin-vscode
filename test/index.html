@@ -1,3 +1,16 @@
-<el-affix :offset="120">
-    <el-button type="primary">Offset top 120px</el-button>
-</el-affix>
+<!-- 手工验证页：html 模式下补全 / Hover / snippets
+     逐行去掉注释触发提示：
+     1. <b- 唤起组件 snippet
+     2. 标签内空格 → 属性提示；枚举属性引号内 → 可选值
+     3. @ → 事件提示；# → 插槽提示
+     4. 悬停标签名 / 属性 / 事件 → 中文文档卡片
+-->
+<b-panel title="手工验证" background>
+    <b-button type="primary" :loading="false" size="">Default</b-button>
+    <b-input v-model="value" placeholder="" @/>
+    <b-grid :data="rows" :columns="columns" height="" #>
+        <template #empty>暂无记录</template>
+    </b-grid>
+    <div v-loading="true" element-loading-text="">加载中</div>
+    <span v-auto-tip content="">超长文本示例超长文本示例超长文本示例超长文本示例</span>
+</b-panel>

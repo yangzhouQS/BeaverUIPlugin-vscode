@@ -1,321 +1,376 @@
 {
     /**
-     * Basic 基础组件
+     * 基础组件
      */
     "Button 按钮组": {
-        "prefix": "<el-button-group⚡",
+        "prefix": "<b-button-group⚡",
         "body": [
-            "<el-button-group>",
-            "    <el-button type=\"primary\" :icon=\"ArrowLeft\">Previous Page</el-button>",
-            "    <el-button type=\"primary\">",
-            "        Next Page<el-icon class=\"el-icon--right\"><ArrowRight /></el-icon>",
-            "    </el-button>",
-            "</el-button-group>"
+            "<b-button-group>",
+            "    <b-button type=\"primary\" :icon=\"ArrowLeft\">Previous Page</b-button>",
+            "    <b-button type=\"primary\">",
+            "        Next Page<b-icon class=\"b-icon--right\"><ArrowRight /></b-icon>",
+            "    </b-button>",
+            "</b-button-group>"
         ],
         "description": "Button 按钮组"
     },
     "Button 按钮": {
-        "prefix": "<el-button⚡",
-        "body": ["<el-button>${1:Default}</el-button>"],
+        "prefix": "<b-button⚡",
+        "body": [
+            "<b-button>${1:Default}</b-button>"
+        ],
         "description": "Button 按钮"
     },
-    "Container 布局容器": {
-        "prefix": "<el-container⚡",
-        "body": [
-            "<el-container>",
-            "    <el-header>Header</el-header>",
-            "    <el-container>",
-            "        <el-aside width=\"200px\">Aside</el-aside>",
-            "        <el-container>",
-            "            <el-main>Main</el-main>",
-            "            <el-footer>Footer</el-footer>",
-            "        </el-container>",
-            "    </el-container>",
-            "</el-container>"
-        ],
-        "description": "Container 布局容器"
-    },
     "Icon 图标": {
-        "prefix": "<el-icon⚡",
-        "body": ["<el-icon size=\"20px\" color=\"#00f\">", "    <Edit />", "</el-icon>"],
+        "prefix": "<b-icon⚡",
+        "body": [
+            "<b-icon size=\"20px\" color=\"#00f\">",
+            "    <Edit />",
+            "</b-icon>"
+        ],
         "description": "Icon 图标"
     },
-
-    "Row 布局": {
-        "prefix": "<el-row⚡",
-        "body": [
-            "<el-row :gutter=\"20\">",
-            "    <el-col :span=\"6\">A</el-col>",
-            "    <el-col :span=\"6\">B</el-col>",
-            "    <el-col :span=\"6\">C</el-col>",
-            "    <el-col :span=\"6\">D</el-col>",
-            "</el-row>"
-        ],
-        "description": "Row 布局"
-    },
-
-    "Col 布局": {
-        "prefix": "<el-col⚡",
-        "body": ["<el-col :span=\"${1:6}\"></el-col>"],
-        "description": "Col 布局"
-    },
-
     "Link 链接": {
-        "prefix": "<el-link⚡",
-        "body": ["<el-link href=\"${2:https://element-plus.org}\" target=\"_blank\">${1:default}</el-link>"],
+        "prefix": "<b-link⚡",
+        "body": [
+            "<b-link href=\"${2:https://element-plus.org}\" target=\"_blank\">${1:default}</b-link>"
+        ],
         "description": "Link 链接"
     },
-
     "Text 文本": {
-        "prefix": "<el-text⚡",
-        "body": ["<el-text type=\"primary\">Primary</el-text>"],
+        "prefix": "<b-text⚡",
+        "body": [
+            "<b-text type=\"primary\">Primary</b-text>"
+        ],
         "description": "Text 文本"
     },
-
     "Scrollbar 滚动条": {
-        "prefix": "<el-scrollbar⚡",
-        "body": ["<el-scrollbar height=\"400px\">", "    <p v-for=\"item in 20\" :key=\"item\" class=\"scrollbar-demo-item\">{{ item }}</p>", "</el-scrollbar>"],
+        "prefix": "<b-scrollbar⚡",
+        "body": [
+            "<b-scrollbar height=\"400px\">",
+            "    <p v-for=\"item in 20\" :key=\"item\" class=\"scrollbar-demo-item\">{{ item }}</p>",
+            "</b-scrollbar>"
+        ],
         "description": "Scrollbar 滚动条"
     },
-
     "Space 间距": {
-        "prefix": "<el-space⚡",
-        "body": ["<el-space :size=\"20\">$1</el-space>"],
+        "prefix": "<b-space⚡",
+        "body": [
+            "<b-space :size=\"20\">$1</b-space>"
+        ],
         "description": "Space 间距"
     },
-
-    "Config Provider 全局配置": {
-        "prefix": "<el-config-provider⚡",
-        "body": ["<el-config-provider :locale=\"locale\" :button=\"{ autoInsertSpace: true }\">", "    $1", "</el-config-provider>"],
-        "description": "Config Provider 全局配置"
-    },
-
-    "Autocomplete 自动补全输入框": {
-        "prefix": "<el-autocomplete⚡",
-        "body": ["<el-autocomplete v-model=\"state1\" :fetch-suggestions=\"querySearch\" clearable placeholder=\"Please Input\" @select=\"handleSelect\"/>"],
-        "description": "Autocomplete 自动补全输入框"
-    },
-
-    "Cascader 级联选择器": {
-        "prefix": "<el-cascader⚡",
-        "body": ["<el-cascader v-model=\"value\" :options=\"options\" @change=\"handleChange\" />"],
-        "description": "Cascader 级联选择器"
-    },
-
-    "Cascader Panel 级联面板": {
-        "prefix": "<el-cascader-panel⚡",
-        "body": ["<el-cascader-panel :options=\"options\" />"],
-        "description": "Cascader Panel 级联面板"
+    "Divider 分割线": {
+        "prefix": "<b-divider⚡",
+        "body": [
+            "<b-divider />"
+        ],
+        "description": "Divider 分割线"
     },
 
     /**
-     * Form 表单组件
+     * 布局组件
      */
-    "Checkbox 多选框组": {
-        "prefix": "<el-checkbox-group⚡",
+    "Row 布局": {
+        "prefix": "<b-row⚡",
         "body": [
-            "<el-checkbox-group v-model=\"${1:checkList}\">",
-            "    <el-checkbox label=\"Option 1\" />",
-            "    <el-checkbox label=\"Option 2\" />",
-            "    <el-checkbox label=\"Option 3\" />",
-            "</el-checkbox-group>"
+            "<b-row :gutter=\"20\">",
+            "    <b-col :span=\"6\">A</b-col>",
+            "    <b-col :span=\"6\">B</b-col>",
+            "    <b-col :span=\"6\">C</b-col>",
+            "    <b-col :span=\"6\">D</b-col>",
+            "</b-row>"
+        ],
+        "description": "Row 布局"
+    },
+    "Col 布局": {
+        "prefix": "<b-col⚡",
+        "body": [
+            "<b-col :span=\"${1:6}\"></b-col>"
+        ],
+        "description": "Col 布局"
+    },
+    "FilterItem 筛选项": {
+        "prefix": "<b-filter-item⚡",
+        "body": [
+            "  <div style=\"max-width: 420px\">",
+            "    <!-- v-slot=\"{ id }\" 透出关联 id，绑定到控件后点击标签即可聚焦（a11y 关联） -->",
+            "    <b-filter-item label=\"项目名称\" :label-width=\"90\" v-slot=\"{ id }\">",
+            "      <b-input :id=\"id\" placeholder=\"请输入项目名称\" clearable />",
+            "    </b-filter-item>",
+            "    <b-filter-item label=\"这是一个很长的标签文本示例\" :label-width=\"90\" v-slot=\"{ id }\">",
+            "      <b-select :id=\"id\" placeholder=\"请选择\" />",
+            "    </b-filter-item>",
+            "  </div>"
+        ],
+        "description": "FilterItem 筛选项 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "FlexLine 左右分栏": {
+        "prefix": "<b-flex-line⚡",
+        "body": [
+            "  <div>",
+            "    <b-flex-line :gap=\"10\">",
+            "      <div class=\"demo-area\">左区（默认 50%）</div>",
+            "      <template #right>",
+            "        <div class=\"demo-area\">右区（占满剩余，内容右对齐）</div>"
+        ],
+        "description": "FlexLine 左右分栏 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "FlexBox 弹性布局": {
+        "prefix": "<b-flex-box⚡",
+        "body": [
+            "  <div class=\"flex-box-demo\">",
+            "    <b-flex-box :item-num=\"2\" :item-config=\"config\" height=\"280px\">",
+            "      <template #item-1>",
+            "        <div class=\"pane pane-fluid\">流体区（flex: 1）</div>"
+        ],
+        "description": "FlexBox 弹性布局 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+
+    /**
+     * 容器组件
+     */
+    "Tabs 标签页": {
+        "prefix": "<b-tabs⚡",
+        "body": [
+            "<b-tabs v-model=\"activeName\" @tab-click=\"handleClick\">",
+            "    <b-tab-pane label=\"User\" name=\"first\">User</b-tab-pane>",
+            "    <b-tab-pane label=\"Config\" name=\"second\">Config</b-tab-pane>",
+            "    <b-tab-pane label=\"Role\" name=\"third\">Role</b-tab-pane>",
+            "    <b-tab-pane label=\"Task\" name=\"fourth\">Task</b-tab-pane>",
+            "</b-tabs>"
+        ],
+        "description": "Tabs 标签页"
+    },
+    "Box 盒子": {
+        "prefix": "<b-box⚡",
+        "body": [
+            "  <b-box>",
+            "    <p>默认 default 档位内边距的内容容器。</p>",
+            "    <p>Box 适合只需要盒子外观、不需要标题行的场景。</p>",
+            "  </b-box>"
+        ],
+        "description": "Box 盒子 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "Panel 面板": {
+        "prefix": "<b-panel⚡",
+        "body": [
+            "  <UsageExample :code=\"code\">",
+            "    <!-- 灰底衬板：background 关闭时透出衬底色，白色背景效果一眼可辨 -->",
+            "    <div",
+            "      style=\"",
+            "        height: 220px;",
+            "        padding: 10px;",
+            "        background-color: var(--b-fill-color-light);",
+            "        border-radius: 6px;",
+            "      \"",
+            "    >",
+            "      <b-panel v-bind=\"props\">",
+            "        <p>标题行 + 内容区，内容区撑满剩余高度并可滚动。</p>",
+            "        <p v-for=\"i in 8\" :key=\"i\">第 {{ i }} 行内容——超出高度在内部滚动。</p>",
+            "      </b-panel>",
+            "    </div>",
+            "    <!-- … -->"
+        ],
+        "description": "Panel 面板 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "ToolBar 工具栏": {
+        "prefix": "<b-tool-bar⚡",
+        "body": [
+            "  <b-tool-bar :filter-gutter=\"8\" divider>",
+            "    <template #filter>",
+            "      <b-col :span=\"8\"><span>筛选条件一</span></b-col>",
+            "      <b-col :span=\"8\"><span>筛选条件二</span></b-col>"
+        ],
+        "description": "ToolBar 工具栏 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+
+    /**
+     * 表单组件
+     */
+    "Cascader 级联选择器": {
+        "prefix": "<b-cascader⚡",
+        "body": [
+            "<b-cascader v-model=\"value\" :options=\"options\" @change=\"handleChange\" />"
+        ],
+        "description": "Cascader 级联选择器"
+    },
+    "Cascader Panel 级联面板": {
+        "prefix": "<b-cascader-panel⚡",
+        "body": [
+            "<b-cascader-panel :options=\"options\" />"
+        ],
+        "description": "Cascader Panel 级联面板"
+    },
+    "Checkbox 多选框组": {
+        "prefix": "<b-checkbox-group⚡",
+        "body": [
+            "<b-checkbox-group v-model=\"${1:checkList}\">",
+            "    <b-checkbox label=\"Option 1\" />",
+            "    <b-checkbox label=\"Option 2\" />",
+            "    <b-checkbox label=\"Option 3\" />",
+            "</b-checkbox-group>"
         ],
         "description": "Checkbox 多选框组"
     },
-
     "Checkbox 多选框": {
-        "prefix": "<el-checkbox⚡",
+        "prefix": "<b-checkbox⚡",
         "body": [
-            "<el-checkbox v-model=\"checked1\" label=\"Option 1\" size=\"large\" />",
+            "<b-checkbox v-model=\"checked1\" label=\"Option 1\" size=\"large\" />"
         ],
         "description": "Checkbox 多选框"
     },
-
     "Checkbox Button 按钮样式多选框": {
-        "prefix": "<el-checkbox-button⚡",
+        "prefix": "<b-checkbox-button⚡",
         "body": [
-            "<el-checkbox-group v-model=\"${1:checkboxGroup1}\">",
-            "    <el-checkbox-button value=\"New York\">New York</el-checkbox-button>",
-            "    <el-checkbox-button value=\"Washington\">Washington</el-checkbox-button>",
-            "    <el-checkbox-button value=\"Los Angeles\">Los Angeles</el-checkbox-button>",
-            "</el-checkbox-group>"
+            "<b-checkbox-group v-model=\"${1:checkboxGroup1}\">",
+            "    <b-checkbox-button value=\"New York\">New York</b-checkbox-button>",
+            "    <b-checkbox-button value=\"Washington\">Washington</b-checkbox-button>",
+            "    <b-checkbox-button value=\"Los Angeles\">Los Angeles</b-checkbox-button>",
+            "</b-checkbox-group>"
         ],
         "description": "Checkbox Button 按钮样式多选框"
     },
-
     "ColorPicker Panel 颜色选择器面板": {
-        "prefix": "<el-color-picker-panel⚡",
+        "prefix": "<b-color-picker-panel⚡",
         "body": [
-            "<el-color-picker-panel v-model=\"color\" />",
+            "<b-color-picker-panel v-model=\"color\" />"
         ],
         "description": "ColorPicker Panel 颜色选择器面板"
     },
-
     "ColorPicker 颜色选择器": {
-        "prefix": "<el-color-picker⚡",
+        "prefix": "<b-color-picker⚡",
         "body": [
-            "<el-color-picker v-model=\"color1\" />",
+            "<b-color-picker v-model=\"color1\" />"
         ],
         "description": "ColorPicker 颜色选择器"
     },
-
     "Date Picker 日期选择器": {
-        "prefix": "<el-date-picker⚡",
-        "body": ["<el-date-picker v-model=\"${1:value}\" type=\"date\" placeholder=\"请选择日期\" />"],
+        "prefix": "<b-date-picker⚡",
+        "body": [
+            "<b-date-picker v-model=\"${1:value}\" type=\"date\" placeholder=\"请选择日期\" />"
+        ],
         "description": "Date Picker 日期选择器"
     },
-
     "Date Picker Panel 日期选择器面板": {
-        "prefix": "<el-date-picker-panel⚡",
-        "body": ["<el-date-picker-panel v-model=\"${1:value}\" />"],
+        "prefix": "<b-date-picker-panel⚡",
+        "body": [
+            "<b-date-picker-panel v-model=\"${1:value}\" />"
+        ],
         "description": "Date Picker Panel 日期选择器面板"
     },
-
-
     "Form 表单": {
-        "prefix": "<el-form⚡",
+        "prefix": "<b-form⚡",
         "body": [
-            "<el-form ref=\"formRef\" :model=\"form\" label-width=\"auto\"> ",
-            "    <el-form-item label=\"Activity name\" prop=\"name\">A</el-form-item>",
-            "    <el-form-item label=\"Activity zone\" prop=\"zone\">B</el-form-item>",
-            "    <el-form-item label=\"Activity time\" prop=\"time\">C</el-form-item>",
-            "</el-form>"
+            "<b-form ref=\"formRef\" :model=\"form\" label-width=\"auto\"> ",
+            "    <b-form-item label=\"Activity name\" prop=\"name\">A</b-form-item>",
+            "    <b-form-item label=\"Activity zone\" prop=\"zone\">B</b-form-item>",
+            "    <b-form-item label=\"Activity time\" prop=\"time\">C</b-form-item>",
+            "</b-form>"
         ],
         "description": "Form 表单"
     },
-
     "Form 表单项": {
-        "prefix": "<el-form-item⚡",
+        "prefix": "<b-form-item⚡",
         "body": [
-            "<el-form-item label=\"Activity name\" prop=\"name\">A</el-form-item>",
+            "<b-form-item label=\"Activity name\" prop=\"name\">A</b-form-item>"
         ],
         "description": "Form 表单项"
     },
-
     "Input 输入框": {
-        "prefix": "<el-input⚡",
-        "body": ["<el-input v-model=\"${1:input}\" placeholder=\"请输入\" />"],
+        "prefix": "<b-input⚡",
+        "body": [
+            "<b-input v-model=\"${1:input}\" placeholder=\"请输入\" />"
+        ],
         "description": "Input 输入框"
     },
-
     "Input Number 数字输入框": {
-        "prefix": "<el-input-number⚡",
-        "body": ["<el-input-number v-model=\"value\" :min=\"1\" :max=\"10\" @change=\"handleChange\" />"],
+        "prefix": "<b-input-number⚡",
+        "body": [
+            "<b-input-number v-model=\"value\" :min=\"1\" :max=\"10\" @change=\"handleChange\" />"
+        ],
         "description": "Input Number 数字输入框"
     },
-
     "InputTag 标签输入框": {
-        "prefix": "<el-input-tag⚡",
+        "prefix": "<b-input-tag⚡",
         "body": [
-            "<el-input-tag v-model=\"input\" placeholder=\"Please input\" aria-label=\"Please click the Enter key after input\" />"
+            "<b-input-tag v-model=\"input\" placeholder=\"Please input\" aria-label=\"Please click the Enter key after input\" />"
         ],
         "description": "InputTag 标签输入框"
     },
-
-    "Input OTP 一次性密码输入框": {
-        "prefix": "<el-input-otp⚡",
-        "body": [
-            "<el-input-otp v-model=\"otp\" />"
-        ],
-        "description": "Input OTP 一次性密码输入框"
-    },
-
-    
-    "Mention 提及": {
-        "prefix": "<el-mention⚡",
-        "body": ["<el-mention v-model=\"value\" :options=\"options\" placeholder=\"Please input\" />"],
-        "description": "Mention 提及"
-    },
-
-
     "Radio 单选框": {
-        "prefix": "<el-radio⚡",
+        "prefix": "<b-radio⚡",
         "body": [
-            "<el-radio-group v-model=\"radio1\">",
-            "    <el-radio value=\"1\" size=\"large\">Option 1</el-radio>",
-            "    <el-radio value=\"2\" size=\"large\">Option 2</el-radio>",
-            "</el-radio-group>"
+            "<b-radio-group v-model=\"radio1\">",
+            "    <b-radio value=\"1\" size=\"large\">Option 1</b-radio>",
+            "    <b-radio value=\"2\" size=\"large\">Option 2</b-radio>",
+            "</b-radio-group>"
         ],
         "description": "Radio 单选框"
     },
-
-    "Rate 评分": {
-        "prefix": "<el-rate⚡",
-        "body": [
-            "<el-rate v-model=\"value\" />",
-        ],
-        "description": "Rate 评分"
-    },
-    
     "Select 选择器": {
-        "prefix": "<el-select⚡",
+        "prefix": "<b-select⚡",
         "body": [
-            "<el-select v-model=\"value\" placeholder=\"请选择\">",
-            "    <el-option label=\"Options1\" value=\"1\" />",
-            "    <el-option label=\"Options2\" value=\"2\" />",
-            "</el-select>"
+            "<b-select v-model=\"value\" placeholder=\"请选择\">",
+            "    <b-option label=\"Options1\" value=\"1\" />",
+            "    <b-option label=\"Options2\" value=\"2\" />",
+            "</b-select>"
         ],
         "description": "Select 选择器"
     },
-
     "Virtualized Select 虚拟化选择器": {
-        "prefix": "<el-select-v2⚡",
+        "prefix": "<b-select-v2⚡",
         "body": [
-            "<el-select-v2 v-model=\"value\" :options=\"options\" placeholder=\"Please select\" size=\"large\" />",
+            "<b-select-v2 v-model=\"value\" :options=\"options\" placeholder=\"Please select\" size=\"large\" />"
         ],
         "description": "Virtualized Select 虚拟化选择器"
     },
-
     "Slider 滑块": {
-        "prefix": "<el-slider⚡",
+        "prefix": "<b-slider⚡",
         "body": [
-            "<el-slider v-model=\"value1\" />"
+            "<b-slider v-model=\"value1\" />"
         ],
         "description": "Slider 滑块"
     },
-
     "Switch 开关": {
-        "prefix": "<el-switch⚡",
-        "body": ["<el-switch v-model=\"${1:value}\" />"],
+        "prefix": "<b-switch⚡",
+        "body": [
+            "<b-switch v-model=\"${1:value}\" />"
+        ],
         "description": "Switch 开关"
     },
     "TimePicker 时间选择器": {
-        "prefix": "<el-time-picker⚡",
+        "prefix": "<b-time-picker⚡",
         "body": [
-            "<el-time-picker v-model=\"value1\" placeholder=\"Arbitrary time\" />"
+            "<b-time-picker v-model=\"value1\" placeholder=\"Arbitrary time\" />"
         ],
         "description": "TimePicker 时间选择器"
     },
-
     "TimeSelect 时间选择": {
-        "prefix": "<el-time-select⚡",
+        "prefix": "<b-time-select⚡",
         "body": [
-            "<el-time-select v-model=\"value\" start=\"08:30\" step=\"00:15\" end=\"18:30\" placeholder=\"Select time\" />"
+            "<b-time-select v-model=\"value\" start=\"08:30\" step=\"00:15\" end=\"18:30\" placeholder=\"Select time\" />"
         ],
         "description": "TimeSelect 时间选择"
     },
-
-    
     "Transfer 穿梭框": {
-        "prefix": "<el-transfer⚡",
+        "prefix": "<b-transfer⚡",
         "body": [
-            "<el-transfer v-model=\"value\" :data=\"data\" />"
+            "<b-transfer v-model=\"value\" :data=\"data\" />"
         ],
         "description": "Transfer 穿梭框"
     },
-
     "TreeSelect 树形选择": {
-        "prefix": "<el-tree-select⚡",
+        "prefix": "<b-tree-select⚡",
         "body": [
-            "<el-tree-select v-model=\"value\" :data=\"data\" :render-after-expand=\"false\" />"
+            "<b-tree-select v-model=\"value\" :data=\"data\" :render-after-expand=\"false\" />"
         ],
         "description": "TreeSelect 树形选择"
     },
-
     "Upload 上传": {
-        "prefix": "<el-upload⚡",
+        "prefix": "<b-upload⚡",
         "body": [
-            "<el-upload",
+            "<b-upload",
             "    v-model:file-list=\"fileList\"",
             "    class=\"upload-demo\"",
             "    action=\"https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15\"",
@@ -326,482 +381,742 @@
             "    :limit=\"3\"",
             "    :on-exceed=\"handleExceed\"",
             "  >",
-            "    <el-button type=\"primary\">Click to upload</el-button>",
+            "    <b-button type=\"primary\">Click to upload</b-button>",
             "    <template #tip>",
-            "        <div class=\"el-upload__tip\">",
+            "        <div class=\"b-upload__tip\">",
             "            jpg/png files with a size less than 500KB.",
             "        </div>",
             "    </template>",
-            "</el-upload>"
+            "</b-upload>"
         ],
         "description": "Upload 上传"
     },
-    
+    "SearchTreeSelect 搜索树选择": {
+        "prefix": "<b-search-tree-select⚡",
+        "body": [
+            "  <b-search-tree-select",
+            "    v-model=\"value\"",
+            "    :data=\"roots\"",
+            "    :page-size=\"20\"",
+            "    searchable",
+            "    :props=\"{ label: 'name', value: 'id' }\"",
+            "    style=\"width: 320px\"",
+            "    @load=\"onLoad\"",
+            "    @load-search=\"onSearch\"",
+            "  />",
+            "  <p style=\"margin-top: 12px\">选中值：{{ value ?? '未选择' }}（数据：真实组织机构 1105 条，同层分页懒加载）</p>"
+        ],
+        "description": "SearchTreeSelect 搜索树选择 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "SearchTreePanel 搜索树面板": {
+        "prefix": "<b-search-tree-panel⚡",
+        "body": [
+            "  <div style=\"height: 320px; max-width: 320px; border: 1px solid var(--b-border-color); border-radius: 4px\">",
+            "    <b-search-tree-panel",
+            "      v-model=\"value\"",
+            "      :data=\"roots\"",
+            "      :page-size=\"20\"",
+            "      searchable",
+            "      clearable",
+            "      auto-expand=\"none\"",
+            "      :props=\"{ label: 'name', value: 'id' }\"",
+            "      @load=\"onLoad\"",
+            "      @load-search=\"onSearch\"",
+            "    />",
+            "  </div>",
+            "  <p style=\"margin-top: 12px\">选中值：{{ value ?? '未选择' }}（数据：真实组织机构 1105 条，同层分页懒加载）</p>"
+        ],
+        "description": "SearchTreePanel 搜索树面板 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "DateRangePicker 日期范围选择器": {
+        "prefix": "<b-date-range-picker⚡",
+        "body": [
+            "  <div>",
+            "    <b-date-range-picker v-model=\"value\" @change=\"onChange\" />",
+            "    <p style=\"margin-top: 12px\">当前区间：{{ value.join(' ~ ') }}，命中间：{{ lastType || '无' }}</p>",
+            "  </div>"
+        ],
+        "description": "DateRangePicker 日期范围选择器 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "Radio 单选框（radio-button）": {
+        "prefix": "<b-radio-button⚡",
+        "body": [
+            "  <div class=\"mb-2 ml-4\">",
+            "    <b-radio-group v-model=\"radio1\">",
+            "      <b-radio value=\"1\" size=\"large\">Option 1</b-radio>",
+            "      <b-radio value=\"2\" size=\"large\">Option 2</b-radio>",
+            "    </b-radio-group>",
+            "  </div>",
+            "  <div class=\"my-2 ml-4\">",
+            "    <b-radio-group v-model=\"radio2\">",
+            "      <b-radio value=\"1\">Option 1</b-radio>",
+            "      <b-radio value=\"2\">Option 2</b-radio>",
+            "    </b-radio-group>",
+            "  </div>",
+            "  <div class=\"my-4 ml-4\">",
+            "    <b-radio-group v-model=\"radio3\">",
+            "      <b-radio value=\"1\" size=\"small\">Option 1</b-radio>",
+            "    <!-- … -->"
+        ],
+        "description": "Radio 单选框 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "Radio 单选框（radio-group）": {
+        "prefix": "<b-radio-group⚡",
+        "body": [
+            "  <div class=\"mb-2 ml-4\">",
+            "    <b-radio-group v-model=\"radio1\">",
+            "      <b-radio value=\"1\" size=\"large\">Option 1</b-radio>",
+            "      <b-radio value=\"2\" size=\"large\">Option 2</b-radio>",
+            "    </b-radio-group>",
+            "  </div>",
+            "  <div class=\"my-2 ml-4\">",
+            "    <b-radio-group v-model=\"radio2\">",
+            "      <b-radio value=\"1\">Option 1</b-radio>",
+            "      <b-radio value=\"2\">Option 2</b-radio>",
+            "    </b-radio-group>",
+            "  </div>",
+            "  <div class=\"my-4 ml-4\">",
+            "    <b-radio-group v-model=\"radio3\">",
+            "      <b-radio value=\"1\" size=\"small\">Option 1</b-radio>",
+            "    <!-- … -->"
+        ],
+        "description": "Radio 单选框 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "SearchSelect 远程搜索选择": {
+        "prefix": "<b-search-select⚡",
+        "body": [
+            "\r",
+            "  <div>\r",
+            "    <b-search-select\r",
+            "      v-model=\"value\"\r",
+            "      :page-size=\"20\"\r",
+            "      :width=\"320\"\r",
+            "      :props=\"{\r",
+            "        label: 'materialName',\r",
+            "        value: 'materialCode',\r",
+            "        subLabel: 'materialModel',\r",
+            "        nextLabel: 'materialUnit',\r",
+            "      }\"\r",
+            "      placeholder=\"请选择物料\"\r",
+            "      search-placeholder=\"输入物料名称搜索\"\r",
+            "      @load=\"onLoad\"\r",
+            "    <!-- … -->"
+        ],
+        "description": "SearchSelect 远程搜索选择 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
 
     /**
-     * Data 数据展示
+     * 数据展示
      */
     "Avatar 头像": {
-        "prefix": "<el-avatar⚡",
+        "prefix": "<b-avatar⚡",
         "body": [
-            "<el-avatar :size=\"50\" :src=\"circleUrl\" />"
+            "<b-avatar :size=\"50\" :src=\"circleUrl\" />"
         ],
         "description": "Avatar 头像"
     },
-
     "Avatar Group 头像组": {
-        "prefix": "<el-avatar-group⚡",
+        "prefix": "<b-avatar-group⚡",
         "body": [
-            "<el-avatar-group :max=\"3\">",
-            "    <el-avatar src=\"https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png\" />",
-            "    <el-avatar src=\"https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png\" />",
-            "</el-avatar-group>"
+            "<b-avatar-group :max=\"3\">",
+            "    <b-avatar src=\"https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png\" />",
+            "    <b-avatar src=\"https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png\" />",
+            "</b-avatar-group>"
         ],
         "description": "Avatar Group 头像组"
     },
-
     "Badge 徽章": {
-        "prefix": "<el-badge⚡",
+        "prefix": "<b-badge⚡",
         "body": [
-            "<el-badge :value=\"12\">",
-            "    <el-button>comments</el-button>",
-            "</el-badge>"
+            "<b-badge :value=\"12\">",
+            "    <b-button>comments</b-button>",
+            "</b-badge>"
         ],
         "description": "Badge 徽章"
     },
-
     "Calendar 日历": {
-        "prefix": "<el-calendar⚡",
+        "prefix": "<b-calendar⚡",
         "body": [
-            "<el-calendar v-model=\"value\" />"
+            "<b-calendar v-model=\"value\" />"
         ],
         "description": "Calendar 日历"
     },
-
-    "Card 卡片": {
-        "prefix": "<el-card⚡",
-        "body": [
-            "<el-card>",
-            "    <template #header>",
-            "        <div class=\"card-header\">",
-            "            <span>Card name</span>",
-            "        </div>",
-            "    </template>",
-            "    <p v-for=\"o in 4\" :key=\"o\" class=\"text item\">{{ 'List item ' + o }}</p>",
-            "    <template #footer>Footer content</template>",
-            "</el-card>"
-        ],
-        "description": "Card 卡片"
-    },
-
     "Carousel 走马灯": {
-        "prefix": "<el-carousel⚡",
+        "prefix": "<b-carousel⚡",
         "body": [
-            "<el-carousel height=\"150px\">",
-            "    <el-carousel-item v-for=\"item in 4\" :key=\"item\">",
+            "<b-carousel height=\"150px\">",
+            "    <b-carousel-item v-for=\"item in 4\" :key=\"item\">",
             "        <h3 class=\"small justify-center\" text=\"2xl\">{{ item }}</h3>",
-            "    </el-carousel-item>",
-            "</el-carousel>"
+            "    </b-carousel-item>",
+            "</b-carousel>"
         ],
         "description": "Carousel 走马灯"
     },
-
     "Collapse 折叠面板": {
-        "prefix": "<el-collapse⚡",
+        "prefix": "<b-collapse⚡",
         "body": [
-            "<el-collapse v-model=\"activeNames\" @change=\"handleChange\">",
-            "    <el-collapse-item title=\"Consistency\" name=\"1\">",
+            "<b-collapse v-model=\"activeNames\" @change=\"handleChange\">",
+            "    <b-collapse-item title=\"Consistency\" name=\"1\">",
             "        <div>Title</div>",
             "        <div>Container</div>",
-            "    </el-collapse-item>",
-            "    <el-collapse-item title=\"Feedback\" name=\"2\">",
+            "    </b-collapse-item>",
+            "    <b-collapse-item title=\"Feedback\" name=\"2\">",
             "        <div>Title2</div>",
             "        <div>Container2</div>",
-            "    </el-collapse-item>",
-            "</el-collapse>"
+            "    </b-collapse-item>",
+            "</b-collapse>"
         ],
         "description": "Collapse 折叠面板"
     },
-
-
-
-    "Descriptions 描述列表": {
-        "prefix": "<el-descriptions⚡",
-        "body": [
-            "<el-descriptions title=\"User Info\">",
-            "    <el-descriptions-item label=\"Username\">kooriookami</el-descriptions-item>",
-            "    <el-descriptions-item label=\"Telephone\">18100000000</el-descriptions-item>",
-            "    <el-descriptions-item label=\"Place\">Suzhou</el-descriptions-item>",
-            "    <el-descriptions-item label=\"Remarks\">",
-            "        <el-tag size=\"small\">School</el-tag>",
-            "    </el-descriptions-item>",
-            "    <el-descriptions-item label=\"Address\">",
-            "        No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province",
-            "    </el-descriptions-item>",
-            "</el-descriptions>"
-        ],
-        "description": "Descriptions 描述列表"
-    },
-
     "Empty 空状态": {
-        "prefix": "<el-empty⚡",
+        "prefix": "<b-empty⚡",
         "body": [
-            "<el-empty description=\"description\" />"
+            "<b-empty description=\"description\" />"
         ],
         "description": "Empty 空状态"
     },
     "Image 图片": {
-        "prefix": "<el-image⚡",
+        "prefix": "<b-image⚡",
         "body": [
-            "<el-image style=\"width: 100px; height: 100px\" :src=\"url\" :fit=\"fit\" />"
+            "<b-image style=\"width: 100px; height: 100px\" :src=\"url\" :fit=\"fit\" />"
         ],
         "description": "Image 图片"
     },
     "Pagination 分页": {
-        "prefix": "<el-pagination⚡",
+        "prefix": "<b-pagination⚡",
         "body": [
-            "<el-pagination layout=\"prev, pager, next\" :total=\"50\" />"
+            "<b-pagination layout=\"prev, pager, next\" :total=\"50\" />"
         ],
         "description": "Pagination 分页"
     },
     "Progress 进度条": {
-        "prefix": "<el-progress⚡",
+        "prefix": "<b-progress⚡",
         "body": [
-            "<el-progress :percentage=\"100\" status=\"success\" />"
+            "<b-progress :percentage=\"100\" status=\"success\" />"
         ],
         "description": "Progress 进度条"
     },
-    "Result 结果": {
-        "prefix": "<el-result⚡",
-        "body": [
-            "<el-result icon=\"success\" title=\"Success Tip\" sub-title=\"Please follow the instructions\">",
-            "    <template #extra>",
-            "        <el-button type=\"primary\">Back</el-button>",
-            "    </template>",
-            "</el-result>"
-        ],
-        "description": "Result 结果"
-    },
     "Skeleton 骨架屏": {
-        "prefix": "<el-skeleton⚡",
+        "prefix": "<b-skeleton⚡",
         "body": [
-            "<el-skeleton />"
+            "<b-skeleton />"
         ],
         "description": "Skeleton 骨架屏"
     },
-    "Table 表格": {
-        "prefix": "<el-table⚡",
-        "body": [
-            "<el-table :data=\"tableData\" style=\"width: 100%\">",
-            "    <el-table-column prop=\"date\" label=\"Date\" width=\"180\" />",
-            "    <el-table-column prop=\"name\" label=\"Name\" width=\"180\" />",
-            "    <el-table-column prop=\"address\" label=\"Address\" />",
-            "</el-table>"
-        ],
-        "description": "Table 表格"
-    },
-    "Virtualized Table 虚拟化表格": {
-        "prefix": "<el-table-v2⚡",
-        "body": [
-            "<el-table-v2 :columns=\"columns\" :data=\"data\" :width=\"700\" :height=\"400\" fixed />"
-        ],
-        "description": "Virtualized Table 虚拟化表格"
-    },
     "Tag 标签": {
-        "prefix": "<el-tag⚡",
+        "prefix": "<b-tag⚡",
         "body": [
-            "<el-tag type=\"primary\">Tag 1</el-tag>"
+            "<b-tag type=\"primary\">Tag 1</b-tag>"
         ],
         "description": "Tag 标签"
     },
     "Timeline 时间线": {
-        "prefix": "<el-timeline⚡",
+        "prefix": "<b-timeline⚡",
         "body": [
-            "<el-timeline style=\"max-width: 600px\">",
-            "    <el-timeline-item v-for=\"(activity, index) in activities\" :key=\"index\" :timestamp=\"activity.timestamp\">",
+            "<b-timeline style=\"max-width: 600px\">",
+            "    <b-timeline-item v-for=\"(activity, index) in activities\" :key=\"index\" :timestamp=\"activity.timestamp\">",
             "        {{ activity.content }}",
-            "    </el-timeline-item>",
-            "</el-timeline>"
+            "    </b-timeline-item>",
+            "</b-timeline>"
         ],
         "description": "Timeline 时间线"
     },
-    "Tour 漫游式引导": {
-        "prefix": "<el-tour⚡",
-        "body": [
-            "<el-tour v-model=\"open\">",
-            "    <el-tour-step :target=\"ref1?.$el\" title=\"Upload File\">",
-            "        <img style=\"width: 240px\" src=\"https://element-plus.org/images/element-plus-logo.svg\" alt=\"tour.png\" />",
-            "        <div>Put your files here.</div>",
-            "    </el-tour-step>",
-            "    <el-tour-step :target=\"ref2?.$el\" title=\"Save\" description=\"Save your changes\" />",
-            "    <el-tour-step :target=\"ref3?.$el\" title=\"Other Actions\" description=\"Click to see other\" />",
-            "</el-tour>"
-        ],
-        "description": "Tour 漫游式引导"
-    },
     "Tree 树形控件": {
-        "prefix": "<el-tree⚡",
+        "prefix": "<b-tree⚡",
         "body": [
-            "<el-tree data=\"data\" :props=\"defaultProps\" @node-click=\"handleNodeClick\" />"
+            "<b-tree data=\"data\" :props=\"defaultProps\" @node-click=\"handleNodeClick\" />"
         ],
         "description": "Tree 树形控件"
     },
     "Tree V2 虚拟化树形控件": {
-        "prefix": "<el-tree-v2⚡",
+        "prefix": "<b-tree-v2⚡",
         "body": [
-            "<el-tree-v2 style=\"max-width: 600px\" :data=\"data\" :props=\"props\" :height=\"208\" />"
+            "<b-tree-v2 style=\"max-width: 600px\" :data=\"data\" :props=\"props\" :height=\"208\" />"
         ],
         "description": "Tree V2 虚拟化树形控件"
     },
-    "Statistic 统计组件": {
-        "prefix": "<el-statistic⚡",
+    "Carousel 走马灯（carousel-item）": {
+        "prefix": "<b-carousel-item⚡",
         "body": [
-            "<el-statistic title=\"Daily active users\" :value=\"268500\" />"
+            "  <div class=\"block text-center\">",
+            "    <span class=\"demonstration\">",
+            "      Switch when indicator is hovered (default)",
+            "    </span>",
+            "    <b-carousel height=\"150px\">",
+            "      <b-carousel-item v-for=\"item in 4\" :key=\"item\">",
+            "        <h3 class=\"small justify-center\" text=\"2xl\">{{ item }}</h3>",
+            "      </b-carousel-item>",
+            "    </b-carousel>",
+            "  </div>",
+            "  <div class=\"block text-center\" m=\"t-4\">",
+            "    <span class=\"demonstration\">Switch when indicator is clicked</span>",
+            "    <b-carousel trigger=\"click\" height=\"150px\">",
+            "      <b-carousel-item v-for=\"item in 4\" :key=\"item\">",
+            "        <h3 class=\"small justify-center\" text=\"2xl\">{{ item }}</h3>",
+            "    <!-- … -->"
         ],
-        "description": "Statistic 统计组件"
+        "description": "Carousel 走马灯 · beaver-ui 新增组件（官方示例：基础用法）"
     },
-    "Countdown 倒计时": {
-        "prefix": "<el-countdown⚡",
+    "Collapse 折叠面板（collapse-item）": {
+        "prefix": "<b-collapse-item⚡",
         "body": [
-            "<el-countdown title=\"Start to grab\" :value=\"Date.now() + 1000 * 60\" />"
+            "  <div class=\"demo-collapse\">",
+            "    <b-collapse v-model=\"activeNames\" @change=\"handleChange\">",
+            "      <b-collapse-item title=\"Consistency\" name=\"1\">",
+            "        <div>",
+            "          Consistent with real life: in line with the process and logic of real",
+            "          life, and comply with languages and habits that the users are used to;",
+            "        </div>",
+            "        <div>",
+            "          Consistent within interface: all elements should be consistent, such",
+            "          as: design style, icons and texts, position of elements, etc.",
+            "        </div>",
+            "      </b-collapse-item>",
+            "      <b-collapse-item title=\"Feedback\" name=\"2\">",
+            "        <div>",
+            "          Operation feedback: enable the users to clearly perceive their",
+            "    <!-- … -->"
         ],
-        "description": "Countdown 倒计时"
+        "description": "Collapse 折叠面板 · beaver-ui 新增组件（官方示例：基础用法）"
     },
-    "Segmented 分段控制器": {
-        "prefix": "<el-segmented⚡",
+    "List 列表": {
+        "prefix": "<b-list⚡",
         "body": [
-            "<el-segmented v-model=\"value\" :options=\"options\" size=\"default\" />"
+            "  <b-list :data=\"rows\" item-key=\"id\" height=\"260px\" :item-props=\"{ border: true, paddingSize: 'default', width: '260px' }\">",
+            "    <template #item=\"{ row }\">",
+            "      <div class=\"demo-row-card\">",
+            "        <span class=\"demo-row-title\">{{ row.name }}</span>",
+            "        <span class=\"demo-row-desc\">{{ row.desc }}</span>",
+            "      </div>"
         ],
-        "description": "Segmented 分段控制器"
+        "description": "List 列表 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "List 列表（list-only）": {
+        "prefix": "<b-list-only⚡",
+        "body": [
+            "  <b-list :data=\"rows\" item-key=\"id\" height=\"260px\" :item-props=\"{ border: true, paddingSize: 'default', width: '260px' }\">",
+            "    <template #item=\"{ row }\">",
+            "      <div class=\"demo-row-card\">",
+            "        <span class=\"demo-row-title\">{{ row.name }}</span>",
+            "        <span class=\"demo-row-desc\">{{ row.desc }}</span>",
+            "      </div>"
+        ],
+        "description": "List 列表 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "List 列表（list-async）": {
+        "prefix": "<b-list-async⚡",
+        "body": [
+            "  <b-list :data=\"rows\" item-key=\"id\" height=\"260px\" :item-props=\"{ border: true, paddingSize: 'default', width: '260px' }\">",
+            "    <template #item=\"{ row }\">",
+            "      <div class=\"demo-row-card\">",
+            "        <span class=\"demo-row-title\">{{ row.name }}</span>",
+            "        <span class=\"demo-row-desc\">{{ row.desc }}</span>",
+            "      </div>"
+        ],
+        "description": "List 列表 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "List 列表（list-report）": {
+        "prefix": "<b-list-report⚡",
+        "body": [
+            "  <b-list :data=\"rows\" item-key=\"id\" height=\"260px\" :item-props=\"{ border: true, paddingSize: 'default', width: '260px' }\">",
+            "    <template #item=\"{ row }\">",
+            "      <div class=\"demo-row-card\">",
+            "        <span class=\"demo-row-title\">{{ row.name }}</span>",
+            "        <span class=\"demo-row-desc\">{{ row.desc }}</span>",
+            "      </div>"
+        ],
+        "description": "List 列表 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "LabelExtend 溢出提示文本": {
+        "prefix": "<b-label-extend⚡",
+        "body": [
+            "  <div style=\"max-width: 420px\">",
+            "    <b-filter-item label=\"组织机构\" :label-width=\"90\">",
+            "      <b-label-extend",
+            "        content=\"中铁十四局集团第三工程有限公司\"",
+            "        style=\"width: 100%\"",
+            "      />",
+            "    </b-filter-item>",
+            "    <b-filter-item label=\"超长名称（悬浮查看完整）\" :label-width=\"160\">",
+            "      <b-label-extend",
+            "        content=\"甘肃路桥建设集团有限公司静庄智慧工地平台项目部的超长组织机构全称文本\"",
+            "        style=\"width: 100%\"",
+            "      />",
+            "    </b-filter-item>",
+            "    <b-filter-item label=\"空值占位\" :label-width=\"90\">",
+            "      <b-label-extend content=\"\" placeholder=\"暂无数据\" style=\"width: 100%\" />",
+            "    <!-- … -->"
+        ],
+        "description": "LabelExtend 溢出提示文本 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "Grid 全能表格": {
+        "prefix": "<b-grid⚡",
+        "body": [
+            "  <b-grid :data=\"rows\" :columns=\"columns\" height=\"240\" border>",
+            "    <template #empty>暂无记录"
+        ],
+        "description": "Grid 全能表格 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "Grid 全能表格（grid-column）": {
+        "prefix": "<b-grid-column⚡",
+        "body": [
+            "  <b-grid :data=\"rows\" :columns=\"columns\" height=\"240\" border>",
+            "    <template #empty>暂无记录"
+        ],
+        "description": "Grid 全能表格 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "Tree 树形控件（tree-table）": {
+        "prefix": "<b-tree-table⚡",
+        "body": [
+            "  <b-tree",
+            "    style=\"max-width: 600px\"",
+            "    :data=\"data\"",
+            "    :props=\"defaultProps\"",
+            "    @node-click=\"handleNodeClick\"",
+            "  />"
+        ],
+        "description": "Tree 树形控件 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "Image 图片（image-viewer）": {
+        "prefix": "<b-image-viewer⚡",
+        "body": [
+            "  <div class=\"demo-image\">",
+            "    <div v-for=\"fit in fits\" :key=\"fit\" class=\"block\">",
+            "      <span class=\"demonstration\">{{ fit }}</span>",
+            "      <b-image style=\"width: 100px; height: 100px\" :src=\"url\" :fit=\"fit\" />",
+            "    </div>",
+            "  </div>"
+        ],
+        "description": "Image 图片 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "Skeleton 骨架屏（skeleton-item）": {
+        "prefix": "<b-skeleton-item⚡",
+        "body": [
+            "  <b-skeleton />",
+            "  <br />",
+            "  <b-skeleton style=\"--b-skeleton-circle-size: 100px\">",
+            "    <template #template>",
+            "      <b-skeleton-item variant=\"circle\" />"
+        ],
+        "description": "Skeleton 骨架屏 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "Timeline 时间线（timeline-item）": {
+        "prefix": "<b-timeline-item⚡",
+        "body": [
+            "  <b-timeline>",
+            "    <b-timeline-item",
+            "      v-for=\"(activity, index) in activities\"",
+            "      :key=\"index\"",
+            "      :timestamp=\"activity.timestamp\"",
+            "    >",
+            "      {{ activity.content }}",
+            "    </b-timeline-item>",
+            "  </b-timeline>"
+        ],
+        "description": "Timeline 时间线 · beaver-ui 新增组件（官方示例：基础用法）"
     },
 
     /**
-     * Navigation 导航
+     * 导航
      */
-    "Affix 固钉": {
-        "prefix": "<el-affix⚡",
-        "body": ["<el-affix :offset=\"120\">", "    <el-button type=\"primary\">Offset top 120px</el-button>", "</el-affix>"],
-        "description": "Affix 固钉"
-    },
     "Anchor 锚点": {
-        "prefix": "<el-anchor⚡",
+        "prefix": "<b-anchor⚡",
         "body": [
-            "<el-anchor :offset=\"70\">",
-            "    <el-anchor-link :href=\"`#${locale['basic-usage']}`\"> {{ locale['Basic Usage'] }} </el-anchor-link>",
-            "    <el-anchor-link :href=\"`#${locale['scroll-container']}`\"> {{ locale['Scroll Container'] }} </el-anchor-link>",
-            "</el-anchor>"
+            "<b-anchor :offset=\"70\">",
+            "    <b-anchor-link :href=\"`#${locale['basic-usage']}`\"> {{ locale['Basic Usage'] }} </b-anchor-link>",
+            "    <b-anchor-link :href=\"`#${locale['scroll-container']}`\"> {{ locale['Scroll Container'] }} </b-anchor-link>",
+            "</b-anchor>"
         ],
         "description": "Anchor 锚点"
     },
     "Backtop 回到顶部": {
-        "prefix": "<el-backtop⚡",
-        "body": ["<el-backtop :right=\"100\" :bottom=\"100\" />"],
+        "prefix": "<b-backtop⚡",
+        "body": [
+            "<b-backtop :right=\"100\" :bottom=\"100\" />"
+        ],
         "description": "Backtop 回到顶部"
     },
     "Breadcrumb 面包屑": {
-        "prefix": "<el-breadcrumb⚡",
+        "prefix": "<b-breadcrumb⚡",
         "body": [
-            "<el-breadcrumb separator=\"/\">",
-            "    <el-breadcrumb-item :to=\"{ path: '/' }\">homepage</el-breadcrumb-item>",
-            "    <el-breadcrumb-item>",
+            "<b-breadcrumb separator=\"/\">",
+            "    <b-breadcrumb-item :to=\"{ path: '/' }\">homepage</b-breadcrumb-item>",
+            "    <b-breadcrumb-item>",
             "        <a href=\"/\">promotion management</a>",
-            "    </el-breadcrumb-item>",
-            "    <el-breadcrumb-item>promotion list</el-breadcrumb-item>",
-            "    <el-breadcrumb-item>promotion detail</el-breadcrumb-item>",
-            "</el-breadcrumb>"
+            "    </b-breadcrumb-item>",
+            "    <b-breadcrumb-item>promotion list</b-breadcrumb-item>",
+            "    <b-breadcrumb-item>promotion detail</b-breadcrumb-item>",
+            "</b-breadcrumb>"
         ],
         "description": "Breadcrumb 面包屑"
     },
     "Dropdown 下拉菜单": {
-        "prefix": "<el-dropdown⚡",
+        "prefix": "<b-dropdown⚡",
         "body": [
-            "<el-dropdown>",
-            "    <span class=\"el-dropdown-link\">",
+            "<b-dropdown>",
+            "    <span class=\"b-dropdown-link\">",
             "        Dropdown List",
-            "        <el-icon class=\"el-icon--right\">",
+            "        <b-icon class=\"b-icon--right\">",
             "            <arrow-down />",
-            "        </el-icon>",
+            "        </b-icon>",
             "    </span>",
             "    <template #dropdown>",
-            "        <el-dropdown-menu>",
-            "            <el-dropdown-item>Action 1</el-dropdown-item>",
-            "            <el-dropdown-item>Action 2</el-dropdown-item>",
-            "            <el-dropdown-item>Action 3</el-dropdown-item>",
-            "            <el-dropdown-item disabled>Action 4</el-dropdown-item>",
-            "            <el-dropdown-item divided>Action 5</el-dropdown-item>",
-            "        </el-dropdown-menu>",
+            "        <b-dropdown-menu>",
+            "            <b-dropdown-item>Action 1</b-dropdown-item>",
+            "            <b-dropdown-item>Action 2</b-dropdown-item>",
+            "            <b-dropdown-item>Action 3</b-dropdown-item>",
+            "            <b-dropdown-item disabled>Action 4</b-dropdown-item>",
+            "            <b-dropdown-item divided>Action 5</b-dropdown-item>",
+            "        </b-dropdown-menu>",
             "    </template>",
-            "</el-dropdown>"
+            "</b-dropdown>"
         ],
         "description": "Dropdown 下拉菜单"
     },
     "Menu 菜单": {
-        "prefix": "<el-menu⚡",
+        "prefix": "<b-menu⚡",
         "body": [
-            "<el-menu :default-active=\"activeIndex\" class=\"el-menu-demo\" mode=\"horizontal\" @select=\"handleSelect\">",
-            "    <el-menu-item index=\"1\">Processing Center</el-menu-item>",
-            "    <el-sub-menu index=\"2\">",
+            "<b-menu :default-active=\"activeIndex\" class=\"b-menu-demo\" mode=\"horizontal\" @select=\"handleSelect\">",
+            "    <b-menu-item index=\"1\">Processing Center</b-menu-item>",
+            "    <b-sub-menu index=\"2\">",
             "        <template #title>Workspace</template>",
-            "        <el-menu-item index=\"2-1\">item one</el-menu-item>",
-            "        <el-menu-item index=\"2-2\">item two</el-menu-item>",
-            "        <el-menu-item index=\"2-3\">item three</el-menu-item>",
-            "        <el-sub-menu index=\"2-4\">",
+            "        <b-menu-item index=\"2-1\">item one</b-menu-item>",
+            "        <b-menu-item index=\"2-2\">item two</b-menu-item>",
+            "        <b-menu-item index=\"2-3\">item three</b-menu-item>",
+            "        <b-sub-menu index=\"2-4\">",
             "            <template #title>item four</template>",
-            "            <el-menu-item index=\"2-4-1\">item one</el-menu-item>",
-            "            <el-menu-item index=\"2-4-2\">item two</el-menu-item>",
-            "            <el-menu-item index=\"2-4-3\">item three</el-menu-item>",
-            "        </el-sub-menu>",
-            "    </el-sub-menu>",
-            "    <el-menu-item index=\"3\" disabled>Info</el-menu-item>",
-            "    <el-menu-item index=\"4\">Orders</el-menu-item>",
-            "</el-menu>"
+            "            <b-menu-item index=\"2-4-1\">item one</b-menu-item>",
+            "            <b-menu-item index=\"2-4-2\">item two</b-menu-item>",
+            "            <b-menu-item index=\"2-4-3\">item three</b-menu-item>",
+            "        </b-sub-menu>",
+            "    </b-sub-menu>",
+            "    <b-menu-item index=\"3\" disabled>Info</b-menu-item>",
+            "    <b-menu-item index=\"4\">Orders</b-menu-item>",
+            "</b-menu>"
         ],
         "description": "Menu 菜单"
     },
-    "Page Header 页头": {
-        "prefix": "<el-page-header⚡",
-        "body": [
-            "<el-page-header @back=\"onBack\">",
-            "    <template #breadcrumb>",
-            "        <el-breadcrumb separator=\"/\">",
-            "            <el-breadcrumb-item :to=\"{ path: './page-header.html' }\"> homepage </el-breadcrumb-item>",
-            "            <el-breadcrumb-item>",
-            "                <a href=\"./page-header.html\">route 1</a>",
-            "            </el-breadcrumb-item>",
-            "            <el-breadcrumb-item>route 2</el-breadcrumb-item>",
-            "        </el-breadcrumb>",
-            "    </template>",
-            "    <template #content>",
-            "        <div class=\"flex items-center\">",
-            "            <el-avatar :size=\"32\" src=\"https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png\" />",
-            "            <span> Title </span>",
-            "            <span style=\"color: var(--el-text-color-regular)\"> Sub title </span>",
-            "            <el-tag>Default</el-tag>",
-            "        </div>",
-            "    </template>",
-            "    <template #extra>",
-            "        <div class=\"flex items-center\">",
-            "            <el-button>Print</el-button>",
-            "            <el-button type=\"primary\">Edit</el-button>",
-            "        </div>",
-            "    </template>",
-            "</el-page-header>"
-        ],
-        "description": "Page Header 页头"
-    },
     "Steps 步骤条": {
-        "prefix": "<el-steps⚡",
+        "prefix": "<b-steps⚡",
         "body": [
-            "<el-steps :active=\"active\" finish-status=\"success\">",
-            "    <el-step title=\"Step 1\" />",
-            "    <el-step title=\"Step 2\" />",
-            "    <el-step title=\"Step 3\" />",
-            "</el-steps>"
+            "<b-steps :active=\"active\" finish-status=\"success\">",
+            "    <b-step title=\"Step 1\" />",
+            "    <b-step title=\"Step 2\" />",
+            "    <b-step title=\"Step 3\" />",
+            "</b-steps>"
         ],
         "description": "Steps 步骤条"
     },
-    "Tabs 标签页": {
-        "prefix": "<el-tabs⚡",
+    "Breadcrumb 面包屑（breadcrumb-item）": {
+        "prefix": "<b-breadcrumb-item⚡",
         "body": [
-            "<el-tabs v-model=\"activeName\" @tab-click=\"handleClick\">",
-            "    <el-tab-pane label=\"User\" name=\"first\">User</el-tab-pane>",
-            "    <el-tab-pane label=\"Config\" name=\"second\">Config</el-tab-pane>",
-            "    <el-tab-pane label=\"Role\" name=\"third\">Role</el-tab-pane>",
-            "    <el-tab-pane label=\"Task\" name=\"fourth\">Task</el-tab-pane>",
-            "</el-tabs>"
+            "  <b-breadcrumb separator=\"/\">",
+            "    <b-breadcrumb-item :to=\"{ path: '/' }\">homepage</b-breadcrumb-item>",
+            "    <b-breadcrumb-item>",
+            "      <a href=\"/\">promotion management</a>",
+            "    </b-breadcrumb-item>",
+            "    <b-breadcrumb-item>promotion list</b-breadcrumb-item>",
+            "    <b-breadcrumb-item>promotion detail</b-breadcrumb-item>",
+            "  </b-breadcrumb>"
         ],
-        "description": "Tabs 标签页"
+        "description": "Breadcrumb 面包屑 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "Dropdown 下拉菜单（dropdown-item）": {
+        "prefix": "<b-dropdown-item⚡",
+        "body": [
+            "  <b-dropdown>",
+            "    <span class=\"b-dropdown-link\">",
+            "      Dropdown List",
+            "      <b-icon class=\"b-icon--right\">",
+            "        <arrow-down />",
+            "      </b-icon>",
+            "    </span>",
+            "    <template #dropdown>",
+            "      <b-dropdown-menu>",
+            "        <b-dropdown-item>Action 1</b-dropdown-item>",
+            "        <b-dropdown-item>Action 2</b-dropdown-item>",
+            "        <b-dropdown-item>Action 3</b-dropdown-item>",
+            "        <b-dropdown-item disabled>Action 4</b-dropdown-item>",
+            "        <b-dropdown-item divided>Action 5</b-dropdown-item>",
+            "      </b-dropdown-menu>"
+        ],
+        "description": "Dropdown 下拉菜单 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "Dropdown 下拉菜单（dropdown-menu）": {
+        "prefix": "<b-dropdown-menu⚡",
+        "body": [
+            "  <b-dropdown>",
+            "    <span class=\"b-dropdown-link\">",
+            "      Dropdown List",
+            "      <b-icon class=\"b-icon--right\">",
+            "        <arrow-down />",
+            "      </b-icon>",
+            "    </span>",
+            "    <template #dropdown>",
+            "      <b-dropdown-menu>",
+            "        <b-dropdown-item>Action 1</b-dropdown-item>",
+            "        <b-dropdown-item>Action 2</b-dropdown-item>",
+            "        <b-dropdown-item>Action 3</b-dropdown-item>",
+            "        <b-dropdown-item disabled>Action 4</b-dropdown-item>",
+            "        <b-dropdown-item divided>Action 5</b-dropdown-item>",
+            "      </b-dropdown-menu>"
+        ],
+        "description": "Dropdown 下拉菜单 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "Menu 菜单（menu-item）": {
+        "prefix": "<b-menu-item⚡",
+        "body": [
+            "  <b-menu",
+            "    :default-active=\"activeIndex\"",
+            "    class=\"b-menu-demo\"",
+            "    mode=\"horizontal\"",
+            "    @select=\"handleSelect\"",
+            "  >",
+            "    <b-menu-item index=\"1\">Processing Center</b-menu-item>",
+            "    <b-sub-menu index=\"2\">",
+            "      <template #title>Workspace"
+        ],
+        "description": "Menu 菜单 · beaver-ui 新增组件（官方示例：顶栏）"
+    },
+    "Menu 菜单（menu-item-group）": {
+        "prefix": "<b-menu-item-group⚡",
+        "body": [
+            "  <b-menu",
+            "    :default-active=\"activeIndex\"",
+            "    class=\"b-menu-demo\"",
+            "    mode=\"horizontal\"",
+            "    @select=\"handleSelect\"",
+            "  >",
+            "    <b-menu-item index=\"1\">Processing Center</b-menu-item>",
+            "    <b-sub-menu index=\"2\">",
+            "      <template #title>Workspace"
+        ],
+        "description": "Menu 菜单 · beaver-ui 新增组件（官方示例：顶栏）"
+    },
+    "Navigation 页面导航": {
+        "prefix": "<b-navigation⚡",
+        "body": [
+            "  <div class=\"nav-demo\">",
+            "    <b-navigation :routers=\"routers\" />",
+            "    <b-navigation :routers=\"routers\" separator=\">\" style=\"margin-top: 12px\" />",
+            "    <b-navigation :routers=\"objectRouters\" style=\"margin-top: 12px\" />",
+            "  </div>"
+        ],
+        "description": "Navigation 页面导航 · beaver-ui 新增组件（官方示例：基础用法）"
+    },
+    "Anchor 锚点（anchor-link）": {
+        "prefix": "<b-anchor-link⚡",
+        "body": [
+            "  <b-anchor :offset=\"70\">",
+            "    <b-anchor-link :href=\"`#$${locale['basic-usage']}`\">",
+            "      {{ locale['Basic Usage'] }}",
+            "    </b-anchor-link>",
+            "    <b-anchor-link :href=\"`#$${locale['horizontal-mode']}`\">",
+            "      {{ locale['Horizontal Mode'] }}",
+            "    </b-anchor-link>",
+            "    <b-anchor-link :href=\"`#$${locale['scroll-container']}`\">",
+            "      {{ locale['Scroll Container'] }}",
+            "    </b-anchor-link>",
+            "    <b-anchor-link :href=\"`#$${locale['anchor-api']}`\">",
+            "      {{ locale['Anchor API'] }}",
+            "      <template #sub-link>",
+            "        <b-anchor-link :href=\"`#$${locale['anchor-attributes']}`\">",
+            "          {{ locale['Anchor Attributes'] }}",
+            "    <!-- … -->"
+        ],
+        "description": "Anchor 锚点 · beaver-ui 新增组件（官方示例：基础用法）"
     },
 
     /**
-     * Feedback 反馈组件
+     * 反馈
      */
     "Alert 提示": {
-        "prefix": "<el-alert⚡",
-        "body": ["<el-alert title=\"Success alert\" type=\"success\" />"],
+        "prefix": "<b-alert⚡",
+        "body": [
+            "<b-alert title=\"Success alert\" type=\"success\" />"
+        ],
         "description": "Alert 提示"
     },
     "Dialog 对话框": {
-        "prefix": "<el-dialog⚡",
+        "prefix": "<b-dialog⚡",
         "body": [
-            "<el-dialog v-model=\"dialogVisible\" title=\"Tips\" width=\"500\" :before-close=\"handleClose\">",
+            "<b-dialog v-model=\"dialogVisible\" title=\"Tips\" width=\"500\" :before-close=\"handleClose\">",
             "    <span>This is a message</span>",
             "    <template #footer>",
             "        <div class=\"dialog-footer\">",
-            "            <el-button @click=\"dialogVisible = false\">Cancel</el-button>",
-            "            <el-button type=\"primary\" @click=\"dialogVisible = false\"> Confirm </el-button>",
+            "            <b-button @click=\"dialogVisible = false\">Cancel</b-button>",
+            "            <b-button type=\"primary\" @click=\"dialogVisible = false\"> Confirm </b-button>",
             "        </div>",
             "    </template>",
-            "</el-dialog>"
+            "</b-dialog>"
         ],
         "description": "Dialog 对话框"
     },
     "Drawer 抽屉": {
-        "prefix": "<el-drawer⚡",
+        "prefix": "<b-drawer⚡",
         "body": [
-            "<el-drawer v-model=\"drawer\" title=\"I am the title\" :direction=\"direction\" :before-close=\"handleClose\">",
+            "<b-drawer v-model=\"drawer\" title=\"I am the title\" :direction=\"direction\" :before-close=\"handleClose\">",
             "    <span>Hi, there!</span>",
-            "</el-drawer>"
+            "</b-drawer>"
         ],
         "description": "Drawer 抽屉"
     },
     "Popconfirm 气泡确认框": {
-        "prefix": "<el-popconfirm⚡",
+        "prefix": "<b-popconfirm⚡",
         "body": [
-            "<el-popconfirm class=\"box-item\" title=\"Top Left prompts info\" placement=\"top-start\">",
+            "<b-popconfirm class=\"box-item\" title=\"Top Left prompts info\" placement=\"top-start\">",
             "    <template #reference>",
-            "        <el-button>top-start</el-button>",
+            "        <b-button>top-start</b-button>",
             "    </template>",
-            "</el-popconfirm>"
+            "</b-popconfirm>"
         ],
         "description": "Popconfirm 气泡确认框"
     },
     "Popover 弹出框": {
-        "prefix": "<el-popover⚡",
+        "prefix": "<b-popover⚡",
         "body": [
-            "<el-popover class=\"box-item\" title=\"Title\" content=\"Top Left prompts info\" placement=\"top-start\">",
+            "<b-popover class=\"box-item\" title=\"Title\" content=\"Top Left prompts info\" placement=\"top-start\">",
             "    <template #reference>",
-            "        <el-button>top-start</el-button>",
+            "        <b-button>top-start</b-button>",
             "    </template>",
-            "</el-popover>"
+            "</b-popover>"
         ],
         "description": "Popover 弹出框"
     },
     "Tooltip 文字提示": {
-        "prefix": "<el-tooltip⚡",
+        "prefix": "<b-tooltip⚡",
         "body": [
-            "<el-tooltip class=\"box-item\" effect=\"dark\" content=\"Top Left prompts info\" placement=\"top-start\">",
-            "    <el-button>top-start</el-button>",
-            "</el-tooltip>"
+            "<b-tooltip class=\"box-item\" effect=\"dark\" content=\"Top Left prompts info\" placement=\"top-start\">",
+            "    <b-button>top-start</b-button>",
+            "</b-tooltip>"
         ],
         "description": "Tooltip 文字提示"
     },
 
     /**
-     * Others 其他
+     * 其他
      */
-    "Divider 分割线": {
-        "prefix": "<el-divider⚡",
-        "body": ["<el-divider />"],
-        "description": "Divider 分割线"
-    },
     "Watermark 水印": {
-        "prefix": "<el-watermark⚡",
-        "body": ["<el-watermark :font=\"font\">", "    <div style=\"height: 500px\" />", "</el-watermark>"],
+        "prefix": "<b-watermark⚡",
+        "body": [
+            "<b-watermark :font=\"font\">",
+            "    <div style=\"height: 500px\" />",
+            "</b-watermark>"
+        ],
         "description": "Watermark 水印"
     },
-    "Splitter 分割面板": {
-        "prefix": "<el-splitter⚡",
+
+    /**
+     * 全局配置
+     */
+    "Config Provider 全局配置": {
+        "prefix": "<b-config-provider⚡",
         "body": [
-            "<el-splitter>",
-            "    <el-splitter-panel size=\"30%\">",
-            "        <div class=\"demo-panel\">1</div>",
-            "    </el-splitter-panel>",
-            "    <el-splitter-panel :min=\"200\">",
-            "        <div class=\"demo-panel\">2</div>",
-            "    </el-splitter-panel>",
-            "</el-splitter>"
+            "<b-config-provider :locale=\"locale\" :button=\"{ autoInsertSpace: true }\">",
+            "    $1",
+            "</b-config-provider>"
         ],
-        "description": "Splitter 分割面板"
-    },
+        "description": "Config Provider 全局配置"
+    }
+
 }

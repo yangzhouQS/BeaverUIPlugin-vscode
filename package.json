@@ -1,10 +1,13 @@
 {
-    "name": "element-plus",
-    "repository": "https://github.com/noxussj2/element-plus",
-    "icon": "images/element-plus.png",
-    "displayName": "Element Plus",
-    "description": "Element Plus Snippets",
-    "version": "3.0.1",
+    "name": "beaver-ui",
+    "displayName": "Beaver UI",
+    "description": "Beaver UI Snippets — @cs/beaver-ui 组件库代码补全与文档提示（属性/事件/插槽/枚举值/指令）",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yangzhouQS/BeaverUIPlugin-vscode.git"
+    },
+    "icon": "images/beaver-ui.png",
     "engines": {
         "vscode": "^1.46.0"
     },
@@ -12,12 +15,13 @@
         "Snippets"
     ],
     "keywords": [
-        "element-plus",
-        "element",
+        "beaver-ui",
+        "beaver",
         "vue",
         "vue3",
         "snippets",
-        "autocomplete"
+        "autocomplete",
+        "element-plus"
     ],
     "activationEvents": [
         "onLanguage:html",
@@ -43,7 +47,9 @@
         "watch": "tsc -watch -p ./",
         "pretest": "yarn run compile && yarn run lint",
         "lint": "eslint src",
-        "test": "vscode-test"
+        "test": "vscode-test",
+        "verify": "node scripts/verify.mjs",
+        "generate": "node scripts/generate-data.mjs && node scripts/generate-snippets.mjs --skip-upstream"
     },
     "devDependencies": {
         "@types/mocha": "^10.0.9",
@@ -56,9 +62,6 @@
         "eslint": "^9.13.0",
         "typescript": "^5.6.3"
     },
-    "dependencies": {
-        "vscode-html-languageservice": "^5.3.1"
-    },
-    "publisher": "noxussj",
+    "publisher": "yearrow",
     "license": "MIT"
 }

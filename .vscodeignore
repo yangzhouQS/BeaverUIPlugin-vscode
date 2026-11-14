@@ -3,11 +3,14 @@
 src/**
 test/**
 out/test/**
+data/**
+scripts/**
 .gitignore
 .yarnrc
 .prettierrc
 eslint.config.mjs
 vsc-extension-quickstart.md
+PUSH.md
 **/tsconfig.json
 **/eslint.config.mjs
 **/*.map
@@ -17,4 +20,3 @@ vsc-extension-quickstart.md
 images/1.png
 images/2.png
 images/3.png
-images/element-plus2.png
